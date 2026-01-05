@@ -83,6 +83,12 @@ class RuleType(Enum):
     OTHER = "OTHER"
 
 
+class CourseStatus(Enum):
+    COMPLETED = "COMPLETED"
+    IN_PROGRESS = "IN_PROGRESS"
+    NOT_TAKEN = "NOT_TAKEN"
+
+
 class Rule(Node, ABC):
     pass
 
@@ -90,6 +96,7 @@ class Rule(Node, ABC):
 class CourseRule(Rule):
     type: RuleType
     course: Ref
+    course_status: CourseStatus
 
     def satisfies(self, ctx: Context) -> bool:
         return ctx.has_course(self.course)
