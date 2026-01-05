@@ -33,29 +33,45 @@ class Context:
     
     def has_program(self, program: Ref) -> bool:
         return program in self.programs
-    
-    
+
+
+class NodeType(Enum):
+    pass
+
+class LogicType(NodeType):
+    AND = "AND"
+    OR = "OR"
+    NOT = "NOT"
+
+class RuleType(NodeType):
+    COURSE = "COURSE"
+    PROGRAM = "PROGRAM"
+    GRADE = "GRADE"
+    LEVEL = "LEVEL"
+    OTHER = "OTHER"
+
+
 
 
 class Node(ABC):
+    type: NodeType
+
     @abstractmethod
     def satisfies(self, ctx: Context) -> bool:
         pass
 
-    @abstractmethod
-    def get_type(self) -> str:
+    def get_type_value(self) -> str:
         return self.type.value
+    
+    def get_nodetype(self) -> str:  # LogicType or RuleType
+        return type(self.type).__name__
 
-
-class LogicType(Enum):
-    AND = "AND"
-    OR = "OR"
-    NOT = "NOT"
 
 @dataclass
 class Logic(Node):
     type: LogicType
     nodes: List[Node] = field(default_factory=list)
+
 
     def satisfies(self, ctx: Context) -> bool:
         if self.type is LogicType.AND:
@@ -73,14 +89,6 @@ class Logic(Node):
     def get_children(self) -> List[Node]:
         return self.nodes
     
-
-
-class RuleType(Enum):
-    COURSE = "COURSE"
-    PROGRAM = "PROGRAM"
-    GRADE = "GRADE"
-    LEVEL = "LEVEL"
-    OTHER = "OTHER"
 
 
 class CourseStatus(Enum):
@@ -142,3 +150,7 @@ class OtherRule(Rule):
 
     def satisfies(self, ctx: Context) -> bool:
         return True
+
+
+#course_rule = CourseRule(RuleType.COURSE, Ref("CS145", "LINK"), CourseStatus.COMPLETED)
+#print(course_rule.get_nodetype())
