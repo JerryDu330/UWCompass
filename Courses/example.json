@@ -1,0 +1,44 @@
+{
+  "code": "CS246",
+  "subject": "CS",
+  "title": "Object-Oriented Software Development",
+  "description": "Introduction to object-oriented programming and to tools and techniques for software development. Designing, coding, debugging, testing, and documenting medium-sized programs: reading specifications and designing software to implement them; selecting appropriate data structures and control structures; writing reusable code; reusing existing code; basic performance issues; debuggers; test suites.",
+  "units": 0.50,
+
+  "prerequisites": {
+    "type": "AND",
+    "items": [
+      {
+        "type": "OR",
+        "items": [
+          { "type": "AND", 
+            "items": [
+                { "type": "COURSE", "code": "CS136L" },
+                { "type": "COURSE", "code": "CS146" }
+            ] },
+          { "type": "AND",
+            "items": [
+                { "type": "GRADE", "grade": 60, "code": "CS138" } 
+            ] },
+          { "type": "AND",
+            "items": [
+                { "type": "AND", 
+                  "items": [
+                    { "type": "COURSE", "code": "CS136L" }
+                  ] },
+                { "type": "AND", 
+                  "items": [
+                    { "type": "GRADE", "grade": 60, "code": "CS136" } 
+                  ] }
+            ]} 
+        ]
+      },
+      { "type": "PROGRAM", "code?": "...." } 
+    ]
+  },
+
+  "corequisites": [],
+  "antirequisites": [],
+  "cross_listed_courses": [],
+  "url": "https://uwaterloo.ca/academic-calendar/undergraduate-studies/catalog#/courses/H1fa6uV7t3?bc=true&bcCurrent=CS246%20-%20Object-Oriented%20Software%20Development&bcGroup=Computer%20Science%20(CS)&bcItemType=courses"
+}
