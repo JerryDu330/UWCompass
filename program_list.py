@@ -66,7 +66,7 @@ def extract_programs_link(driver):
 
         prev_links_count = -1
         program_links = []
-        timeout_links = 1
+        timeout_links = 2
         start_time_links = time.time()
 
         while True:
@@ -85,7 +85,7 @@ def extract_programs_link(driver):
             if time.time() - start_time_links > timeout_links:
                 break
 
-            time.sleep(0.05)
+            time.sleep(0.1)
 
         print(f"  program number: {len(program_links)}")
 

@@ -5,6 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import time
+import csv
+
 
 def extract_course(url):
     print("Done!")
@@ -89,6 +92,7 @@ def extract_courses_link(driver):
         except:
             print("No button or already expanded")
 
+        time.sleep(0.5)  # Can extend if internet is slow
         modules = browser.find_elements(
             By.CSS_SELECTOR, "div.style__collapsibleBox___DBqEP"
         )
@@ -112,10 +116,17 @@ def extract_courses_link(driver):
             else:
                 code, name = text, ""
 
+            subject = title.split("(")[1].split(")")[0]
             all_courses.append(
-                {"module": title, "number": code, "name": name, "link": href}
+                {
+                    "subject": subject,
+                    "module": title,
+                    "number": code,
+                    "name": name,
+                    "link": href,
+                }
             )
-            print(f"  {title} - {code} - {name} - {href}")
+            # print(f"  {title} - {code} - {name} - {href}")
 
     print("\nDone! Total course number:", len(all_courses))
     return all_courses
@@ -135,10 +146,17 @@ if __name__ == "__main__":
 
     links = extract_courses_link(driver)
     ind = 0
+    """
     for link in links[:10]:
         page = extract_course(link["link"])
         with open(f"page{ind}.html", "w", encoding="utf-8") as f:
             f.write(page)
         ind += 1
-
+    """
     driver.quit()
+    with open("courses.csv", "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f, fieldnames=["subject", "module", "number", "name", "link"]
+        )
+        writer.writeheader()
+        writer.writerows(links)
