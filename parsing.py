@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
 import re
+import os
 from lxml import html
 import pandas as pd
 import json
-import course_info as cc
+import crawler_copy as cc
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -40,7 +41,7 @@ def check_logic_type(rule):
         "enrolled in the following"]):
         return "AND"
     elif any(phrase in rule for phrase in [
-        "at least", "1 of", "enroll in", "enrolled in"]):
+        "at least", "1 of", "one of", "enroll in", "enrolled in"]):
         return "OR"
     
     return None
@@ -235,14 +236,20 @@ if __name__ == "__main__":
     driver = webdriver.Chrome(options=chrome_options)
 
     df = pd.read_csv("courses_info.csv")
-    num_to_link = dict(zip(df["code"], df["link"]))
-    # open("special_rules.txt", "w", encoding="utf-8").close()
+    num_to_link = dict(zip(df["code"], zip(df["link"], df["subject"])))
 
-    x = 1265
-    for code, link in list(num_to_link.items())[1265:2000]:
+    open("special_rules.txt", "w", encoding="utf-8").close()
+
+
+    x = 0
+    for code, (link, subject) in list(num_to_link.items()):
         print(code + " " + str(x) + "\n")
         x += 1
         html_text = cc.extract_course(link, driver)
         data = find_req(html_text, code)
-        with open(f"Courses/{code}.json", "w", encoding="utf-8") as f:
+
+        folder_path = os.path.join("Courses", subject)
+        os.makedirs(folder_path, exist_ok=True)
+        file_path = os.path.join(folder_path, f"{code}.json")
+        with open(file_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)
