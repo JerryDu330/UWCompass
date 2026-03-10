@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CourseMap</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<script defer src="script.js"></script>
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+<div class="logo">CourseMap</div>
+
+<nav class="nav">
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">Visualizer</a>
+<a href="#">Recommendation</a>
+<a href="#">About</a>
+</nav>
+
+<div class="search">
+<input placeholder="Search courses...">
+</div>
+
+</header>
+
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 class="reveal">Visualize Your Academic Path</h1>
+
+<p class="reveal">
+Understand prerequisites, explore course dependencies,
+and plan the smartest academic journey.
+</p>
+
+<button class="primary-btn reveal">Start Exploring</button>
+
+</div>
+
+</section>
+
+
+
+<section class="features">
+
+<h2 class="reveal">Core Features</h2>
+
+<div class="feature-grid">
+
+<div class="card reveal">
+<h3>Prerequisite Visualization</h3>
+<p>
+Interactive graphs show relationships between courses
+so you understand dependencies instantly.
+</p>
+</div>
+
+<div class="card reveal">
+<h3>Smart Course Recommendation</h3>
+<p>
+AI suggests optimal courses to take based on your
+completed prerequisites.
+</p>
+</div>
+
+<div class="card reveal">
+<h3>Eligibility Checker</h3>
+<p>
+Instantly determine which courses you can take next.
+</p>
+</div>
+
+<div class="card reveal">
+<h3>Degree Planner</h3>
+<p>
+Plan multiple semesters while satisfying prerequisite
+constraints automatically.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="interactive">
+
+<h2 class="reveal">What Can I Take Next?</h2>
+
+<p class="reveal">Select courses you completed</p>
+
+<div class="course-select reveal">
+
+<label><input type="checkbox" value="CS135"> CS135</label>
+<label><input type="checkbox" value="CS136"> CS136</label>
+<label><input type="checkbox" value="MATH135"> MATH135</label>
+<label><input type="checkbox" value="MATH137"> MATH137</label>
+
+</div>
+
+<button onclick="recommend()" class="secondary-btn reveal">
+Check Available Courses
+</button>
+
+<div id="result"></div>
+
+</section>
+
+
+
+<footer class="footer">
+
+<p>© 2026 CourseMap</p>
+
+</footer>
+
+</body>
+
+</html>
