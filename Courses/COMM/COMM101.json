@@ -1,0 +1,31 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM121"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CFM101"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS283W"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

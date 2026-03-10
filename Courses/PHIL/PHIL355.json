@@ -1,0 +1,43 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CLAS261"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHIL251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHIL283"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHIL284"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PHIL250A"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHIL250B"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

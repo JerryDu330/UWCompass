@@ -1,0 +1,31 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "SOC101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC101R"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "SOC120R"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

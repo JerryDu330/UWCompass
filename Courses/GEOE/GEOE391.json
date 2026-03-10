@@ -1,0 +1,23 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "4B",
+                "op": "="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

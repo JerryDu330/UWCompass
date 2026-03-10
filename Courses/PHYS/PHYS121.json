@@ -1,0 +1,63 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ECE105"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS111"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS115"
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH104"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH127"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH137"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH147"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "4U Calculus and Vectors"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "4U Advanced Functions"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "and 4U Physics"
+                    }
+                ]
+            }
+        ]
+    }
+}

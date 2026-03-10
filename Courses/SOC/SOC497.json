@@ -1,0 +1,23 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Sociology"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

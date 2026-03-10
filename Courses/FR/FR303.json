@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "FR251"
+            },
+            {
+                "type": "COURSE",
+                "code": "FR252"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

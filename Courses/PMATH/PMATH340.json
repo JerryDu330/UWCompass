@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH135"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH145"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH225"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

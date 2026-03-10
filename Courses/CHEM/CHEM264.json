@@ -1,0 +1,38 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM123"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM125"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHEM262"
+            },
+            {
+                "type": "COURSE",
+                "code": "CHEM266"
+            },
+            {
+                "type": "COURSE",
+                "code": "NE222"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

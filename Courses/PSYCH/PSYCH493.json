@@ -1,0 +1,50 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH391"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Psychology (BA)"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Psychology (BSc)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "Make-up Psychology"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

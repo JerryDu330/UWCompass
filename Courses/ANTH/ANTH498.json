@@ -1,0 +1,31 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Anthropology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Anthropology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Anthropology"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

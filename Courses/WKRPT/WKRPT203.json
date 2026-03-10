@@ -1,0 +1,23 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Architectural Studies"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

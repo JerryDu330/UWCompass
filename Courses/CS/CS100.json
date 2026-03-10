@@ -1,0 +1,79 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "All 200-"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "300-"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "400-level CS courses or equivalents"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Biomedical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Chemical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Civil Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Electrical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Environmental Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Management Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechanical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechatronics Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Nanotechnology Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Systems Design Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

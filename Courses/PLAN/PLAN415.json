@@ -1,0 +1,37 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PLAN202"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PLAN261"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,33 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHEM254"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECE403"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS358"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHEM370"
+            },
+            {
+                "type": "COURSE",
+                "code": "NE333"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

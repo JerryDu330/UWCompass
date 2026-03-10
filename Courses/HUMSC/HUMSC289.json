@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "HUMSC101"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

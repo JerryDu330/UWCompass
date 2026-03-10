@@ -1,0 +1,55 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH106"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH114"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH115"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH136"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH146"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH239"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH249"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CO220"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

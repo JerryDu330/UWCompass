@@ -1,0 +1,59 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "1B",
+                        "op": ">="
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Systems Design Engineering"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "2A",
+                        "op": ">="
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Mechatronics Engineering"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME182"
+            },
+            {
+                "type": "COURSE",
+                "code": "MTE182"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

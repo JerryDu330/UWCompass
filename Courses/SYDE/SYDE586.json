@@ -1,0 +1,36 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Software Engineering"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SYDE599 (Topic 2: Material Selection for Design)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

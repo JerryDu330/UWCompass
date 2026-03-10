@@ -1,0 +1,44 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MTE202"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE203"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechatronics Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SYDE381"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

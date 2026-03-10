@@ -1,0 +1,37 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "GEOG205"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "2A",
+                        "op": ">="
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Environmental Sciences - Water Science Specialization"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

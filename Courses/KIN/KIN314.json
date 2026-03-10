@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "KIN204"
+            },
+            {
+                "type": "COURSE",
+                "code": "KIN204L"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "KIN414"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

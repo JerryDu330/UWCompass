@@ -1,0 +1,42 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CLAS201"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CLAS202"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CLAS251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CLAS252"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": []
+            },
+            {
+                "type": "OR",
+                "items": []
+            },
+            {
+                "type": "OR",
+                "items": []
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

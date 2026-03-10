@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "LS101"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "LS330 (Topic 4: \t\nLabour Law in Precarious Times)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

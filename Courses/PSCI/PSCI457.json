@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "3B",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSCI490 (Topic 54: Narratives of Exile)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Health Sciences"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Public Health"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

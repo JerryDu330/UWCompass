@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Global Business & Digital Arts"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "DAC202"
+            },
+            {
+                "type": "COURSE",
+                "code": "ENGL204"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

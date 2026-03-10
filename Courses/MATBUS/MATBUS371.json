@@ -1,0 +1,87 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ACTSC221"
+            },
+            {
+                "type": "COURSE",
+                "code": "ACTSC231"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC291"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC372"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC391"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM272"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM273"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM274"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM275"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON371"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC371"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM372"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BUS283W"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT231"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT241"
+            }
+        ]
+    }
+}

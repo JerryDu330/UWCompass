@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geography & Aviation"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geography & Environmental Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Geography & Environmental Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Geography & Environmental Management Minor"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geomatics"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

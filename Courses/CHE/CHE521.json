@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Chemical Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME411"
+            },
+            {
+                "type": "COURSE",
+                "code": "MSE331"
+            },
+            {
+                "type": "COURSE",
+                "code": "SYDE411"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

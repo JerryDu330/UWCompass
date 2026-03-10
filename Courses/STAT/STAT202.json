@@ -1,0 +1,34 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Knowledge Integration"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Knowledge Integration Minor"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT220"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT230"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

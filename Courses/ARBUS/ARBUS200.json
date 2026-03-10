@@ -1,0 +1,66 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECON101"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "Arts & Business"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Management Studies Minor"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ENBUS203"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MGMT220"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ARBUS200 taken prior to fall 2013"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON220"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,21 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AFM101"
+            },
+            {
+                "type": "COURSE",
+                "code": "AFM121"
+            },
+            {
+                "type": "COURSE",
+                "code": "AFM123"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

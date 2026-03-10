@@ -1,0 +1,67 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "HLTH333"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "KIN232"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "LS221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH291"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "REC371"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SDS251R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SRF220"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "LS321"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SMF220"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC321"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SWREN251R"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

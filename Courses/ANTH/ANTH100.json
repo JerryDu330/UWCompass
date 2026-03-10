@@ -1,0 +1,17 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ANTH101"
+            },
+            {
+                "type": "COURSE",
+                "code": "ANTH102"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

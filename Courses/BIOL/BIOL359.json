@@ -1,0 +1,59 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "BIOL239"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "BIOL139"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "3A",
+                        "op": ">="
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Environment, Resources & Sustainability"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "JH-Environment, Resources & Sustainability"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "Environment, Resources & Sustainability Minor"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

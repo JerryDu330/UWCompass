@@ -1,0 +1,88 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH235"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH245"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "STAT241"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "STAT231",
+                                "grade": 60
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "SYDE212",
+                                "grade": 70
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AFM323"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECON421"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT321"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT371"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT373"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT374"
+            },
+            {
+                "type": "COURSE",
+                "code": "SYDE334"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

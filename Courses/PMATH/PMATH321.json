@@ -1,0 +1,97 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH106"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH114"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH115"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH136"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH146"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH215"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "NE112"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MATH104"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH116"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH117"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH124"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH127"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH137"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH147"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MATH109"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PMATH360"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

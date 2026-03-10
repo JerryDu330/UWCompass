@@ -1,0 +1,51 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE491"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS201"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "LS283"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "COMM231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "GENE411"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ME401"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTHEL100"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

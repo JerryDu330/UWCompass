@@ -1,0 +1,43 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "HLTH205"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "LS221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH291"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "REC373"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SDS251R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC221"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

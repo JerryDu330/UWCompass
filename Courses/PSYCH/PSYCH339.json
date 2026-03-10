@@ -1,0 +1,57 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH101R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH238"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PSYCH291"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LEVEL",
+                        "level": "3A",
+                        "op": ">="
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BUS354W/BUS454W"
+            },
+            {
+                "type": "COURSE",
+                "code": "BUS408W/BUS498KW"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

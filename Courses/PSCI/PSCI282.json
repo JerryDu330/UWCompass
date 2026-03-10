@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "INTST101"
+            },
+            {
+                "type": "COURSE",
+                "code": "PSCI150"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

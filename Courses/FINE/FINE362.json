@@ -1,0 +1,9 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

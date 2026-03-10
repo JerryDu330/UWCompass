@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Science & Business"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Science & Business - Biochemistry Specialization"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Science & Business - Biology Specialization"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Science & Business - Biotechnology Specialization"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

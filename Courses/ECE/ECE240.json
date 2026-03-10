@@ -1,0 +1,64 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE106"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE140"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH119"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Electrical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ECE205"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH211"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH213"
+            }
+        ]
+    }
+}

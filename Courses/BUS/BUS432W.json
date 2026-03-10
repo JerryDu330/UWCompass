@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BUS362W"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH438"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

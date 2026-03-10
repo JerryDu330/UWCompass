@@ -1,0 +1,58 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MSE251"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MSCI251"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Management Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ECE307"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT332"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

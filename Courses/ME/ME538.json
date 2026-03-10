@@ -1,0 +1,36 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ME322"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ME436"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": "="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechanical Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

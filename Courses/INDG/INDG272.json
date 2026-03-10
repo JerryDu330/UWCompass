@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "INDG201"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ANTH370"
+            },
+            {
+                "type": "COURSE",
+                "code": "NATST 272"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

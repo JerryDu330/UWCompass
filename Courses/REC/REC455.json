@@ -1,0 +1,44 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "REC253"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "REC351"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "REC357"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Therapeutic Recreation"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Therapeutic Recreation"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

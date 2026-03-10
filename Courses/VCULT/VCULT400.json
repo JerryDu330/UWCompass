@@ -1,0 +1,44 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "VCULT300"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Visual Culture"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "FINE490"
+            },
+            {
+                "type": "COURSE",
+                "code": "FINE496"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

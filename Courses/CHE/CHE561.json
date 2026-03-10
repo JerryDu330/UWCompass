@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHE560"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME589 (Topic 4: Biomaterials & Biomedical Design)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

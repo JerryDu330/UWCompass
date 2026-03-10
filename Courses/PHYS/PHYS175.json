@@ -1,0 +1,59 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH116"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH117"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH127"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH137"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH147"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS111"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS115"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS121"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SCI238"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

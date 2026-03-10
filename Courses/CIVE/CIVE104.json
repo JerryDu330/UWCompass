@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "1A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Civil Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Environmental Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PHYS115"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

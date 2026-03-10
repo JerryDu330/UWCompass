@@ -1,0 +1,36 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "1A",
+                        "op": "="
+                    },
+                    {
+                        "type": "LEVEL",
+                        "level": "1B",
+                        "op": "="
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PHYS111"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS121"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

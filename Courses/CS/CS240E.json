@@ -1,0 +1,102 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "CS136",
+                        "grade": 85
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "CS138",
+                        "grade": 85
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "CS146",
+                        "grade": 85
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-BBA & BCS Double Degree"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Computer Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Computer Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computing & Financial Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Data Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Data Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS234"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS240"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECE250"
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT206"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT230"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT240"
+            }
+        ]
+    }
+}

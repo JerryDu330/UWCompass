@@ -1,0 +1,72 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MATH145"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "MATH135",
+                                "grade": 80
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH136"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH146"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH229"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH239"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CO220"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

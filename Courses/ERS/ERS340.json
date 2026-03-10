@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL150"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS200"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2B",
+                "op": ">="
+            },
+            {
+                "type": "AND",
+                "items": []
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

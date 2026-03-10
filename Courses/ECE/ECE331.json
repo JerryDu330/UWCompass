@@ -1,0 +1,36 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE109"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Electrical Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "HIST 291 (Topic 18: Murder in Canadian History)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

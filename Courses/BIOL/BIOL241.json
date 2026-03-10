@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL240"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL240L"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL140"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL140L"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

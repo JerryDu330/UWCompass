@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Social Work"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SWREN414R"
+            }
+        ]
+    }
+}

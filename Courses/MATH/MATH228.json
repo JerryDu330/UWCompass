@@ -1,0 +1,38 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH128"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH138"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH250"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH350"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

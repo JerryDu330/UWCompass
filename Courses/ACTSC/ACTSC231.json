@@ -1,0 +1,66 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH137"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH147"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "STAT220",
+                                "grade": 70
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ACTSC221"
+            },
+            {
+                "type": "COURSE",
+                "code": "ACTSC232"
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT230"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT240"
+            }
+        ]
+    }
+}

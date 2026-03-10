@@ -1,0 +1,137 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECON201"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON290"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ARTS280"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ECON221"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ENVS278"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "LS280"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PSCI314"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PSYCH292"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "REC371"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SDS250R"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SOC280"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT202"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT206"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT211"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT221"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT231"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT241"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "BIOL460"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ENVS271"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ENVS277"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "KIN222"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PSCI214"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PSYCH201"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "REC371A"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SDS250A"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SDS250B"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT204"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

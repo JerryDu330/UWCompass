@@ -1,0 +1,83 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH211"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Psychology (BA)"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Psychology (BSc)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH389"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH395"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH397"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH399"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "Research Intensive Specialization"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH391"
+            }
+        ]
+    }
+}

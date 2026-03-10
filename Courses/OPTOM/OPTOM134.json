@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "Optometry"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BIOL441"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

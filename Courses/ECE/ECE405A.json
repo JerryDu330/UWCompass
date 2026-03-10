@@ -1,0 +1,63 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH373"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM356"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE305"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "NE332"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS233"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS234"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "Quantum Engineering Option"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "CE-Quantum Engineering Specialization"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "EE-Quantum Engineering Specialization"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PHYS468"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

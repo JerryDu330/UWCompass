@@ -1,0 +1,65 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "FR251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "FR252"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "FR296"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "FR297"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "FR251"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "FR252"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "FR296"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "FR297"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "FR197"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

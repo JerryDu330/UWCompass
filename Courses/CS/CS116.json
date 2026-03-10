@@ -1,0 +1,75 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS115"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS135"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS145"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS114"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS136"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS137"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS138"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS146"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MSE240"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "NE111"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MSCI240"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS236"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS239"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

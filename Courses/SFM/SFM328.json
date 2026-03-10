@@ -1,0 +1,43 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM285"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM485"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENBUS102"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS195"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS205"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SFM101"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2B",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

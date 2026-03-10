@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PHIL271 (Topic 11: Ancient Science)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

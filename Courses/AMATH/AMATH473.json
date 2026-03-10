@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PMATH343"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH373"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS334"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

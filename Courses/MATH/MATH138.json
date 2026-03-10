@@ -1,0 +1,68 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH147"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "MATH116",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "MATH117",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "MATH127",
+                        "grade": 70
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "MATH137",
+                        "grade": 60
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH118"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH119"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH128"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH148"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,22 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Knowledge Integration"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Knowledge Integration Minor"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

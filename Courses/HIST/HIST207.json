@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "HIST291 (Topic 19: The Beatles & Their Times)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

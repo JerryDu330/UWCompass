@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SOC101"
+            },
+            {
+                "type": "COURSE",
+                "code": "SOC101R"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SOC330 (Topic 4: Criminal Gangs)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

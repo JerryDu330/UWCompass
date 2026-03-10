@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PHARM110"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHARM111"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHARM141"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "Pharmacy"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,16 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": []
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "GBDA210"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

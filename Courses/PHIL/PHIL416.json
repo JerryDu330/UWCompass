@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Philosophy"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Philosophy"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Philosophy"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Philosophy Minor"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

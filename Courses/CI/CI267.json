@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CI100"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

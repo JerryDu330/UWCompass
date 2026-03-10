@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Geography & Aviation"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Science & Aviation"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AVIA101"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

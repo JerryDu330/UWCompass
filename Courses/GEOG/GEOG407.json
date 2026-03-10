@@ -1,0 +1,31 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "EARTH123"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "GEOG209"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "AND",
+                "items": []
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

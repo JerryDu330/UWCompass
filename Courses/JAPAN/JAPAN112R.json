@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "JAPAN101R"
+            },
+            {
+                "type": "COURSE",
+                "code": "JAPAN111R"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "JAPAN102R"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

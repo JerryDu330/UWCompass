@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PMATH347"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

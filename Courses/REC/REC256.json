@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "REC100"
+            },
+            {
+                "type": "COURSE",
+                "code": "REC101"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "REC356 prior to fall 2025"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

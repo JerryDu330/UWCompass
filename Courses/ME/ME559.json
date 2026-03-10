@@ -1,0 +1,61 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ME220"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE219"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ME303"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE204"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechanical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechatronics Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CIVE422"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

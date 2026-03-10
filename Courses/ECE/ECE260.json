@@ -1,0 +1,66 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE106"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Electrical Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ME269"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE320"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE261"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE361"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

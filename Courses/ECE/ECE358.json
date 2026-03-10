@@ -1,0 +1,33 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME213"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECE203"
+            },
+            {
+                "type": "COURSE",
+                "code": "MTE201"
+            },
+            {
+                "type": "COURSE",
+                "code": "NE215"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT206"
+            },
+            {
+                "type": "COURSE",
+                "code": "SYDE212"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

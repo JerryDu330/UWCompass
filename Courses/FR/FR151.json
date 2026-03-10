@@ -1,0 +1,69 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "FR101"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "Ontario Grade 9 or 10 French"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "FR152"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "FR192A"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "FR192B"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "Ontario Grade 11 or 12 French"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "4U Core French"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "high school immersion"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "or Extended French"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

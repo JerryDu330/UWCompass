@@ -1,0 +1,446 @@
+AFM123: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies, H-Recreation & Business, H-Recreation & Sport Business, JH-Recreation & Sport Business, H-Science-Biotechnology/Economics
+ACTSC221: The following antirequisites are only for students in the Faculty of Mathematics.
+ACTSC231: Corequisite (see below)
+ASL101R: Not open to students with native, near-native, or similar advanced ability
+ASL102R: Not open to students with native, near-native, or similar advanced ability
+ANTH499A: Must have earned a minimum ANTH average of 80.0%
+ANTH499B: Earned a minimum Anthropology average of 80.0%
+AMATH382: Enrolled in an Honours program
+AMATH474: Enrolled in a Faculty of Mathematics or Faculty of Science program
+AMATH475: Enrolled in an Honours Faculty of Mathematics or a Faculty of Science program
+AMATH499: Enrolled in H-Applied Mathematics with Scientific Computing
+ARABIC101R: Placement test is required
+ARABIC101R: Not open to students with native, near-native, or similar advanced ability
+ARABIC102R: Placement test is required
+ARABIC102R: Not open to students with native, near-native, or similar advanced ability
+ARABIC120R: Placement test is required
+ARABIC201R: Not open to students with native, near native, or similar advanced ability
+ARABIC202R: Not open to students with native, near native, or similar advanced ability
+ARABIC301R: Not open to students with native, near native, or similar advanced ability
+ARABIC302R: Not open to students with native, near native, or similar advanced ability
+ARABIC410R: Native, near-native, or similar advanced ability
+ARABIC410R: Placement test is required
+ARTS111: Not open to Arts and Business students in level 1A or 1B
+BIOL110: Not open to students in a Faculty of Environment program
+BIOL280: Enrolled in a Faculty of Engineering program or an Honours Science program
+BIOL331: Enrolled in H-Biotechnology/Economics
+BIOL331: Corequisite
+BIOL382: Enrolled in an Honours program
+BIOL461: Not open to students in a Faculty of Mathematics program
+BIOL499A: Earned a minimum cumulative major average of 73
+BIOL499A: Enrolled in Life Physics - Biophysics Specialization
+BIOL499B: Earned a minimum cumulative major average of 73
+BIOL499B: Enrolled in Life Physics - Biophysics Specialization
+BME544: Enrolled in Hnours Life Physics (Biophysics Specialization)
+BME582: Enrolled in a BASc program
+BUS111W: Enrolled in an undergraduate degree program or MATH/ELAS
+BUS121W: Enrolled in an undergraduate degree program or MATH/ELAS
+BUS283W: Must have completed any UW introductory statistics course
+BUS283W: Not open to students enrolled in Math/Business plans
+BUS288W: Not open to students enrolled in Math/Business plans
+BUS354W: Not open to students enrolled in Math/Business plans
+BUS375W: Must have completed any Waterloo introductory statistics course
+BUS393W: Must have completed any Waterloo introductory statistics course
+BUS393W: Not open to students enrolled in Math/Business plans
+BUS398W: Not open to students enrolled in Math/Business plans
+BUS435W: Must have completed any Waterloo introductory statistics course
+BUS445W: Must have completed any Waterloo introductory statistics course
+BUS455W: Must have completed any Waterloo introductory statistics course
+BUS485W: Must have completed any Waterloo introductory statistics course
+CHEM140: Not open to students in a Faculty of Mathematics program
+CHEM212: Enrolled in an Honours program
+CHEM220: Enrolled in an Honours program
+CHEM240: Not open to students in a Faculty of Mathematics program
+CHEM250L: Enrolled in an Honours program
+CHEM254: Enrolled in an Honours program
+CHEM264: Enrolled in an Honours program
+CHEM265: Enrolled in an Honours program
+CHEM310: Enrolled in an Honours program
+CHEM310L: Enrolled in Chemical Physics
+CHEM313: Enrolled in an Honours program
+CHEM323: Enrolled in an Honours Science program
+CHEM350: Enrolled in an Honours program
+CHEM350L: Enrolled in an Honours program
+CHEM360: Enrolled in an Honours program
+CHEM400: Enrolled in Chemical Physics
+CHEM494A: Enrolled in Chemical Physics
+CHEM495: Students visiting on an exchange agreement
+CHEM496: Students visiting on an exchange agreement
+CHEM497: Students visiting on an exchange agreement
+CHINA101R: Not open to students with native, near-native, or similar advanced ability
+CHINA102R: Not open to students with native, near-native, or similar advanced ability
+CHINA120R: Not open to students with native, near-native, or similar advanced ability
+CHINA401R: Placement test
+CHINA402R: Placement test
+CLAS100: Earned between 0.00 and 0.50 units from CLAS
+CO250: Earned a minimum cumulative average of 60
+CO430: Earned a minimum cumulative average of 80
+CO431: Earned a minimum cumulative average of 80
+CO434: Earned a minimum cumulative average of 80
+CO442: Earned a minimum cumulative average of 80
+CO444: Earned a minimum cumulative average of 80
+CO446: Earned a minimum cumulative average of 80
+CO450: Earned a minimum cumulative average of 80
+CO452: Earned a minimum cumulative average of 80
+CO463: Earned a minimum cumulative average of 80
+CO466: Earned a minimum cumulative average of 80
+CO471: Earned a minimum cumulative average of 80.0
+CO485: Earned a minimum cumulative average of 80
+COMMST193: Enrolled in a Bachelor of Science program in the Faculty of Science
+COMMST225: The following prerequisites are applicable to students enrolled in a Faculty of Mathematics program
+COMMST227: The following prerequisites are applicable to students enrolled in a Faculty of Mathematics program
+COMMST228: The following prerequisites are applicable to students enrolled in a Faculty of Mathematics program
+CS100: Not open to students enrolled in Faculty of Mathematics programs
+CS105: Not open to students enrolled in programs offered by Faculty of Mathematics
+CS106: Not open to students in a Faculty of Mathematics program
+CS114: Not open to students enrolled in programs offered by Faculty of Mathematics
+CS245: Enrolled in an Honours Mathematics program
+CS245E: Enrolled in an Honours Mathematics program
+CS246: Enrolled in an Honours Mathematics program
+CS246E: Enrolled in an Honours Mathematics program
+CS350: Not completed nor concurrently enrolled in ECE254
+CS487: Enrolled in an Honours Mathematics program
+CROAT101: Not open to students with native, near-native, or similar advanced ability
+CROAT102: Not open to students with native, near-native, or similar advanced ability
+DUTCH101: Not open to students with native, near-native, or similar advanced ability
+DUTCH102: Not open to students with native, near-native, or similar advanced ability
+EARTH436A: Enrolled in Geochemistry
+EARTH456: Not open to students enrolled in the Faculty of Mathematics
+ECON211: Not open to students in a Faculty of Mathematics program
+ECON221: Not open to students enrolled in Faculty of Mathematics programs
+ECON311: Not open to students enrolled in Faculty of Mathematics programs
+ECON322: Enrolled in a Faculty of Mathematics program
+ECON371: Must have completed any prior course in probability and/or basic statistics
+ECON372: Enrolled in a program offered by all faculties, excluding Faculty of Mathematics
+ECON412: Enrolled in Science Biotechnology/Economics
+ECON421: Enrolled in an Honours program
+ECON422: Enrolled in an Honours program
+ECON423: Enrolled in an Honours program
+ECON424: Enrolled in an Honours program
+ECON425: Enrolled in an Honours program
+ECON436: Enrolled in an Honours program
+ECON445: Enrolled in an Honours program
+ECON451: Enrolled in an Honours program
+ECON452: Enrolled in an Honours program
+ECON456: Enrolled in an Honours program
+ECON496: Enrolled in an Honours program
+ECE222: Enrolled in a BASc program
+ECE224: Enrolled in a BASc program
+ECE224: Not completed nor concurrently enrolled in MTE325
+ECE252: Enrolled in a BASc program
+ECE320: Enrolled in a BASc program
+ECE327: Enrolled in a BASc program
+ECE350: Enrolled in a BASc program
+ECE360: Enrolled in a BASc program
+ECE409: Enrolled in a BASc program
+ECE423: Enrolled in a BASc program
+ECE423: Not completed nor concurrently enrolled in SYDE524
+ECE451: Enrolled in a BASc program
+ECE452: Enrolled in a BASc program
+ECE453: Enrolled in a BASc program
+ECE454: Enrolled in a BASc program
+ECE455: Enrolled in a BASc program
+ECE457A: Enrolled in a BASc program
+ECE457B: Enrolled in a BASc program
+ECE458: Enrolled in a BASc program
+ECE459: Enrolled in a BASc program
+ECE463: Enrolled in an Engineering program
+ENGL119: Enrolled in an Honours Mathematics program
+ENGL129R: Not open to fluent writers of English
+ENGL193: Enrolled in a Bachelor of Science program in the Faculty of Science
+ENGL309E: Enrolled in 3G-English - Rhetoric and Professional Writing, 4G-English - Rhetoric and Professional Writing, or H-English - Rhetoric and Professional Writing
+EMLS101R: Not open to fluent speakers of English
+EMLS102R: Not open to fluent writers of English
+EMLS103R: Not open to fluent speakers of English
+EMLS104R: Not open to fluent speakers or writers of English
+EMLS105R: Not open to fluent speakers and writers of English
+EMLS110R: Not open to fluent speakers or writers of English
+EMLS129R: Not open to fluent writers of English
+ENVS178: Not open to students enrolled in programs offered by Faculty of Mathematics
+ENVS278: Enrolled in a program offered by the Faculty of Environment
+FINE304: Earned at least 2.0 units from FINE 200-level studio courses
+FINE309: Earned at least 2.0 units from FINE 200-level studio courses
+FINE312: Earned at least 2.0 units from FINE 200-level studio courses
+FINE315: Earned at least 2.0 units from FINE 200-level studio courses
+FINE327: Earned at least 2.0 units from FINE 200-level studio courses
+FINE404: Earned at least 1.0 units from FINE 300-level studio courses
+FINE472: Earned 1.0 units from FINE 300-level studio courses
+FINE473: Earned at least 1.0 units from FINE 300-level studio courses
+FR101: Not open to students with native, near-native, or similar advanced ability
+FR151: Student must not have advanced, near-native, or native ability in French
+FR152: Student must not have advanced, near-native, or native ability in French
+FR192A: Student must not have near-native or native ability in French
+FR192B: Student must not have near-native or native ability in French
+GENE101: Enrolled in a BASc program
+GENE119: Enrolled in a BASc program
+GENE120: Enrolled in a BASc program
+GENE199: Enrolled in a BASc program
+GENE298: Enrolled in a BASc program
+GENE299: Enrolled in a BASc program
+GENE310E: Enrolled in a BASc program
+GENE311A: Enrolled in a BASc program
+GENE311B: Enrolled in a BASc program
+GENE311C: Enrolled in a BASc program
+GENE311D: Enrolled in a BASc program
+GENE312E: Enrolled in a BASc program
+GENE399: Enrolled in a BASc program
+GENE403: Enrolled in a BASc program
+GENE404: Enrolled in a BASc program
+GENE499: Enrolled in a BASc program
+GENE501: Visiting exchange students only
+GENE502: Visiting exchange students only
+GENE503: Visiting exchange students only
+GENE599: Enrolled in a BASc program
+GEOG316: Not open to students enrolled in a program offered by Faculty of Mathematics
+GEOG318: Not open to students enrolled in programs offered by Faculty of Mathematics
+GEOG430A: Enrolled in an Honours program
+GEOG430B: Enrolled in an Honours program
+GEOG430C: Enrolled in an Honours program
+GEOG474: Enrolled in an Honours program
+GEOG475: Enrolled in an Honours program
+GEOG476: Enrolled in an Honours program
+GEOG490A: Enrolled in an Honours program
+GER101: Not open to students with native, near-native, or similar advanced ability
+GER102: Not open to students with native, near-native, or similar advanced ability
+GER201: Not open to students with native, near-native, or similar advanced ability
+GER202: Not open to students with native, near-native, or similar advanced ability
+HEALTH150: Not open to students enrolled in programs offered by the Faculty of Science
+INDG101: Not open to students with advanced ability in Mohawk
+JAPAN101R: Not open to students with native, near-native, or similar advanced ability
+JAPAN111R: Not open to students with native, near-native, or similar advanced ability
+KIN104: Corequisite is for H-Kinesiology students only
+KIN121: Corequisite is for H-Kinesiology students only
+KIN140L: Current first aid and CPR certification is required
+KIN202: Corequisite is for H-Kinesiology students only
+KIN217: Enrolled in an Honours Science plan
+KIN255: Corequisite is for H-Kinesiology students only
+KIN493: Earned a minimum cumulative average of 75
+INTEG230: Enrolled in Joint Honours Knowledge Integration
+KOREA101R: Not open to students with native, near-native, or similar advanced ability
+LS221: Not open to students enrolled in a Faculty of Mathematics program
+LS280: Not open to students enrolled in a Faculty of Mathematics program
+LS322: Not open to students enrolled in a Faculty of Mathematics program
+MSE331: Not open to students enrolled in Bachelor of Computer Science or Bachelor of Mathematics programs
+MSE343: Enrolled in a BASc program
+MSE431: Not open to students enrolled in Bachelor of Computer Science or Bachelor of Mathematics
+MATH103: Enrolled in a program offered by the Faculties of Arts, Environment, or Health
+MATH104: Enrolled in a program offered by the Faculties of Arts, Environment, Health, or Science
+MATH135: Enrolled in an Honours Mathematics program or Mathematics/BASE
+MATH136: Enrolled in an Honours Mathematics program or Mathematics/BASE
+MATH145: Enrolled in an Honours Mathematics program
+MATH146: Enrolled in an Honours Mathematics program
+MATH147: Enrolled in an Honours Mathematics program
+MATH148: Enrolled in an Honours Mathematics program
+MATH211: Not open to students enrolled in Faculty of Mathematics programs
+MATH212: Not open to students in a Faculty of Mathematics program
+MATH217: Not open to students in Faculty of Mathematics programs
+MATH218: Enrolled in Bachelor of Applied Science or Bachelor of Software Engineering
+MATH227: Enrolled in an Honours Science program
+MATH228: Not open to students in Faculty of Mathematics programs
+MATH235: Enrolled in an Honours Mathematics program
+MATH237: Enrolled in an Honours Mathematics program
+MATH239: Enrolled in an Honours Mathematics program
+MATH245: Enrolled in an Honours Mathematics program
+MATH247: Enrolled in Honours Mathematics
+MATH249: Enrolled in an Honours Mathematics program
+ME351: See corequisites
+ME571: Enrolled in a BASc program
+MOHAWK101R: Not open to students with advanced ability in Mohawk
+MUSIC116: Audition required
+MUSIC117: Audition required
+MUSIC216: Audition required
+MUSIC217: Audition required
+MUSIC226: Audition required
+MUSIC270: A basic knowledge of scales, triads, and Western music notation is required.
+MUSIC316: Audition required
+MUSIC317: Audition required
+MUSIC416: Audition required
+MUSIC417: Audition required
+OPTOM342A: Must have advanced standing status
+OPTOM346: Must have advanced standing status
+OPTOM347: Must have advanced standing status
+OPTOM367: Must have advanced standing status
+OPTOM375: Must have advanced standing status
+OPTOM377: Must have advanced standing status
+OPTOM385: Must have advanced standing status
+OPTOM387: Must have advanced standing status
+PHIL240: Not open to students in a Faculty of Mathematics program
+PHYS105: Not open to students enrolled in a Bachelor of Applied Science program
+PHYS115: Enrolled in a program offered by the Faculty of Engineering
+PHYS242: AMATH231 can be taken concurrently
+PHYS280: Enrolled in an Honours Science program
+PHYS335: Enrolled in a program offered by the Faculties of Engineering, Mathematics, or Science
+PHYS359: See corequisite
+PHYS364: Enrolled in Chemical Physics, or Life Physics
+PHYS365: Enrolled in Chemical Physics, or Life Physics
+PHYS395: Enrolled in a program offered by the Faculties of Engineering, Mathematics, or Science
+PHYS396: Enrolled in a program offered by the Faculties of Engineering, Mathematics, or Science
+PHYS437A: Earned a minimum cumulative average of 70
+PHYS437A: Enrolled in Chemical Physics, or Life Physics
+PHYS437B: Earned a minimum cumulative average of 70
+PHYS474: Enrolled in a program in Faculties of Mathematics or Science
+PHYS475: Enrolled in a program offered by the Faculties of Mathematics or Science
+PHYS476: Enrolled in a program offered by the Faculties of Mathematics or Science
+PHYS483: Enrolled in Life Physics - Medical Physics Specialization
+PHYS484: Enrolled in a program offered by the Faculties of Mathematics or Science
+PLAN351: Not open to students enrolled in a program offered by Faculty of Mathematics
+PLAN353: Not open to students enrolled in a program offered by Faculty of Mathematics
+PSCI314: Not open to students enrolled in Faculty of Mathematics program
+PSCI400: Earned a minimum Political Science major average of 75.0%
+PSCI499A: Earned a minimum Political Science average of 75.0%
+PD1: Not open to students enrolled in a Faculty of Engineering program
+PD3: Enrolled in a co-operative program
+PD4: Enrolled in a co-operative program
+PD5: Enrolled in a co-operative program
+PD6: Enrolled in a co-operative program
+PD7: Enrolled in a co-operative program
+PD8: Enrolled in a co-operative program
+PD9: Enrolled in a co-operative program
+PD10: Enrolled in a co-operative program
+PD11: Enrolled in a co-operative program
+PD12: Enrolled in a co-operative program
+PD13: Enrolled in a co-operative program
+PD14: Enrolled in a co-operative program
+PD22: Enrolled in a co-operative program
+PSYCH291: Corequisite is required if students have not completed 4U Math
+PSYCH389: Earned a minimum Psychology major average of 74.0%
+PSYCH389: Enrolled in Make-up Psychology
+PSYCH390: Enrolled in Make-up Psychology
+PSYCH391: Earned a minimum Psychology major average of 74.0%
+PSYCH392: Earned a minimum Psychology major average of 74.0%
+PSYCH392: Enrolled in Make-up Psychology
+PSYCH393: Earned a minimum Psychology major average of 74.0%
+PSYCH393: Enrolled in Make-up Psychology
+PSYCH394: Earned a minimum Psychology major average of 74.0%
+PSYCH394: Enrolled in Make-up Psychology
+PSYCH395: Earned a minimum Psychology major average of 74.0%
+PSYCH395: Enrolled in Make-up Psychology
+PSYCH396: Earned a minimum Psychology major average of 74.0%
+PSYCH396: Enrolled in Make-up Psychology
+PSYCH397: Earned a minimum Psychology major average of 74.0%
+PSYCH397: Enrolled in Make-up Psychology
+PSYCH398: Earned a minimum Psychology major average of 74.0%
+PSYCH398: Enrolled in Make-up Psychology
+PSYCH399: Earned a minimum Psychology major average of 74.0%
+PSYCH399: Enrolled in Make-up Psychology
+PSYCH417: Earned a minimum Psychology major average of 70.0%
+PSYCH417: Enrolled in Make-up Psychology
+PSYCH420: Earned a minimum Psychology major average of 74.0%
+PSYCH451: Earned a minimum cumulative Psychology average of 74.0%
+PSYCH451: Enrolled in Make-up Psychology
+PSYCH453: Earned a minimum Psychology major average of 74.0%
+PSYCH453: Enrolled in Make-up Psychology
+PSYCH454: Earned a minimum Psychology major average of 74.0%
+PSYCH454: Enrolled in Make-up Psychology
+PSYCH455: Earned a minimum Psychology major average of 74.0%
+PSYCH455: Enrolled in Make-up Psychology
+PSYCH457: Earned a minimum Psychology major average of 74.0%
+PSYCH457: Enrolled in Make-up Psychology
+PSYCH458: Earned a minimum Psychology major average of 74.0%
+PSYCH458: Enrolled in Make-up Psychology
+PSYCH459: Earned a minimum cumulative Psychology major average of 74.0%.
+PSYCH459: Enrolled in Make-up Psychology
+PSYCH461: Earned a minimum Psychology major average of 74.0%
+PSYCH461: Enrolled in Make-up Psychology
+PSYCH462: Earned a minimum  Psychology major average of 74.0%
+PSYCH462: Enrolled in Make-up Psychology
+PSYCH463: Earned a minimum Psychology major average of 74.0%
+PSYCH463: Enrolled in Make-up Psychology
+PSYCH464: Enrolled in Make-up Psychology
+PSYCH465: Earned a minimum Psychology major average of 75.0%
+PSYCH466: Earned a minimum Psychology major average of 75.0%
+PSYCH467: Earned a minimum cumulative HRM average of 70.0%
+PSYCH470: Enrolled in Make-Up Psychology
+PSYCH480: Earned a minimum Psychology major average of 75.0%
+PSYCH481: Earned a minimum Psychology major average of 75.0%
+PSYCH482: Earned a minimum Psychology major average of 75.0%
+PSYCH483: Earned a minimum Psychology major average of 75.0%
+PSYCH483: Enrolled in Make-up Psychology
+PSYCH484: Earned a minimum Psychology major average of 75.0%
+PSYCH484: Enrolled in Make-up Psychology
+PSYCH485: Earned a minimum Psychology major average of 75.0%
+PSYCH485: Enrolled in Make-up Psychology
+PSYCH486: Earned a minimum Psychology major average of 75.0%
+PSYCH486: Enrolled in Make-up Psychology
+PSYCH487: Earned a minimum Psychology average of 75.0%
+PSYCH492: Earned a minimum Psychology average of 74.0%
+PSYCH493: Earned a minimum Psychology major average of 75.0%
+PSYCH499A: Earned a minimum Psychology major average of 82.0%
+PSYCH499A: Enrolled in Make-up Psychology
+PSYCH499B: Earned a minimum Psychology major average of 75.0%
+PSYCH499B: Enrolled in Make-up Psychology
+PSYCH499C: Earned a minimum Psychology major average of 75.0%
+PSYCH499C: Enrolled in Make-up Psychology
+HLTH202: Enrolled in Health Studies
+HLTH204: Enrolled in Health Studies
+HLTH205: Enrolled in Health Studies
+HLTH335: Enrolled in Health Studies
+HLTH344: Enrolled in Health Studies, Mathematics Health Informatics Option
+HLTH400: Enrolled in Health Studies
+HLTH427: Enrolled in Health Studies
+HLTH430: Enrolled in Health Studies
+HLTH433: Enrolled in Health Studies
+HLTH442: Enrolled in Health Studies
+HLTH448: Enrolled in Health Studies
+HLTH449: Enrolled in Health Studies
+HLTH450: Enrolled in Health Studies
+HLTH451: Enrolled in Health Studies
+HLTH452: Enrolled in Health Studies
+HLTH455: Enrolled in Health Studies
+HLTH459: Enrolled in Health Studies
+HLTH472: Enrolled in Health Studies
+HLTH473: Enrolled in Health Studies
+HLTH474: Enrolled in Health Studies
+HLTH475: Enrolled in Health Studies
+HLTH480: Enrolled in Health Studies
+HLTH481: Enrolled in Health Promotion
+REC120: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC151: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC213: Enrolled in H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC215: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC312: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC313: Enrolled in H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC318: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC356: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC371: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC373: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC405: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC413: Enrolled in H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC456: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC471A: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+REC475: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
+RUSS101: Not open to students with native, near-native, or similar advanced ability
+RUSS102: Not open to students with native, near-native, or similar advanced ability
+SCBUS223: Enrolled in Biotechnology/Economics
+SCBUS323: Enrolled in Biotechnology/Economics
+SCBUS423: Enrolled in Biotechnology/Economics
+SRF490: Earned a minimum major average of 73.0%
+SRF490: An application is required
+SRF491: Earned a minimum major average of 73.0%
+SRF499A: Earned a minimum major average of 75.0%
+SRF499B: Earned a minimum major average of 75.0%
+SDS250R: Not open to students enrolled in a Faculty of Mathematics program
+SDS251R: Not open to students enrolled in a Faculty of Mathematics program
+STV400: Enrolled in Society, Technology & Values Option
+SOC221: Not open to students enrolled in a Faculty of Mathematics program
+SOC280: Not open to students in a Faculty of Mathematics program
+SOC322: Not open to students in a Faculty of Mathematics program
+SPAN101: Not open to students with native, near-native, or similar advanced ability
+SPAN102: Not open to students with native, near-native, or similar advanced ability
+STAT202: Enrolled in a Faculty of Science program
+STAT230: Enrolled in an Honours Mathematics program
+STAT231: Enrolled in an Honours Mathematics program
+STAT240: Enrolled in an Honours Mathematics program
+STAT241: Enrolled in an Honours Mathematics program
+STAT316: Not open to students enrolled in Honours Mathematics
+STAT430: Not open to students enrolled in Faculty of Arts or Faculty of Environment programs
+SI390R: Must have completed at least 4 elective courses from the Studies and Islam academic plans
+SYDE534: Enrolled in a BASc program
+SYDE535: Enrolled in a BASc program
+SYDE536: Enrolled in a BASc program
+SYDE537: Enrolled in a BASc program
+SYDE544: Enrolled in Life Physics - Biophysics Specialization
+SYDE554: Enrolled in a BASc program
+SYDE577: Enrolled in a BASc program
+SYDE584: Enrolled in Honours Life Physics - Biophysics Specialization
+SYDE586: Enrolled in a BASc program

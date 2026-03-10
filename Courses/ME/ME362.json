@@ -1,0 +1,61 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ME351"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "LEVEL",
+                                "level": "3B",
+                                "op": ">="
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Mechanical Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "LEVEL",
+                                "level": "4A",
+                                "op": ">="
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Mechatronics Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

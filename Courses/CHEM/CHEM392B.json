@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHEM392A"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

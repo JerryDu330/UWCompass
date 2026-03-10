@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM120"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM121"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "Pharmacy"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,48 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM254"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM123"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM125"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM262"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM264"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM266"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

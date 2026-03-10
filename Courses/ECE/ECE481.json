@@ -1,0 +1,93 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ECE380"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "MTE360"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "SYDE352"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Computer Engineering"
+                                    },
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Electrical Engineering"
+                                    },
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Systems Design Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ECE207"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "SE380"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Software Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ECE484"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

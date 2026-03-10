@@ -1,0 +1,74 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "STAT231",
+                                "grade": 60
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "STAT241"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-BBA & BMath Double Degree"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Information Technology Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematical Optimization - Business Specialization"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematics/Business Administration"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Math/FARM - Chartered Financial Analyst Spec"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Math/FARM - Professional Risk Management Spec"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT322"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT332"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

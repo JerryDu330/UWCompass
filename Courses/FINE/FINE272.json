@@ -1,0 +1,22 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "FINE100"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": []
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,114 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ACTSC372"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "BUS393W"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "STAT330"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT333"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "STAT334"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Actuarial Science"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Actuarial Science"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematical Finance"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Math/FARM - Chartered Financial Analyst Spec"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Math/FARM - Professional Risk Management Spec"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM422"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATBUS472"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS433W"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BUS439W"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

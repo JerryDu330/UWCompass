@@ -1,0 +1,92 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MUSIC227"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MUSIC270"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MUSIC100"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MUSIC110"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Music"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Music"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Music"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Music Minor"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MUSIC116"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC117"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC216"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC217"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC316"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC317"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC416"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC417"
+            }
+        ]
+    }
+}

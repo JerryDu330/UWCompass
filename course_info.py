@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-def extract_course(url):
+def extract_course(url, driver):
     print("Done!")
     driver.get(url)
     footer = WebDriverWait(driver, 10).until(
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     links = extract_courses_link(driver)
     ind = 0
     for link in links[:10]:
-        page = extract_course(link["link"])
+        page = extract_course(link["link"], driver)
         with open(f"page{ind}.html", "w", encoding="utf-8") as f:
             f.write(page)
         ind += 1

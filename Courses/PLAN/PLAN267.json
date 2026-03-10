@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PLAN474 (Topic 51: Technology and the City)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

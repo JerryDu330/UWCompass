@@ -1,0 +1,32 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "NE408"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "4B",
+                "op": "="
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Nanotechnology Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

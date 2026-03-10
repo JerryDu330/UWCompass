@@ -1,0 +1,71 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MATH145"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "MATH135",
+                                "grade": 60
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Mathematical Physics (BSc)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH106"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH114"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH115"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH146"
+            },
+            {
+                "type": "COURSE",
+                "code": "NE112"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

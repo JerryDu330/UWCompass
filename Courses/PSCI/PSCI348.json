@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "3A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSCI390 (Topic 24: Protests"
+            },
+            {
+                "type": "COURSE",
+                "code": "Social Movements and Revolutions)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

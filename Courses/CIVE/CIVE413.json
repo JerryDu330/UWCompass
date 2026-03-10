@@ -1,0 +1,40 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AE310"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE310"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Architectural Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Civil Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

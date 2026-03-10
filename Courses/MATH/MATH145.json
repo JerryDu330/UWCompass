@@ -1,0 +1,26 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "4U Calculus and Vectors or 4U Mathematics of Data Management"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH135"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

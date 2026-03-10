@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CO481"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS467"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS334"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS467"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

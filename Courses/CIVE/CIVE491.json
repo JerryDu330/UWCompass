@@ -1,0 +1,65 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": "="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Civil Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS201"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "LS283"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS231W"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "COMM231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "GENE411"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ME401"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

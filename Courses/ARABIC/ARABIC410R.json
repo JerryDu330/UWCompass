@@ -1,0 +1,22 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ARABIC302R"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": []
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

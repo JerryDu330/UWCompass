@@ -1,0 +1,49 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "GERON245"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "GSJ260"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "HLTH245"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "HLTH260"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "Addictions, Mental Health, & Policy Minor"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

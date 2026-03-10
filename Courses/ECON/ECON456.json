@@ -1,0 +1,61 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECON393"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECON323"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT241"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Economics"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "4G-Economics"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Mathematical Economics (BMath)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

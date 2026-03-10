@@ -1,0 +1,37 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS138"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH135"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS245"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS245E"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECE208"
+            },
+            {
+                "type": "COURSE",
+                "code": "PMATH330"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

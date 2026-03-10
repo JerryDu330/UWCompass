@@ -1,0 +1,53 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE252"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE241"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SE350"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Software Engineering"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS458"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

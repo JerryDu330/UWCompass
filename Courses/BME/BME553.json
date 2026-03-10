@@ -1,0 +1,43 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Biomedical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechanical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechatronics Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Systems Design Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME588 (Topic 5: Intro Mech of Biomed Materials)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "HLTH102"
+            },
+            {
+                "type": "COURSE",
+                "code": "HLTH245"
+            },
+            {
+                "type": "COURSE",
+                "code": "HLTH260"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

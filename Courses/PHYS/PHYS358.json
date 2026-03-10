@@ -1,0 +1,68 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH250"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH228"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH227"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH237"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH247"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS112"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS122"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHEM254"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECE403"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

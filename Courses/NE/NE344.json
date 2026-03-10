@@ -1,0 +1,53 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3B",
+                "op": ">="
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Nanotechnology Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE240"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE340"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SYDE292"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE242"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

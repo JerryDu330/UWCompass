@@ -1,0 +1,56 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "REC256"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "4G-Recreation & Leisure Studies"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Recreation, Leadership & Health"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "JH-Recreation, Leadership & Health"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Sport & Recreation Management"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "JH-Sport & Recreation Management"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Therapeutic Recreation"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "JH-Therapeutic Recreation"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

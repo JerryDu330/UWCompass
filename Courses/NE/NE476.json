@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3B",
+                "op": ">="
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Electrical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Nanotechnology Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "NE479 (Topic 1: Organic Electronics)"
+            },
+            {
+                "type": "COURSE",
+                "code": "NE499 (Topic 5: Materials 4 Printed Electronics )"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

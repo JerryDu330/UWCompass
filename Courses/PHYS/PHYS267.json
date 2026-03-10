@@ -1,0 +1,82 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS122"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH227"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH237"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH247"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "CS114"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS116"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS136"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS146"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS236"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT230"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT231"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

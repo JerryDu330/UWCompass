@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Peace & Conflict Studies"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Peace & Conflict Studies"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Peace & Conflict Studies"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Peace & Conflict Studies Diploma"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Peace & Conflict Studies Minor"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Materials & Nanosciences"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MNS211"
+            },
+            {
+                "type": "COURSE",
+                "code": "MNS221"
+            }
+        ]
+    }
+}

@@ -1,0 +1,167 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MATH106"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH136"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH146"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MATH237"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH247"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "STAT230"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT240"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ACTSC291"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ACTSC372"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "AFM272"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ECON371"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ACTSC371"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "BUS393W"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH250"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH353"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE222"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE205"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVE223"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH211"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH218"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH228"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ME203"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS364"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SYDE211"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Mathematics"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

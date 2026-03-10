@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "RS391 (Topic 19: Aging and the Spiritual Life)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

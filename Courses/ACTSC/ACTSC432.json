@@ -1,0 +1,43 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC363"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT330"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT333"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Actuarial Science"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Actuarial Science"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematical Finance"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

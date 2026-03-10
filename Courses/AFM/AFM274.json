@@ -1,0 +1,81 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM272"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM273"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Accounting & Financial Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Biotechnology/Chartered Professional Accountancy"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computing & Financial Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematics/Chartered Professional Accountancy"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Sustainability & Financial Management"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC372"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC391"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM275"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON371"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM392"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

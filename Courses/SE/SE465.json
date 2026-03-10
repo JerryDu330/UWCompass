@@ -1,0 +1,47 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS246"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS246E"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS247"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS447"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECE453"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

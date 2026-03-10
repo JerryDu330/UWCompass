@@ -1,0 +1,52 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AE221"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Architectural Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Environmental Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CIVE222"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH218"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

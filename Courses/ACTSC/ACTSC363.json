@@ -1,0 +1,41 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Actuarial Science"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "JH-Actuarial Science"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "Actuarial Science Minor"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Mathematical Finance"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ACTSC431 (taken in or before spring 2020)"
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT330"
+            }
+        ]
+    }
+}

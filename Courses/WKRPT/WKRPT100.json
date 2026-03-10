@@ -1,0 +1,67 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "1B",
+                "op": ">="
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Chemical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Civil Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Environmental Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Management Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechanical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mechatronics Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Nanotechnology Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Systems Design Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "WKRPT101"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "COMM103"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECON100"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECON101"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

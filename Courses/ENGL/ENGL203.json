@@ -1,0 +1,33 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-English - Creative & Professional Writing"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-English - Literature"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-English - Literature & Rhetoric"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-English - Rhetoric, Media, & Professional Communication"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "GBDA101"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

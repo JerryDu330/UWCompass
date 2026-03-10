@@ -1,0 +1,35 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Sustainability & Financial Management"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ENBUS102"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS274 (Topic 5: Introduction to Sustainability and Financial Manag)"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,42 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "GRADE",
+                "code": "CS145",
+                "grade": 75
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS116"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS136"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS137"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS138"
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS136L"
+            }
+        ]
+    }
+}

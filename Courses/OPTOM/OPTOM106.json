@@ -1,0 +1,74 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH127"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS111"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS111L"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS112"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS112L"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS121"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS121L"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS122"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS122L"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "Optometry"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

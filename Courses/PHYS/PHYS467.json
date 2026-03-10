@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH114"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH115"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH235"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH245"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS334"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

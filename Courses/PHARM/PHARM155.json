@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "Pharmacy"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

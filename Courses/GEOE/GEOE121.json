@@ -1,0 +1,57 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "1B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE150"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE121"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SYDE121"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHE121"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "GENE121"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

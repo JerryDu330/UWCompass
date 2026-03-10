@@ -1,0 +1,76 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS241"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS241E"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH115"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH136"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH146"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-BBA & BCS Double Degree"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Computer Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Computer Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computing & Financial Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Data Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

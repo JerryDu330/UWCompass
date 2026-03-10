@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PHIL120J  (taken prior to fall 2017)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "KIN255"
+            },
+            {
+                "type": "COURSE",
+                "code": "PSYCH306"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH307"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "KIN456"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

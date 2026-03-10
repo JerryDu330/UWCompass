@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AE105"
+            },
+            {
+                "type": "COURSE",
+                "code": "CIVE105"
+            },
+            {
+                "type": "COURSE",
+                "code": "ME219"
+            },
+            {
+                "type": "COURSE",
+                "code": "SYDE286"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

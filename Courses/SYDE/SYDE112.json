@@ -1,0 +1,51 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "1B",
+                "op": "="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Biomedical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Systems Design Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH118"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH119"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH128"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH138"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH148"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

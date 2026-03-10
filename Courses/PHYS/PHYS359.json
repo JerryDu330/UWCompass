@@ -1,0 +1,95 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM254"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE403"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ME250"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS358"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "CHEM356"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS233"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS234"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "CS114"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS116"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS136"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS146"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS236"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AMATH373"
+            }
+        ]
+    }
+}

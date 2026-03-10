@@ -1,0 +1,33 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Computing & Financial Management"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ACTSC127"
+            },
+            {
+                "type": "COURSE",
+                "code": "AFM121"
+            },
+            {
+                "type": "COURSE",
+                "code": "AFM127"
+            },
+            {
+                "type": "COURSE",
+                "code": "COMM101"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

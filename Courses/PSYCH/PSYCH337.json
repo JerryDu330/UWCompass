@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH211"
+            },
+            {
+                "type": "COURSE",
+                "code": "PSYCH257"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH 363 (Topic 19: Family Systems)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

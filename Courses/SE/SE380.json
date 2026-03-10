@@ -1,0 +1,33 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH213"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ECE380"
+            },
+            {
+                "type": "COURSE",
+                "code": "ME360"
+            },
+            {
+                "type": "COURSE",
+                "code": "MTE360"
+            },
+            {
+                "type": "COURSE",
+                "code": "SYDE352"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

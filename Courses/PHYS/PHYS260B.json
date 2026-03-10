@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PHYS260A"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PHYS242L"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS260L"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

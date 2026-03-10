@@ -1,0 +1,56 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "GSJ260"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "HLTH101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "HLTH102"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "HLTH260"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Gender & Social Justice"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Gender & Social Justice"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Gender & Social Justice"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Gender & Social Justice Minor"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

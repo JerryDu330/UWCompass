@@ -1,0 +1,67 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-English - Creative & Professional Writing"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-English - Language & Literature"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-English - Literature & Rhetoric"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-English - Rhetoric, Media, & Professional Communication"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-English - Creative & Professional Writing"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-English - Literature"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-English - Literature & Rhetoric"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-English - Rhetoric, Media, & Professional Communication"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-English - Creative & Professional Writing"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-English - Literature"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-English - Literature & Rhetoric"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-English - Rhetoric, Media, & Professional Communication"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

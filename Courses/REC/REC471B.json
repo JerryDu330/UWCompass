@@ -1,0 +1,14 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "GRADE",
+                "code": "REC471A",
+                "grade": 80
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

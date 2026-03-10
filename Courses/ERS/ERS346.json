@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS178"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT202"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS200"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL150"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL251"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

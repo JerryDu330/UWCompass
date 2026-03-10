@@ -1,0 +1,100 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "MATH116",
+                                "grade": 80
+                            },
+                            {
+                                "type": "GRADE",
+                                "code": "MATH117",
+                                "grade": 80
+                            },
+                            {
+                                "type": "GRADE",
+                                "code": "MATH137",
+                                "grade": 80
+                            },
+                            {
+                                "type": "GRADE",
+                                "code": "MATH147",
+                                "grade": 80
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "GRADE",
+                                "code": "MATH128",
+                                "grade": 60
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MATH118"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH119"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH138"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Mathematical Physics (BMath)"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Mathematical Physics (BSc)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "STAT220"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT240"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

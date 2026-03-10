@@ -1,0 +1,60 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "CS115",
+                        "grade": 90
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "CS116",
+                        "grade": 70
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "CS135",
+                        "grade": 60
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS145"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS136"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS146"
+            }
+        ]
+    }
+}

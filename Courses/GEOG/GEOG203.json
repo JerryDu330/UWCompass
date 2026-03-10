@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ENVS195"
+            },
+            {
+                "type": "COURSE",
+                "code": "ENVS205"
+            },
+            {
+                "type": "COURSE",
+                "code": "GEOG101"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

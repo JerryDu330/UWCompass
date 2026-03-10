@@ -1,0 +1,54 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "STAT241"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "STAT231",
+                        "grade": 60
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "SYDE212",
+                        "grade": 70
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BIOL361"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT322"
+            },
+            {
+                "type": "COURSE",
+                "code": "STAT372"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

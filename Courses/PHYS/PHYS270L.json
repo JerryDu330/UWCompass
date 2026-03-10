@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ECE404"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS256"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

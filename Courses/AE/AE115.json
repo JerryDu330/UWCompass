@@ -1,0 +1,73 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "1A",
+                "op": "="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Architectural Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Civil Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Environmental Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE115"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH114"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH115"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH136"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH146"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH125"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

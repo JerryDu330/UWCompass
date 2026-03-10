@@ -1,0 +1,31 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ARABIC120R"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "SI101R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SI120R"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

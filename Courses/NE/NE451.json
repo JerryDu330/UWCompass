@@ -1,0 +1,47 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "3A",
+                        "op": ">="
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Chemistry - Computational Specialization"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "3B",
+                        "op": ">="
+                    },
+                    {
+                        "type": "NOT",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Nanotechnology Engineering"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

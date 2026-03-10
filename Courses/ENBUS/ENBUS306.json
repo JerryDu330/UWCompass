@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Environment & Business"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ERS302"
+            },
+            {
+                "type": "COURSE",
+                "code": "INTEG340"
+            },
+            {
+                "type": "COURSE",
+                "code": "PLAN350"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

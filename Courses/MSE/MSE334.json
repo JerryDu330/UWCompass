@@ -1,0 +1,111 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MSE131"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MSCI131"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "CHE220"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CIVE224"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ECE307"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ENVE224"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ME202"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MSE253"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MTE201"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT206"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT231"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT241"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SYDE212"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ECE306"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MSCI252"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MSCI253"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MSE432"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

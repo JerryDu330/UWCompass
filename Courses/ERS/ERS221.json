@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ERS275 (Topic 29: The Future of our Oceans)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

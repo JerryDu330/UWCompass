@@ -1,0 +1,26 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Anthropology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Anthropology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Anthropology"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

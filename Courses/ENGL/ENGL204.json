@@ -1,0 +1,17 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "GBDA201"
+            },
+            {
+                "type": "COURSE",
+                "code": "GBDA202"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

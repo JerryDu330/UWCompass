@@ -1,0 +1,26 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "INTEG121"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "INTEG230"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": []
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,71 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "EARTH123"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "EARTH121"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "EARTH121L"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "EARTH122"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "EARTH122L"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE153"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVE153"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "GEOE153"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

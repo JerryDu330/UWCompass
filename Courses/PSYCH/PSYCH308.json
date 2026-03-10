@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH207"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

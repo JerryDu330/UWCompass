@@ -1,0 +1,77 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "GENE123"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE120"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "LEVEL",
+                                "level": "2B",
+                                "op": ">="
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Mechanical Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "LEVEL",
+                                "level": "2A",
+                                "op": ">="
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Mechatronics Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ECE222"
+            },
+            {
+                "type": "COURSE",
+                "code": "ME262"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

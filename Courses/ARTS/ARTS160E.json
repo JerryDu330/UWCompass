@@ -1,0 +1,34 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "Degree Reqs: BA (Arts)"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Global Business & Digital Arts"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ARTS160"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": []
+            }
+        ]
+    },
+    "Corequisites": ""
+}

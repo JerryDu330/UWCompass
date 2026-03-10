@@ -1,0 +1,30 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BIOL273"
+            },
+            {
+                "type": "COURSE",
+                "code": "PSYCH101"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "KIN255L"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "THPERF306"
+            },
+            {
+                "type": "COURSE",
+                "code": "THPERF307"
+            },
+            {
+                "type": "COURSE",
+                "code": "THPERF316"
+            },
+            {
+                "type": "COURSE",
+                "code": "THPERF317"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

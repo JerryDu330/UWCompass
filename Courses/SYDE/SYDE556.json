@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME252"
+            },
+            {
+                "type": "COURSE",
+                "code": "SYDE252"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

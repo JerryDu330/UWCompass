@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH439"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

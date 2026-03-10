@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "HIST230/PSCI257 (taken before fall 2021)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

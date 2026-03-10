@@ -1,0 +1,66 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "SI121R"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "RCS221"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SI221R"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "RS221"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MEDVL250R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MEDVL251R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SI250R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SI251R"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

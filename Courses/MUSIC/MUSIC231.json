@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MUSIC100"
+            },
+            {
+                "type": "COURSE",
+                "code": "MUSIC110"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

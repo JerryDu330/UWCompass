@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Biology"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Biochemistry"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Biochemistry - Biotechnology Specialization"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Biomedical Sciences"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Environmental Sciences - Ecology Specialization"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

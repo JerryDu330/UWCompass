@@ -1,0 +1,62 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE222"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BME393"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE124"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE262"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SYDE192"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "CS-Digital Hardware Specialization"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Software Engineering"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

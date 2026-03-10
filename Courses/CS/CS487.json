@@ -1,0 +1,30 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS234"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS240"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS240E"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

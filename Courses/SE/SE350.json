@@ -1,0 +1,87 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE222"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS240"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS240E"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS246"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS246E"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS247"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS350"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE241"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE254"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE354"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

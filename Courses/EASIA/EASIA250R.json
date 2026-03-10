@@ -1,0 +1,41 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHINA101R"
+            },
+            {
+                "type": "COURSE",
+                "code": "CHINA102R"
+            },
+            {
+                "type": "COURSE",
+                "code": "CHINA120R"
+            },
+            {
+                "type": "COURSE",
+                "code": "CHINA180R"
+            },
+            {
+                "type": "COURSE",
+                "code": "KOREA101R"
+            },
+            {
+                "type": "COURSE",
+                "code": "KOREA102R"
+            },
+            {
+                "type": "COURSE",
+                "code": "JAPAN101R"
+            },
+            {
+                "type": "COURSE",
+                "code": "JAPAN102R"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

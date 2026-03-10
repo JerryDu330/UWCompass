@@ -1,0 +1,21 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CIVE153"
+            },
+            {
+                "type": "COURSE",
+                "code": "ENVE153"
+            },
+            {
+                "type": "COURSE",
+                "code": "GEOE153"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ANTH289 (Topic 1: Doing Ethnography)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

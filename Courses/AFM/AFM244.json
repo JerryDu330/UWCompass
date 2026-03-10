@@ -1,0 +1,76 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM113"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT211"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT241"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2B",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Accounting & Financial Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Biotechnology/Chartered Professional Accountancy"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematics/Chartered Professional Accountancy"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Sustainability & Financial Management"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AFM415 taken in fall 2017"
+            },
+            {
+                "type": "COURSE",
+                "code": "fall 2018"
+            },
+            {
+                "type": "COURSE",
+                "code": "fall 2019"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

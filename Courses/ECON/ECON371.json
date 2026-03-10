@@ -1,0 +1,79 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "COMM103"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON100"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON101"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ECON221"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2B",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM273"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM274"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC372"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMF271"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "AFM371"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

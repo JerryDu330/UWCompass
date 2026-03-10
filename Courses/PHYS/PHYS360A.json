@@ -1,0 +1,65 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MNS201L"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS270L"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS260L"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Materials & Nanosciences"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematical Physics (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Mathematical Physics (BSc)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Physics"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Physics"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Physics & Astronomy"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

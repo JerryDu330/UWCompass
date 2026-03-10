@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AFM272"
+            },
+            {
+                "type": "COURSE",
+                "code": "AFM273"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,31 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Sociology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Sociology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Sociology"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

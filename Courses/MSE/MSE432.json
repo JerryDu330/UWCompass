@@ -1,0 +1,105 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AE224"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BME213"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHE220"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE224"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE203"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVE224"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ME202"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE201"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "NE215"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT206"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT211"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT241"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SYDE212"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE306"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MSE334"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Management Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

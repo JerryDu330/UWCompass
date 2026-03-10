@@ -1,0 +1,75 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH118"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AMATH231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE206"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH207"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH212"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH227"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH237"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH247"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ME201"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "NE217"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ENVE221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH212N"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

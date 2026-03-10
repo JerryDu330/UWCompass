@@ -1,0 +1,113 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "CS116"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS136"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS138"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "CS146"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "GRADE",
+                                        "code": "CS114",
+                                        "grade": 60
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "CS115"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "CS135"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "CS145"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH235"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH245"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH237"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH247"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS335"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS370"
+            },
+            {
+                "type": "COURSE",
+                "code": "ECE204"
+            },
+            {
+                "type": "COURSE",
+                "code": "MTE204"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

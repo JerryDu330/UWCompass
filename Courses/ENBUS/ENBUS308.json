@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ENBUS202"
+            },
+            {
+                "type": "COURSE",
+                "code": "ENBUS204"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

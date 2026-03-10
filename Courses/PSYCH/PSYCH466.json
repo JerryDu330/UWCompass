@@ -1,0 +1,61 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH211"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH291"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH292"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH212"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH212R"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Psychology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Psychology (BA)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Psychology (BSc)"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

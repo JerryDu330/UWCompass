@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "REC219"
+            },
+            {
+                "type": "COURSE",
+                "code": "REC319"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

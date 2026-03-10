@@ -1,0 +1,48 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ERS346"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS178"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT202"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL150"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS200"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

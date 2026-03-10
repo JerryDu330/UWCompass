@@ -1,0 +1,49 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "Biomechanics Option"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Biomedical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "Ergonomics & Injury Prevention Minor"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Systems Design Engineering"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "LEVEL",
+                        "level": "4A",
+                        "op": ">="
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Mechatronics Engineering"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

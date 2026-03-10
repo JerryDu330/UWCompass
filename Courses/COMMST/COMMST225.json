@@ -1,0 +1,42 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "COMMST100"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "COMMST223"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "EMLS101R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "EMLS102R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "EMLS129R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENGL109"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENGL129R"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

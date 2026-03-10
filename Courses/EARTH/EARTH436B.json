@@ -1,0 +1,14 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "GRADE",
+                "code": "EARTH436A",
+                "grade": 75
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

@@ -1,0 +1,121 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH236"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SRF101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SRF204"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "SMF101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SMF204"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ARTS280"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS278"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "LS280"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSCI314"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH292"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "REC371"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SDS250R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC280"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT202"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT206"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT211"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT221"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT231"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT241"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "KIN222"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SWREN250R"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

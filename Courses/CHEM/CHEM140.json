@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHEM120"
+            },
+            {
+                "type": "COURSE",
+                "code": "CHEM121"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

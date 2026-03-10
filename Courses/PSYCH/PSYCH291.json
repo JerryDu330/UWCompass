@@ -1,0 +1,99 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH101R"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Psychology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Psychology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Psychology (BA)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Psychology (BSc)"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "HLTH333"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "KIN232"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SDS251R"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "KIN330"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "REC270"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SWREN251R"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH103"
+                    }
+                ]
+            }
+        ]
+    }
+}

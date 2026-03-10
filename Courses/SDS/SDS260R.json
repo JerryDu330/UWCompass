@@ -1,0 +1,51 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "EARTH122"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS105"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVS205"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSCI150"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SDS131R"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC101R"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ERS100"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

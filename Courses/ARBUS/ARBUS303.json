@@ -1,0 +1,96 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ARBUS302"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ENBUS211"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MGMT244"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ECON344"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ENBUS311"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "Arts & Business"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ARBUS303"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENBUS211"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "GBDA304"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS352W"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON345"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENBUS311"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

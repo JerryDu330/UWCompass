@@ -1,0 +1,65 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "AFM280"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MSE211"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PSYCH238"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SCBUS225"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "MSCI211"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PSYCH338"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "LS319"
+            },
+            {
+                "type": "COURSE",
+                "code": "PACS323"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

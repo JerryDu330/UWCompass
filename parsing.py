@@ -4,7 +4,7 @@ import os
 from lxml import html
 import pandas as pd
 import json
-import crawler_copy as cc
+import course_info as cc
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -235,7 +235,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome(options=chrome_options)
 
-    df = pd.read_csv("courses_info.csv")
+    df = pd.read_csv("courses_table.csv")
     num_to_link = dict(zip(df["code"], zip(df["link"], df["subject"])))
 
     open("special_rules.txt", "w", encoding="utf-8").close()

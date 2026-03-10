@@ -1,0 +1,123 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS240"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS240E"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS241"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS241E"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS246"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS246E"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS251"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS251E"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE222"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-BBA & BCS Double Degree"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Computer Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Computer Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computing & Financial Management"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Data Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE350"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MTE241"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SE350"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

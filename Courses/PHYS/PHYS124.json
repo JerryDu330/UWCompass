@@ -1,0 +1,66 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "PHYS111",
+                        "grade": 70
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE105"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS115"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS121"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE106"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS112"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS122"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PHYS125"
+                    }
+                ]
+            }
+        ]
+    }
+}

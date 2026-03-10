@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "GEOG281"
+            },
+            {
+                "type": "COURSE",
+                "code": "PLAN281"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

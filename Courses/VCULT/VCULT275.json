@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "FINE204 (Topic 4: Text as an Image)"
+            },
+            {
+                "type": "COURSE",
+                "code": "FINE275"
+            },
+            {
+                "type": "COURSE",
+                "code": "SI375R (Topic 3: Text as an Image)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

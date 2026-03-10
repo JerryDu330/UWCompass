@@ -1,0 +1,48 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM280"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH238"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SCBUS225"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS288W"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MSCI211"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Accounting & Financial Management"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

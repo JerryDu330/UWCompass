@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Global Business & Digital Arts"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ARBUS200"
+            },
+            {
+                "type": "COURSE",
+                "code": "ENBUS203"
+            },
+            {
+                "type": "COURSE",
+                "code": "MGMT220"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

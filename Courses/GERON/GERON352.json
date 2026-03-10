@@ -1,0 +1,75 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "HEALTH107"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SOC101"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "SOC101R"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "AHS107"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "GSJ101"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "GSJ102"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "Aging Studies Option"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "Gerontology Diploma"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "Gerontology Minor"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

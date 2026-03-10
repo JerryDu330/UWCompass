@@ -1,0 +1,31 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "3G-Social Development Studies"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "4G-Social Development Studies"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Social Development Studies"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

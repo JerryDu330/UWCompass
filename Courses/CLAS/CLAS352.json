@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CLAS252"
+            },
+            {
+                "type": "COURSE",
+                "code": "HIST252"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

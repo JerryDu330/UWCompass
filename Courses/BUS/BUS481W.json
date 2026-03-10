@@ -1,0 +1,84 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS121W"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "AFM131"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "BUS111W"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ACTSC291"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "AFM272"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ECON371"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATBUS371"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ACTSC371"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "AFM271"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "BUS383W"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

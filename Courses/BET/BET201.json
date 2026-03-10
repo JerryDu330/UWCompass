@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BET100 prior to fall 2025"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

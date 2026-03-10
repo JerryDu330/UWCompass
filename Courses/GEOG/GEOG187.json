@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Geomatics"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "JH-Geomatics"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

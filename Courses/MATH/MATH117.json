@@ -1,0 +1,63 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "4U Calculus and Vectors"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Computer Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Electrical Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Nanotechnology Engineering"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MATH116"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH124"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH127"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH137"
+            },
+            {
+                "type": "COURSE",
+                "code": "MATH147"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

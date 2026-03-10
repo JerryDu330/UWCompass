@@ -1,0 +1,102 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECON221"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ECON101"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ECON102"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT211"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Accounting & Financial Management"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "STAT220"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT230"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "STAT240"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ECON101"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ECON102"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "COMM103"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ECON100"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

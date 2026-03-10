@@ -1,0 +1,52 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS105"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS106"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS100"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS200"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CS230"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "FINE228"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "FINE247"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

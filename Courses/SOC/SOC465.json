@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "4A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "LS496 (Topic 29: Urban Arts Research)"
+            },
+            {
+                "type": "COURSE",
+                "code": "SOC430 (Topic 22: Urban Arts Research)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

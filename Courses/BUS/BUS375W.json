@@ -1,0 +1,17 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BUS385W"
+            },
+            {
+                "type": "COURSE",
+                "code": "BUS395W"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

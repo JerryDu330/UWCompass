@@ -1,0 +1,18 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "4U Spanish"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PMATH365"
+            },
+            {
+                "type": "COURSE",
+                "code": "PMATH367"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

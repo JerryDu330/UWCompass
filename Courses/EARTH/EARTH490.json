@@ -1,0 +1,39 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Earth Sciences - Geology Specialization"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Earth Sciences - Geophysics Specialization"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Earth Sciences - Hydrogeology"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Environmental Sciences - Geoscience Specialization"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geological Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

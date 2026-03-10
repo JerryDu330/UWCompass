@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ENGL495A"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

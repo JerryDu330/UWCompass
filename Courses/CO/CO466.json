@@ -1,0 +1,60 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "CO255"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "CO367"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "AND",
+                                        "items": [
+                                            {
+                                                "type": "COURSE",
+                                                "code": "CO250"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "AND",
+                                        "items": [
+                                            {
+                                                "type": "COURSE",
+                                                "code": "CO352"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

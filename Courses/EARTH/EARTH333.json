@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "EARTH232"
+            },
+            {
+                "type": "COURSE",
+                "code": "EARTH235"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

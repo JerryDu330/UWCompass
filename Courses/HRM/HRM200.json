@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BUS354W"
+            },
+            {
+                "type": "COURSE",
+                "code": "BUS454W"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,142 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "LEVEL",
+                "level": "4A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ECE380"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Computer Engineering"
+                                    },
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Electrical Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "ME360"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Mechanical Engineering"
+                                    },
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "Mechatronics Option"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "MTE360"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Mechatronics Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "SE380"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Software Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "AND",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "SYDE352"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Systems Design Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

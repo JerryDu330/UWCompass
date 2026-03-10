@@ -1,0 +1,99 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "GRADE",
+                        "code": "COMMST100",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "COMMST223",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "EMLS101R",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "EMLS102R",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "EMLS129R",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "ENGL109",
+                        "grade": 70
+                    },
+                    {
+                        "type": "GRADE",
+                        "code": "ENGL129R",
+                        "grade": 70
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ACTSC331"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT331"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "STAT371"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Actuarial Science"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Actuarial Science"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Biostatistics"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Data Science (BMath)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Data Science (BCS)"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Statistics"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "JH-Statistics"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

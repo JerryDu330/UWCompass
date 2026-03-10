@@ -1,0 +1,65 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH104"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "4U Calculus and Vectors"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH116"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH117"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH124"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH137"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MATH147"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "MATH109"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

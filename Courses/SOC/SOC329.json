@@ -1,0 +1,29 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SOC101"
+            },
+            {
+                "type": "COURSE",
+                "code": "SOC101R"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "LS 330 (Topic 2: Policing and Security)"
+            },
+            {
+                "type": "COURSE",
+                "code": "SOC330 (Topic 2: Policing and Security)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

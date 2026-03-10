@@ -1,0 +1,29 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME386"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS395"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS396"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BME487 (Topic 1: Ultrasound in Medicine & Biology)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

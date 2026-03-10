@@ -1,0 +1,17 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "HIST391 (Topic 25: Gardens and Gardeners in Canada)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

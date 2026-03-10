@@ -1,0 +1,13 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "Entrepreneurship Minor"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

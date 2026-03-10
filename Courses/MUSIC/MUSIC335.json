@@ -1,0 +1,29 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "MUSIC391 (Topic 6: Music"
+            },
+            {
+                "type": "COURSE",
+                "code": "Peace and Conflict)"
+            },
+            {
+                "type": "COURSE",
+                "code": "PACS301 (Topic 11: Music"
+            },
+            {
+                "type": "COURSE",
+                "code": "Peace and Conflict)"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

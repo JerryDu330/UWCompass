@@ -1,0 +1,41 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "GER211"
+            },
+            {
+                "type": "COURSE",
+                "code": "GER299"
+            },
+            {
+                "type": "COURSE",
+                "code": "GER303"
+            },
+            {
+                "type": "COURSE",
+                "code": "GER304"
+            },
+            {
+                "type": "COURSE",
+                "code": "GER307"
+            },
+            {
+                "type": "COURSE",
+                "code": "GER308"
+            },
+            {
+                "type": "COURSE",
+                "code": "GER350"
+            },
+            {
+                "type": "COURSE",
+                "code": "GER399"
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

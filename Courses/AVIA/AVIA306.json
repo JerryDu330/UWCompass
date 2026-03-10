@@ -1,0 +1,43 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AVIA205"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Geography & Aviation"
+                    },
+                    {
+                        "type": "PROGRAM",
+                        "code": "H-Science & Aviation"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "AVIA324"
+            },
+            {
+                "type": "COURSE",
+                "code": "AVIA346"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

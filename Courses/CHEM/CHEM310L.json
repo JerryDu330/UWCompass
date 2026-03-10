@@ -1,0 +1,57 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM212"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM123L"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "CHEM125L"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Chemistry"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "JH-Chemistry"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Chemistry - Computational Specialization"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Medicinal Chemistry"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

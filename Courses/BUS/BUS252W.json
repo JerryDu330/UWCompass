@@ -1,0 +1,65 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "AFM131"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ARBUS101"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS111W"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ARBUS302"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MGMT244"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BUS229W"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECON344"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MGMT344"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": ""
+}

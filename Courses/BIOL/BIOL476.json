@@ -1,0 +1,47 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "BIOL273"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "BME284"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH261"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SYDE584"
+                    }
+                ]
+            },
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "SYDE384"
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "BIOL377"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

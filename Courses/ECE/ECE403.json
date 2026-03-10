@@ -1,0 +1,125 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ECE105"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "ECE106"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS112"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "PHYS122"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "COURSE",
+                                "code": "ECE205"
+                            },
+                            {
+                                "type": "COURSE",
+                                "code": "MATH211"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "AMATH250"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "AMATH251"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "MATH228"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "COURSE",
+                                        "code": "MATH227"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "MATH237"
+                                    },
+                                    {
+                                        "type": "COURSE",
+                                        "code": "MATH247"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CHEM254"
+            },
+            {
+                "type": "COURSE",
+                "code": "ME250"
+            },
+            {
+                "type": "COURSE",
+                "code": "ME354"
+            },
+            {
+                "type": "COURSE",
+                "code": "MTE309"
+            },
+            {
+                "type": "COURSE",
+                "code": "PHYS358"
+            },
+            {
+                "type": "COURSE",
+                "code": "SYDE381"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

@@ -1,0 +1,21 @@
+{
+    "Prerequisites": {
+        "type": "LEVEL",
+        "level": "2A",
+        "op": ">="
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "ARBUS200"
+            },
+            {
+                "type": "COURSE",
+                "code": "MGMT220"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

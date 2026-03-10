@@ -1,0 +1,65 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CIVE224"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ENVE224"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "LEVEL",
+                                "level": "3A",
+                                "op": ">="
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Civil Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "AND",
+                        "items": [
+                            {
+                                "type": "LEVEL",
+                                "level": "3B",
+                                "op": ">="
+                            },
+                            {
+                                "type": "OR",
+                                "items": [
+                                    {
+                                        "type": "PROGRAM",
+                                        "code": "H-Environmental Engineering"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": "",
+    "Corequisites": ""
+}

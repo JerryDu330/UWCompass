@@ -1,0 +1,87 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-BBA & BCS Double Degree"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Computer Science (BCS)"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Computer Science (BMath)"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "JH-Computer Science (BCS)"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "JH-Computer Science (BMath)"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Computing & Financial Management"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Data Science (BCS)"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Data Science (BMath)"
+            },
+            {
+                "type": "PROGRAM",
+                "code": "H-Software Engineering"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "CS338"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "ECE356"
+                    }
+                ]
+            },
+            {
+                "type": "NOT",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "ECE456"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "MSCI346"
+                    }
+                ]
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CS240"
+            },
+            {
+                "type": "COURSE",
+                "code": "CS240E"
+            }
+        ]
+    }
+}

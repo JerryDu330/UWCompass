@@ -1,0 +1,77 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "AND",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH207"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH211"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH261"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "3A",
+                "op": ">="
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "OR",
+                        "items": [
+                            {
+                                "type": "PROGRAM",
+                                "code": "Research Intensive Specialization"
+                            },
+                            {
+                                "type": "PROGRAM",
+                                "code": "H-Psychology (BSc)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH392"
+            },
+            {
+                "type": "COURSE",
+                "code": "PSYCH394"
+            },
+            {
+                "type": "COURSE",
+                "code": "PSYCH396"
+            },
+            {
+                "type": "COURSE",
+                "code": "PSYCH398"
+            }
+        ]
+    },
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "PSYCH391"
+            }
+        ]
+    }
+}

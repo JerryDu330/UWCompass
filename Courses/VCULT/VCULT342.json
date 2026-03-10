@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "CLAS241"
+            },
+            {
+                "type": "COURSE",
+                "code": "VCULT241"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "FINE342"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

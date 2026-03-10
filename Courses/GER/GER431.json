@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": "",
+    "Corequisites": {
+        "type": "OR",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "GER331"
+            }
+        ]
+    }
+}

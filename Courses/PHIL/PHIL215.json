@@ -1,0 +1,13 @@
+{
+    "Prerequisites": "",
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "PROGRAM",
+                "code": "H-Accounting & Financial Management"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

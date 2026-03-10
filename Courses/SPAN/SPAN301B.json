@@ -1,0 +1,25 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SPAN301A"
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SPAN262W"
+            },
+            {
+                "type": "COURSE",
+                "code": "SPAN304W"
+            }
+        ]
+    },
+    "Corequisites": ""
+}

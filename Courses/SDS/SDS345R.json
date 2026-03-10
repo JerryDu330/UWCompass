@@ -1,0 +1,52 @@
+{
+    "Prerequisites": {
+        "type": "AND",
+        "items": [
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "PSYCH101R"
+                    }
+                ]
+            },
+            {
+                "type": "OR",
+                "items": [
+                    {
+                        "type": "COURSE",
+                        "code": "SOC101"
+                    },
+                    {
+                        "type": "COURSE",
+                        "code": "SOC101R"
+                    }
+                ]
+            },
+            {
+                "type": "LEVEL",
+                "level": "2A",
+                "op": ">="
+            }
+        ]
+    },
+    "Antirequisites": {
+        "type": "NOT",
+        "items": [
+            {
+                "type": "COURSE",
+                "code": "SOC209"
+            },
+            {
+                "type": "COURSE",
+                "code": "SOC235"
+            }
+        ]
+    },
+    "Corequisites": ""
+}
