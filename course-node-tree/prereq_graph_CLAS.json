@@ -1,0 +1,75 @@
+{
+    "CLAS321": [
+        "OR_NODE#007"
+    ],
+    "CLAS325": [
+        "OR_NODE#001"
+    ],
+    "CLAS327": [
+        "OR_NODE#001"
+    ],
+    "CLAS331": [
+        "OR_NODE#003"
+    ],
+    "CLAS341": [
+        "OR_NODE#008"
+    ],
+    "CLAS342": [
+        "OR_NODE#000"
+    ],
+    "CLAS351": [
+        "OR_NODE#005"
+    ],
+    "CLAS352": [
+        "OR_NODE#002"
+    ],
+    "CLAS384": [
+        "OR_NODE#004"
+    ],
+    "CLAS486": [
+        "CLAS251",
+        "OR_NODE#003",
+        "CLAS252",
+        "OR_NODE#006"
+    ],
+    "OR_NODE#000": [
+        "CLAS242",
+        "VCULT242"
+    ],
+    "OR_NODE#001": [
+        "CLAS104",
+        "CLAS201",
+        "CLAS100",
+        "CLAS202"
+    ],
+    "OR_NODE#002": [
+        "CLAS252",
+        "HIST252"
+    ],
+    "OR_NODE#003": [
+        "CLAS231",
+        "CLAS232"
+    ],
+    "OR_NODE#004": [
+        "CLAS251",
+        "CLAS201",
+        "CLAS252",
+        "CLAS202"
+    ],
+    "OR_NODE#005": [
+        "CLAS251",
+        "HIST242"
+    ],
+    "OR_NODE#006": [
+        "CLAS242",
+        "CLAS241"
+    ],
+    "OR_NODE#007": [
+        "ANTH201",
+        "CLAS221"
+    ],
+    "OR_NODE#008": [
+        "CLAS241",
+        "VCULT241"
+    ]
+}

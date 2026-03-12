@@ -1,0 +1,348 @@
+{
+    "AMATH231": [
+        "OR_NODE#004"
+    ],
+    "AMATH242": [
+        "OR_NODE#026",
+        "OR_NODE#027",
+        "OR_NODE#004"
+    ],
+    "AMATH250": [
+        "OR_NODE#003",
+        "OR_NODE#002"
+    ],
+    "AMATH251": [
+        "OR_NODE#003",
+        "OR_NODE#002"
+    ],
+    "AMATH271": [
+        "OR_NODE#008"
+    ],
+    "AMATH331": [
+        "OR_NODE#004"
+    ],
+    "AMATH332": [
+        "OR_NODE#004"
+    ],
+    "AMATH333": [
+        "OR_NODE#012",
+        "OR_NODE#011"
+    ],
+    "AMATH342": [
+        "OR_NODE#000",
+        "OR_NODE#001"
+    ],
+    "AMATH343": [
+        "OR_NODE#008"
+    ],
+    "AMATH345": [
+        "OR_NODE#018",
+        "OR_NODE#016",
+        "OR_NODE#017"
+    ],
+    "AMATH350": [
+        "OR_NODE#010",
+        "OR_NODE#023",
+        "OR_NODE#020",
+        "OR_NODE#004"
+    ],
+    "AMATH351": [
+        "OR_NODE#028",
+        "OR_NODE#004"
+    ],
+    "AMATH353": [
+        "OR_NODE#005",
+        "AMATH231"
+    ],
+    "AMATH361": [
+        "OR_NODE#019",
+        "AMATH231"
+    ],
+    "AMATH362": [
+        "OR_NODE#003",
+        "OR_NODE#007",
+        "OR_NODE#006"
+    ],
+    "AMATH373": [
+        "OR_NODE#019",
+        "AMATH231"
+    ],
+    "AMATH382": [
+        "OR_NODE#037"
+    ],
+    "AMATH383": [
+        "OR_NODE#033",
+        "OR_NODE#032",
+        "OR_NODE#001"
+    ],
+    "AMATH390": [
+        "OR_NODE#003"
+    ],
+    "AMATH391": [
+        "OR_NODE#013",
+        "OR_NODE#014"
+    ],
+    "AMATH442": [
+        "AMATH342"
+    ],
+    "AMATH445": [
+        "OR_NODE#009"
+    ],
+    "AMATH449": [
+        "OR_NODE#031"
+    ],
+    "AMATH451": [
+        "OR_NODE#015"
+    ],
+    "AMATH453": [
+        "OR_NODE#015",
+        "AMATH353"
+    ],
+    "AMATH455": [
+        "OR_NODE#015",
+        "OR_NODE#038"
+    ],
+    "AMATH456": [
+        "OR_NODE#005",
+        "OR_NODE#004"
+    ],
+    "AMATH463": [
+        "OR_NODE#036",
+        "AMATH361"
+    ],
+    "AMATH473": [
+        "OR_NODE#030"
+    ],
+    "AMATH474": [
+        "OR_NODE#034"
+    ],
+    "AMATH475": [
+        "OR_NODE#035",
+        "OR_NODE#019"
+    ],
+    "AMATH477": [
+        "OR_NODE#010",
+        "OR_NODE#009"
+    ],
+    "OR_NODE#000": [
+        "CS370",
+        "AMATH242",
+        "CS371"
+    ],
+    "OR_NODE#001": [
+        "AMATH250",
+        "AMATH350",
+        "MATH228",
+        "MATH218",
+        "AMATH251"
+    ],
+    "OR_NODE#002": [
+        "MATH106",
+        "MATH115",
+        "MATH114",
+        "MATH136",
+        "MATH146",
+        "NE112"
+    ],
+    "OR_NODE#003": [
+        "MATH148",
+        "MATH128",
+        "MATH118",
+        "MATH119",
+        "MATH138"
+    ],
+    "OR_NODE#004": [
+        "MATH237",
+        "MATH247"
+    ],
+    "OR_NODE#005": [
+        "AMATH250",
+        "MATH228",
+        "MATH218",
+        "ECE205",
+        "AMATH251",
+        "MATH211"
+    ],
+    "OR_NODE#006": [
+        "AMATH250",
+        "AMATH350",
+        "MATH228",
+        "MATH218",
+        "AMATH251",
+        "MATH211",
+        "MATH213"
+    ],
+    "OR_NODE#007": [
+        "STAT206",
+        "STAT240",
+        "STAT220",
+        "STAT230",
+        "STAT202"
+    ],
+    "OR_NODE#008": [
+        "MATH138",
+        "MATH128",
+        "MATH148"
+    ],
+    "OR_NODE#009": [
+        "AMATH250",
+        "AMATH350",
+        "MATH228",
+        "ECE205",
+        "MATH218",
+        "AMATH251",
+        "MATH211"
+    ],
+    "OR_NODE#010": [
+        "STAT240",
+        "STAT230"
+    ],
+    "OR_NODE#011": [
+        "MATH227",
+        "PMATH365",
+        "AMATH231"
+    ],
+    "OR_NODE#012": [
+        "MATH114",
+        "MATH146",
+        "MATH136"
+    ],
+    "OR_NODE#013": [
+        "ECE207",
+        "SYDE252",
+        "AMATH231",
+        "PHYS364"
+    ],
+    "OR_NODE#014": [
+        "MATH115",
+        "MATH114",
+        "MATH136",
+        "MATH146",
+        "SYDE114"
+    ],
+    "OR_NODE#015": [
+        "AMATH250",
+        "AMATH251"
+    ],
+    "OR_NODE#016": [
+        "AMATH250",
+        "AMATH251",
+        "MATH228"
+    ],
+    "OR_NODE#017": [
+        "CS136",
+        "CS116",
+        "CS114",
+        "CS146"
+    ],
+    "OR_NODE#018": [
+        "STAT231",
+        "STAT206",
+        "PHYS267",
+        "STAT221",
+        "STAT241",
+        "STAT202"
+    ],
+    "OR_NODE#019": [
+        "PHYS263",
+        "AMATH271"
+    ],
+    "OR_NODE#020": [
+        "MATH146",
+        "MATH106",
+        "MATH136"
+    ],
+    "OR_NODE#021": [
+        "AFM272",
+        "ECON371",
+        "ACTSC372",
+        "ACTSC291"
+    ],
+    "OR_NODE#022": [
+        "ACTSC371",
+        "BUS393W"
+    ],
+    "OR_NODE#023": [
+        "OR_NODE#022",
+        "OR_NODE#021"
+    ],
+    "OR_NODE#024": [
+        "CS136",
+        "CS116",
+        "CS146",
+        "CS138"
+    ],
+    "OR_NODE#025": [
+        "CS135",
+        "CS145",
+        "CS115"
+    ],
+    "OR_NODE#026": [
+        "OR_NODE#024",
+        "OR_NODE#025",
+        "CS114"
+    ],
+    "OR_NODE#027": [
+        "MATH235",
+        "MATH245"
+    ],
+    "OR_NODE#028": [
+        "AMATH250",
+        "AMATH251",
+        "AMATH350"
+    ],
+    "OR_NODE#029": [
+        "PHYS334",
+        "AMATH373"
+    ],
+    "OR_NODE#030": [
+        "OR_NODE#029",
+        "AMATH231",
+        "PMATH343"
+    ],
+    "OR_NODE#031": [
+        "OR_NODE#010",
+        "STAT206"
+    ],
+    "OR_NODE#032": [
+        "MATH106",
+        "MATH115",
+        "MATH114",
+        "MATH136",
+        "MATH146"
+    ],
+    "OR_NODE#033": [
+        "STAT231",
+        "STAT206",
+        "STAT211",
+        "STAT220",
+        "STAT230",
+        "STAT241",
+        "STAT202"
+    ],
+    "OR_NODE#034": [
+        "AMATH473",
+        "PHYS454"
+    ],
+    "OR_NODE#035": [
+        "MATH227",
+        "AMATH231"
+    ],
+    "OR_NODE#036": [
+        "PHYS364",
+        "AMATH353"
+    ],
+    "OR_NODE#037": [
+        "MATH148",
+        "MATH128",
+        "MATH118",
+        "SYDE112",
+        "MATH119",
+        "MATH138"
+    ],
+    "OR_NODE#038": [
+        "PMATH332",
+        "AMATH332",
+        "PMATH352"
+    ]
+}

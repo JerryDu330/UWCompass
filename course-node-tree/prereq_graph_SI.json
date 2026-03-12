@@ -1,0 +1,21 @@
+{
+    "OR_NODE#000": [
+        "SI221R",
+        "RCS221"
+    ],
+    "OR_NODE#001": [
+        "RS221",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#002": [
+        "SI251R",
+        "MEDVL251R",
+        "MEDVL250R",
+        "SI250R"
+    ],
+    "SI390R": [
+        "OR_NODE#002",
+        "OR_NODE#001",
+        "SI121R"
+    ]
+}

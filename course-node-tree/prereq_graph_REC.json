@@ -1,0 +1,139 @@
+{
+    "OR_NODE#000": [
+        "SOC101R",
+        "SOC101",
+        "HEALTH107",
+        "GSJ101",
+        "GSJ102"
+    ],
+    "OR_NODE#001": [
+        "AHS107",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#002": [
+        "PSYCH101R",
+        "PSYCH101"
+    ],
+    "OR_NODE#003": [
+        "REC220",
+        "REC120"
+    ],
+    "OR_NODE#004": [
+        "GSJ101",
+        "GSJ102"
+    ],
+    "OR_NODE#005": [
+        "WS102",
+        "WS101"
+    ],
+    "OR_NODE#006": [
+        "OR_NODE#005",
+        "OR_NODE#004"
+    ],
+    "OR_NODE#007": [
+        "SOC101",
+        "SOC101R",
+        "HEALTH107"
+    ],
+    "OR_NODE#008": [
+        "OR_NODE#007",
+        "AHS107"
+    ],
+    "OR_NODE#009": [
+        "GEOG233",
+        "REC280"
+    ],
+    "REC151": [
+        "REC100"
+    ],
+    "REC200": [
+        "OR_NODE#002"
+    ],
+    "REC203": [
+        "OR_NODE#008"
+    ],
+    "REC213": [
+        "REC101"
+    ],
+    "REC251": [
+        "REC100"
+    ],
+    "REC252": [
+        "REC100"
+    ],
+    "REC253": [
+        "REC251",
+        "REC252",
+        "REC151"
+    ],
+    "REC256": [
+        "REC101",
+        "REC100"
+    ],
+    "REC306": [
+        "OR_NODE#006"
+    ],
+    "REC312": [
+        "OR_NODE#003"
+    ],
+    "REC319": [
+        "REC219"
+    ],
+    "REC351": [
+        "REC251",
+        "REC252"
+    ],
+    "REC356": [
+        "REC256"
+    ],
+    "REC357": [
+        "REC251",
+        "REC252",
+        "REC151"
+    ],
+    "REC362": [
+        "OR_NODE#001"
+    ],
+    "REC383": [
+        "OR_NODE#009"
+    ],
+    "REC413": [
+        "REC313",
+        "REC213"
+    ],
+    "REC419": [
+        "REC219",
+        "REC319"
+    ],
+    "REC420": [
+        "REC371",
+        "REC373"
+    ],
+    "REC433": [
+        "REC230"
+    ],
+    "REC450": [
+        "REC357",
+        "REC253",
+        "REC351"
+    ],
+    "REC455": [
+        "REC357",
+        "REC253",
+        "REC351"
+    ],
+    "REC456": [
+        "REC356",
+        "REC256"
+    ],
+    "REC471A": [
+        "REC371",
+        "REC373"
+    ],
+    "REC471B": [
+        "REC471A"
+    ],
+    "REC480": [
+        "REC280"
+    ]
+}

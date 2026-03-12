@@ -1,0 +1,33 @@
+{
+    "GEOE221": [
+        "MATH118"
+    ],
+    "GEOE224": [
+        "MATH116"
+    ],
+    "GEOE280": [
+        "CIVE105"
+    ],
+    "GEOE353": [
+        "OR_NODE#001"
+    ],
+    "GEOE354": [
+        "GEOE353"
+    ],
+    "GEOE392": [
+        "MATH116"
+    ],
+    "GEOE554": [
+        "CIVE353",
+        "CIVE354"
+    ],
+    "OR_NODE#000": [
+        "ENVE153",
+        "GEOE153"
+    ],
+    "OR_NODE#001": [
+        "EARTH121L",
+        "EARTH121",
+        "OR_NODE#000"
+    ]
+}

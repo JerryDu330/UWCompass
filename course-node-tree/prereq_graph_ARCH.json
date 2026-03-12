@@ -1,0 +1,70 @@
+{
+    "ARCH113": [
+        "ARCH110"
+    ],
+    "ARCH143": [
+        "ARCH142"
+    ],
+    "ARCH173": [
+        "ARCH172"
+    ],
+    "ARCH193": [
+        "ARCH192"
+    ],
+    "ARCH212": [
+        "ARCH113"
+    ],
+    "ARCH246": [
+        "ARCH143"
+    ],
+    "ARCH248": [
+        "ARCH246"
+    ],
+    "ARCH276": [
+        "OR_NODE#001"
+    ],
+    "ARCH292": [
+        "ARCH193"
+    ],
+    "ARCH293": [
+        "ARCH292"
+    ],
+    "ARCH342": [
+        "ARCH248"
+    ],
+    "ARCH362": [
+        "OR_NODE#002"
+    ],
+    "ARCH364": [
+        "ARCH173"
+    ],
+    "ARCH392": [
+        "ARCH293"
+    ],
+    "ARCH393": [
+        "ARCH392"
+    ],
+    "ARCH442": [
+        "ARCH342"
+    ],
+    "ARCH492": [
+        "ARCH393"
+    ],
+    "ARCH493": [
+        "ARCH492"
+    ],
+    "OR_NODE#000": [
+        "ARCH260",
+        "CIVE205",
+        "CIVE204"
+    ],
+    "OR_NODE#001": [
+        "ARCH262",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#002": [
+        "ARCH260",
+        "ARCH276",
+        "ARCH262"
+    ]
+}

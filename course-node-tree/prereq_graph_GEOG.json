@@ -1,0 +1,282 @@
+{
+    "GEOG202": [
+        "OR_NODE#017"
+    ],
+    "GEOG203": [
+        "OR_NODE#011"
+    ],
+    "GEOG205": [
+        "OR_NODE#005"
+    ],
+    "GEOG209": [
+        "OR_NODE#000"
+    ],
+    "GEOG233": [
+        "OR_NODE#002"
+    ],
+    "GEOG271": [
+        "OR_NODE#013"
+    ],
+    "GEOG281": [
+        "OR_NODE#013"
+    ],
+    "GEOG300": [
+        "OR_NODE#008"
+    ],
+    "GEOG303": [
+        "GEOG209"
+    ],
+    "GEOG304": [
+        "OR_NODE#008"
+    ],
+    "GEOG305": [
+        "GEOG205"
+    ],
+    "GEOG307": [
+        "GEOG207"
+    ],
+    "GEOG309": [
+        "OR_NODE#000"
+    ],
+    "GEOG310": [
+        "OR_NODE#013"
+    ],
+    "GEOG311": [
+        "OR_NODE#006"
+    ],
+    "GEOG314": [
+        "GEOG207"
+    ],
+    "GEOG316": [
+        "ENVS278"
+    ],
+    "GEOG318": [
+        "ENVS278"
+    ],
+    "GEOG319": [
+        "ENVS278"
+    ],
+    "GEOG320": [
+        "OR_NODE#009"
+    ],
+    "GEOG323": [
+        "OR_NODE#020"
+    ],
+    "GEOG325": [
+        "OR_NODE#018"
+    ],
+    "GEOG336": [
+        "GEOG101"
+    ],
+    "GEOG349": [
+        "OR_NODE#019"
+    ],
+    "GEOG356": [
+        "OR_NODE#006"
+    ],
+    "GEOG359": [
+        "GEOG207"
+    ],
+    "GEOG368": [
+        "ENVS200"
+    ],
+    "GEOG371": [
+        "GEOG271"
+    ],
+    "GEOG381": [
+        "OR_NODE#016"
+    ],
+    "GEOG387": [
+        "OR_NODE#016"
+    ],
+    "GEOG391": [
+        "ENVS278",
+        "OR_NODE#014"
+    ],
+    "GEOG392": [
+        "ENVS278",
+        "OR_NODE#014"
+    ],
+    "GEOG403": [
+        "OR_NODE#007"
+    ],
+    "GEOG404": [
+        "ENVS200"
+    ],
+    "GEOG405": [
+        "OR_NODE#012",
+        "ENVS200"
+    ],
+    "GEOG407": [
+        "OR_NODE#012"
+    ],
+    "GEOG408": [
+        "GEOG309"
+    ],
+    "GEOG409": [
+        "GEOG309"
+    ],
+    "GEOG414": [
+        "GEOG207"
+    ],
+    "GEOG415": [
+        "GEOG293",
+        "OR_NODE#006"
+    ],
+    "GEOG416": [
+        "AVIA100"
+    ],
+    "GEOG417": [
+        "GEOG207"
+    ],
+    "GEOG418": [
+        "GEOG309"
+    ],
+    "GEOG420": [
+        "OR_NODE#008"
+    ],
+    "GEOG423": [
+        "OR_NODE#001"
+    ],
+    "GEOG426": [
+        "OR_NODE#006"
+    ],
+    "GEOG428": [
+        "ENVS278",
+        "OR_NODE#016"
+    ],
+    "GEOG432": [
+        "OR_NODE#015"
+    ],
+    "GEOG436": [
+        "OR_NODE#022"
+    ],
+    "GEOG452": [
+        "OR_NODE#014"
+    ],
+    "GEOG460": [
+        "OR_NODE#021"
+    ],
+    "GEOG471": [
+        "GEOG371"
+    ],
+    "GEOG481": [
+        "OR_NODE#003",
+        "ENVS278",
+        "OR_NODE#004"
+    ],
+    "GEOG484": [
+        "GEOG316",
+        "GEOG371"
+    ],
+    "GEOG487": [
+        "OR_NODE#010"
+    ],
+    "GEOG490A": [
+        "OR_NODE#010"
+    ],
+    "GEOG490B": [
+        "GEOG490A"
+    ],
+    "OR_NODE#000": [
+        "GEOG102",
+        "EARTH121"
+    ],
+    "OR_NODE#001": [
+        "GEOG233",
+        "GEOG323"
+    ],
+    "OR_NODE#002": [
+        "GEOG101",
+        "ENVS195",
+        "REC101"
+    ],
+    "OR_NODE#003": [
+        "PLAN381",
+        "GEOG381"
+    ],
+    "OR_NODE#004": [
+        "GEOG387",
+        "PLAN387"
+    ],
+    "OR_NODE#005": [
+        "GEOG102",
+        "EARTH123",
+        "EARTH121"
+    ],
+    "OR_NODE#006": [
+        "GEOG203",
+        "GEOG202"
+    ],
+    "OR_NODE#007": [
+        "GEOG205",
+        "GEOG209"
+    ],
+    "OR_NODE#008": [
+        "GEOG209",
+        "GEOG305"
+    ],
+    "OR_NODE#009": [
+        "GEOG207",
+        "GEOG205",
+        "GEOG209"
+    ],
+    "OR_NODE#010": [
+        "OR_NODE#003",
+        "OR_NODE#004"
+    ],
+    "OR_NODE#011": [
+        "GEOG101",
+        "ENVS195",
+        "ENVS205"
+    ],
+    "OR_NODE#012": [
+        "GEOG209",
+        "EARTH123"
+    ],
+    "OR_NODE#013": [
+        "GEOG187",
+        "GEOG181"
+    ],
+    "OR_NODE#014": [
+        "GEOG293",
+        "GEOG294"
+    ],
+    "OR_NODE#015": [
+        "GSJ260",
+        "HLTH260",
+        "GEOG325",
+        "ERS253",
+        "PLAN233"
+    ],
+    "OR_NODE#016": [
+        "PLAN281",
+        "GEOG281"
+    ],
+    "OR_NODE#017": [
+        "GEOG101",
+        "ENVS195"
+    ],
+    "OR_NODE#018": [
+        "GEOG101",
+        "GEOG225"
+    ],
+    "OR_NODE#019": [
+        "PLAN100",
+        "GEOG101"
+    ],
+    "OR_NODE#020": [
+        "GEOG233",
+        "REC230"
+    ],
+    "OR_NODE#021": [
+        "GEOG361",
+        "ERS361"
+    ],
+    "OR_NODE#022": [
+        "GSJ222",
+        "INTEG221",
+        "PLAN233",
+        "GEOG202"
+    ]
+}

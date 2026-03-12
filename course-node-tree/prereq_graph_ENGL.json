@@ -1,0 +1,26 @@
+{
+    "ENGL336": [
+        "ENGL335"
+    ],
+    "ENGL378": [
+        "OR_NODE#000",
+        "OR_NODE#001"
+    ],
+    "ENGL495B": [
+        "ENGL495A"
+    ],
+    "OR_NODE#000": [
+        "EMLS102R",
+        "COMMST100",
+        "ENGL129R",
+        "EMLS101R",
+        "ENGL109",
+        "COMMST223",
+        "EMLS129R"
+    ],
+    "OR_NODE#001": [
+        "STAT371",
+        "ACTSC331",
+        "STAT331"
+    ]
+}

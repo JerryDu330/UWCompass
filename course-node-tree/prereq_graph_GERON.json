@@ -1,0 +1,42 @@
+{
+    "GERON218": [
+        "OR_NODE#004"
+    ],
+    "GERON220": [
+        "OR_NODE#004"
+    ],
+    "GERON310": [
+        "BIOL273"
+    ],
+    "GERON352": [
+        "OR_NODE#003",
+        "OR_NODE#002"
+    ],
+    "GERON355": [
+        "BIOL273"
+    ],
+    "GERON400": [
+        "OR_NODE#000"
+    ],
+    "OR_NODE#000": [
+        "GERON201",
+        "HLTH201"
+    ],
+    "OR_NODE#001": [
+        "SOC101",
+        "SOC101R",
+        "HEALTH107"
+    ],
+    "OR_NODE#002": [
+        "AHS107",
+        "OR_NODE#001"
+    ],
+    "OR_NODE#003": [
+        "GSJ101",
+        "GSJ102"
+    ],
+    "OR_NODE#004": [
+        "PSYCH101R",
+        "PSYCH101"
+    ]
+}

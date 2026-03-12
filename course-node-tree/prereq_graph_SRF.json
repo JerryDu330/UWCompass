@@ -1,0 +1,251 @@
+{
+    "OR_NODE#000": [
+        "SRF101",
+        "SMF101"
+    ],
+    "OR_NODE#001": [
+        "SMF310",
+        "SRF310"
+    ],
+    "OR_NODE#002": [
+        "LS280",
+        "STAT231",
+        "REC371",
+        "SOC280",
+        "STAT206",
+        "ECON221",
+        "PSCI314",
+        "PSYCH292",
+        "SDS250R",
+        "SRF230",
+        "STAT241",
+        "STAT211",
+        "STAT221",
+        "ARTS280",
+        "STAT202",
+        "ENVS278"
+    ],
+    "OR_NODE#003": [
+        "SMF230",
+        "KIN222",
+        "SWREN250R"
+    ],
+    "OR_NODE#004": [
+        "OR_NODE#003",
+        "OR_NODE#002"
+    ],
+    "OR_NODE#005": [
+        "LS221",
+        "SDS251R",
+        "SRF220",
+        "SOC221",
+        "PSCI315",
+        "PSYCH291"
+    ],
+    "OR_NODE#006": [
+        "REC270",
+        "SMF220",
+        "KIN330",
+        "SWREN251R"
+    ],
+    "OR_NODE#007": [
+        "OR_NODE#005",
+        "OR_NODE#006"
+    ],
+    "OR_NODE#008": [
+        "SRF305",
+        "SRF304",
+        "SRF365"
+    ],
+    "OR_NODE#009": [
+        "SMF304",
+        "SMF365",
+        "SMF305"
+    ],
+    "OR_NODE#010": [
+        "OR_NODE#008",
+        "OR_NODE#009"
+    ],
+    "OR_NODE#011": [
+        "SRF204",
+        "SRF101",
+        "PSYCH236"
+    ],
+    "OR_NODE#012": [
+        "SMF101",
+        "SMF204"
+    ],
+    "OR_NODE#013": [
+        "OR_NODE#012",
+        "OR_NODE#011"
+    ],
+    "OR_NODE#014": [
+        "SRF204",
+        "PSYCH236"
+    ],
+    "OR_NODE#015": [
+        "SMF204",
+        "OR_NODE#014"
+    ],
+    "OR_NODE#016": [
+        "SMF208",
+        "SRF208"
+    ],
+    "OR_NODE#017": [
+        "SRF301",
+        "SOCWK220R"
+    ],
+    "OR_NODE#018": [
+        "SWREN220R",
+        "SMF301"
+    ],
+    "OR_NODE#019": [
+        "OR_NODE#018",
+        "OR_NODE#017"
+    ],
+    "OR_NODE#020": [
+        "SRF101",
+        "PSYCH253",
+        "PSYCH253R"
+    ],
+    "OR_NODE#021": [
+        "SMF101",
+        "OR_NODE#020"
+    ],
+    "OR_NODE#022": [
+        "SMF230",
+        "KIN222",
+        "OR_NODE#002",
+        "SWREN250R"
+    ],
+    "OR_NODE#023": [
+        "SRF305",
+        "SRF366",
+        "PSYCH354R",
+        "SRF306",
+        "SRF304",
+        "SRF365",
+        "SRF307",
+        "PSYCH354"
+    ],
+    "OR_NODE#024": [
+        "SMF365",
+        "SMF304",
+        "SMF305",
+        "SMF307",
+        "SMF306",
+        "SMF366"
+    ],
+    "OR_NODE#025": [
+        "PSYCH354R",
+        "SRF306",
+        "SRF366",
+        "SRF307",
+        "PSYCH354"
+    ],
+    "OR_NODE#026": [
+        "SMF307",
+        "SMF306",
+        "SMF366"
+    ],
+    "OR_NODE#027": [
+        "OR_NODE#025",
+        "OR_NODE#026"
+    ],
+    "OR_NODE#028": [
+        "SRF204",
+        "PSYCH236",
+        "SRF207"
+    ],
+    "OR_NODE#029": [
+        "SMF207",
+        "SMF204"
+    ],
+    "OR_NODE#030": [
+        "OR_NODE#029",
+        "OR_NODE#028"
+    ],
+    "SRF205": [
+        "OR_NODE#015"
+    ],
+    "SRF207": [
+        "OR_NODE#000"
+    ],
+    "SRF208": [
+        "OR_NODE#030",
+        "OR_NODE#000"
+    ],
+    "SRF220": [
+        "OR_NODE#013"
+    ],
+    "SRF230": [
+        "OR_NODE#013"
+    ],
+    "SRF301": [
+        "OR_NODE#013"
+    ],
+    "SRF304": [
+        "OR_NODE#015"
+    ],
+    "SRF305": [
+        "OR_NODE#015"
+    ],
+    "SRF306": [
+        "OR_NODE#021"
+    ],
+    "SRF307": [
+        "OR_NODE#021"
+    ],
+    "SRF308": [
+        "OR_NODE#019",
+        "OR_NODE#016"
+    ],
+    "SRF309": [
+        "OR_NODE#019",
+        "OR_NODE#016"
+    ],
+    "SRF310": [
+        "OR_NODE#015",
+        "OR_NODE#000"
+    ],
+    "SRF365": [
+        "OR_NODE#015"
+    ],
+    "SRF366": [
+        "OR_NODE#000"
+    ],
+    "SRF400": [
+        "OR_NODE#007",
+        "OR_NODE#001",
+        "OR_NODE#004"
+    ],
+    "SRF404": [
+        "OR_NODE#024",
+        "OR_NODE#022",
+        "OR_NODE#001",
+        "OR_NODE#023",
+        "OR_NODE#007"
+    ],
+    "SRF491": [
+        "SRF490"
+    ],
+    "SRF494": [
+        "OR_NODE#010",
+        "OR_NODE#007",
+        "OR_NODE#001",
+        "OR_NODE#004"
+    ],
+    "SRF496": [
+        "OR_NODE#004",
+        "OR_NODE#007",
+        "OR_NODE#001",
+        "OR_NODE#027"
+    ],
+    "SRF499A": [
+        "OR_NODE#007",
+        "OR_NODE#004"
+    ],
+    "SRF499B": [
+        "SRF499A"
+    ]
+}

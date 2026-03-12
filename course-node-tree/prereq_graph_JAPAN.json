@@ -1,0 +1,31 @@
+{
+    "JAPAN102R": [
+        "OR_NODE#000"
+    ],
+    "JAPAN112R": [
+        "OR_NODE#000"
+    ],
+    "JAPAN201R": [
+        "OR_NODE#001"
+    ],
+    "JAPAN202R": [
+        "JAPAN201R"
+    ],
+    "JAPAN301R": [
+        "JAPAN202R"
+    ],
+    "JAPAN302R": [
+        "JAPAN301R"
+    ],
+    "JAPAN391R": [
+        "JAPAN202R"
+    ],
+    "OR_NODE#000": [
+        "JAPAN111R",
+        "JAPAN101R"
+    ],
+    "OR_NODE#001": [
+        "JAPAN112R",
+        "JAPAN102R"
+    ]
+}

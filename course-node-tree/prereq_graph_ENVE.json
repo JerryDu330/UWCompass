@@ -1,0 +1,66 @@
+{
+    "ENVE200": [
+        "ENVE100"
+    ],
+    "ENVE224": [
+        "MATH116"
+    ],
+    "ENVE225": [
+        "ENVE115",
+        "ENVE223"
+    ],
+    "ENVE275": [
+        "OR_NODE#000"
+    ],
+    "ENVE280": [
+        "CIVE105"
+    ],
+    "ENVE375": [
+        "CHE102",
+        "ENVE280"
+    ],
+    "ENVE376": [
+        "OR_NODE#001"
+    ],
+    "ENVE382": [
+        "OR_NODE#003",
+        "CIVE105",
+        "OR_NODE#004"
+    ],
+    "ENVE383": [
+        "OR_NODE#002"
+    ],
+    "ENVE392": [
+        "MATH116"
+    ],
+    "ENVE481": [
+        "OR_NODE#002"
+    ],
+    "ENVE573": [
+        "ENVE375",
+        "ENVE225"
+    ],
+    "ENVE583": [
+        "ENVE382"
+    ],
+    "OR_NODE#000": [
+        "CHE102",
+        "ENVE175"
+    ],
+    "OR_NODE#001": [
+        "ENVE375",
+        "CIVE375"
+    ],
+    "OR_NODE#002": [
+        "ENVE382",
+        "CIVE382"
+    ],
+    "OR_NODE#003": [
+        "GEOE224",
+        "ENVE224"
+    ],
+    "OR_NODE#004": [
+        "GEOE280",
+        "ENVE280"
+    ]
+}

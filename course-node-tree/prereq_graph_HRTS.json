@@ -1,0 +1,34 @@
+{
+    "HRTS201": [
+        "HRTS101"
+    ],
+    "HRTS203": [
+        "OR_NODE#000"
+    ],
+    "HRTS204": [
+        "OR_NODE#000"
+    ],
+    "HRTS301": [
+        "HRTS101"
+    ],
+    "HRTS302": [
+        "HRTS201"
+    ],
+    "HRTS305": [
+        "OR_NODE#001"
+    ],
+    "HRTS390": [
+        "HRTS101"
+    ],
+    "HRTS490": [
+        "HRTS101"
+    ],
+    "OR_NODE#000": [
+        "HRTS101",
+        "LS101"
+    ],
+    "OR_NODE#001": [
+        "HRTS101",
+        "INDG201"
+    ]
+}

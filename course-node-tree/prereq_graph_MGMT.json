@@ -1,0 +1,21 @@
+{
+    "MGMT345": [
+        "OR_NODE#003"
+    ],
+    "OR_NODE#000": [
+        "ARBUS302",
+        "MGMT244"
+    ],
+    "OR_NODE#001": [
+        "ECON344",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#002": [
+        "ENBUS311",
+        "ENBUS211"
+    ],
+    "OR_NODE#003": [
+        "OR_NODE#002",
+        "OR_NODE#001"
+    ]
+}

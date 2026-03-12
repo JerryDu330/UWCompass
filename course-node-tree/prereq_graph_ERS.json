@@ -1,0 +1,71 @@
+{
+    "ERS283": [
+        "ENVS200"
+    ],
+    "ERS315": [
+        "ERS215",
+        "ENVS200"
+    ],
+    "ERS335": [
+        "OR_NODE#000"
+    ],
+    "ERS337": [
+        "OR_NODE#000"
+    ],
+    "ERS340": [
+        "OR_NODE#000"
+    ],
+    "ERS341": [
+        "OR_NODE#000"
+    ],
+    "ERS342": [
+        "OR_NODE#000"
+    ],
+    "ERS346": [
+        "OR_NODE#001",
+        "OR_NODE#000"
+    ],
+    "ERS365": [
+        "ERS201"
+    ],
+    "ERS382": [
+        "OR_NODE#000"
+    ],
+    "ERS383": [
+        "ENVS200"
+    ],
+    "ERS401": [
+        "ERS400"
+    ],
+    "ERS415": [
+        "ERS315"
+    ],
+    "ERS443": [
+        "OR_NODE#001",
+        "OR_NODE#000"
+    ],
+    "ERS446": [
+        "OR_NODE#001",
+        "ERS346",
+        "OR_NODE#000"
+    ],
+    "ERS460": [
+        "OR_NODE#002"
+    ],
+    "ERS484": [
+        "ENVS200"
+    ],
+    "OR_NODE#000": [
+        "BIOL251",
+        "BIOL150",
+        "ENVS200"
+    ],
+    "OR_NODE#001": [
+        "STAT202",
+        "ENVS178"
+    ],
+    "OR_NODE#002": [
+        "GEOG361",
+        "ERS361"
+    ]
+}

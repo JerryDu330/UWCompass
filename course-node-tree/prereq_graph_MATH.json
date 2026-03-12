@@ -1,0 +1,162 @@
+{
+    "MATH106": [
+        "MATH103"
+    ],
+    "MATH118": [
+        "OR_NODE#002"
+    ],
+    "MATH119": [
+        "OR_NODE#002"
+    ],
+    "MATH127": [
+        "MATH104"
+    ],
+    "MATH128": [
+        "OR_NODE#002"
+    ],
+    "MATH136": [
+        "OR_NODE#008"
+    ],
+    "MATH138": [
+        "OR_NODE#004"
+    ],
+    "MATH146": [
+        "MATH145"
+    ],
+    "MATH148": [
+        "MATH147"
+    ],
+    "MATH207": [
+        "OR_NODE#001"
+    ],
+    "MATH211": [
+        "MATH119"
+    ],
+    "MATH212": [
+        "OR_NODE#010"
+    ],
+    "MATH213": [
+        "OR_NODE#006"
+    ],
+    "MATH217": [
+        "MATH118"
+    ],
+    "MATH218": [
+        "OR_NODE#015"
+    ],
+    "MATH225": [
+        "OR_NODE#007"
+    ],
+    "MATH227": [
+        "OR_NODE#005"
+    ],
+    "MATH228": [
+        "OR_NODE#005"
+    ],
+    "MATH229": [
+        "OR_NODE#000"
+    ],
+    "MATH235": [
+        "OR_NODE#012"
+    ],
+    "MATH237": [
+        "OR_NODE#000",
+        "OR_NODE#001"
+    ],
+    "MATH239": [
+        "OR_NODE#014"
+    ],
+    "MATH245": [
+        "MATH146"
+    ],
+    "MATH247": [
+        "MATH148",
+        "MATH146"
+    ],
+    "MATH249": [
+        "OR_NODE#008",
+        "OR_NODE#009"
+    ],
+    "OR_NODE#000": [
+        "MATH106",
+        "MATH115",
+        "MATH114",
+        "MATH136",
+        "MATH146"
+    ],
+    "OR_NODE#001": [
+        "MATH148",
+        "MATH138",
+        "MATH128"
+    ],
+    "OR_NODE#002": [
+        "MATH116",
+        "MATH127",
+        "MATH137",
+        "MATH147",
+        "MATH117"
+    ],
+    "OR_NODE#003": [
+        "MATH127",
+        "MATH116",
+        "MATH117"
+    ],
+    "OR_NODE#004": [
+        "MATH137",
+        "OR_NODE#003",
+        "MATH147"
+    ],
+    "OR_NODE#005": [
+        "MATH138",
+        "MATH128"
+    ],
+    "OR_NODE#006": [
+        "MATH119",
+        "MATH118",
+        "MATH138",
+        "MATH128"
+    ],
+    "OR_NODE#007": [
+        "MATH146",
+        "MATH106",
+        "MATH136"
+    ],
+    "OR_NODE#008": [
+        "MATH145",
+        "MATH135"
+    ],
+    "OR_NODE#009": [
+        "MATH146",
+        "MATH136"
+    ],
+    "OR_NODE#010": [
+        "MATH211",
+        "ECE205"
+    ],
+    "OR_NODE#011": [
+        "MATH115",
+        "MATH114",
+        "MATH106"
+    ],
+    "OR_NODE#012": [
+        "MATH136",
+        "MATH146",
+        "OR_NODE#011"
+    ],
+    "OR_NODE#013": [
+        "OR_NODE#009",
+        "MATH106"
+    ],
+    "OR_NODE#014": [
+        "OR_NODE#008",
+        "OR_NODE#013"
+    ],
+    "OR_NODE#015": [
+        "MATH148",
+        "MATH128",
+        "MATH118",
+        "SYDE112",
+        "MATH119",
+        "MATH138"
+    ]
+}

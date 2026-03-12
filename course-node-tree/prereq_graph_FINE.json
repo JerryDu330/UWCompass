@@ -1,0 +1,122 @@
+{
+    "FINE202": [
+        "FINE100"
+    ],
+    "FINE204": [
+        "FINE100"
+    ],
+    "FINE220": [
+        "FINE100"
+    ],
+    "FINE221": [
+        "FINE100"
+    ],
+    "FINE222": [
+        "FINE100"
+    ],
+    "FINE223": [
+        "FINE100"
+    ],
+    "FINE224": [
+        "FINE100"
+    ],
+    "FINE225": [
+        "FINE100"
+    ],
+    "FINE226": [
+        "FINE100"
+    ],
+    "FINE227": [
+        "FINE100"
+    ],
+    "FINE228": [
+        "OR_NODE#004"
+    ],
+    "FINE230": [
+        "FINE100"
+    ],
+    "FINE231": [
+        "FINE100"
+    ],
+    "FINE232": [
+        "FINE100"
+    ],
+    "FINE246": [
+        "FINE100"
+    ],
+    "FINE247": [
+        "FINE100"
+    ],
+    "FINE271": [
+        "FINE100"
+    ],
+    "FINE272": [
+        "FINE100"
+    ],
+    "FINE302": [
+        "OR_NODE#000"
+    ],
+    "FINE304": [
+        "OR_NODE#000"
+    ],
+    "FINE309": [
+        "OR_NODE#000"
+    ],
+    "FINE312": [
+        "OR_NODE#000"
+    ],
+    "FINE315": [
+        "OR_NODE#000"
+    ],
+    "FINE327": [
+        "OR_NODE#000"
+    ],
+    "FINE344": [
+        "FINE343"
+    ],
+    "FINE383": [
+        "OR_NODE#003",
+        "CS106",
+        "OR_NODE#002",
+        "CS105"
+    ],
+    "FINE404": [
+        "FINE327",
+        "OR_NODE#001"
+    ],
+    "FINE407": [
+        "OR_NODE#001"
+    ],
+    "FINE472": [
+        "FINE327",
+        "OR_NODE#001"
+    ],
+    "FINE473": [
+        "FINE327",
+        "OR_NODE#001"
+    ],
+    "FINE475": [
+        "FINE474"
+    ],
+    "OR_NODE#000": [
+        "FINE209",
+        "VCULT209"
+    ],
+    "OR_NODE#001": [
+        "VCULT319",
+        "FINE319"
+    ],
+    "OR_NODE#002": [
+        "CS200",
+        "CS230",
+        "CS100"
+    ],
+    "OR_NODE#003": [
+        "FINE228",
+        "FINE247"
+    ],
+    "OR_NODE#004": [
+        "FINE100",
+        "FINE130"
+    ]
+}

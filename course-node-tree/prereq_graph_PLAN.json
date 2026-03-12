@@ -1,0 +1,159 @@
+{
+    "OR_NODE#000": [
+        "PLAN133",
+        "PLAN233"
+    ],
+    "OR_NODE#001": [
+        "PLAN281",
+        "GEOG281"
+    ],
+    "OR_NODE#002": [
+        "PLAN100",
+        "GEOG101"
+    ],
+    "OR_NODE#003": [
+        "BIOL251",
+        "BIOL150",
+        "ENVS200"
+    ],
+    "OR_NODE#004": [
+        "GSJ260",
+        "HLTH260",
+        "GEOG325",
+        "ERS253",
+        "PLAN233"
+    ],
+    "OR_NODE#005": [
+        "GEOG187",
+        "GEOG181"
+    ],
+    "OR_NODE#006": [
+        "PLAN381",
+        "GEOG381"
+    ],
+    "OR_NODE#007": [
+        "GEOG387",
+        "PLAN387"
+    ],
+    "OR_NODE#008": [
+        "OR_NODE#007",
+        "OR_NODE#006"
+    ],
+    "OR_NODE#009": [
+        "PLAN202",
+        "PLAN261"
+    ],
+    "OR_NODE#010": [
+        "ENVS278",
+        "CIVE342"
+    ],
+    "PLAN202": [
+        "PLAN100",
+        "ENVS178"
+    ],
+    "PLAN205": [
+        "ENVS178"
+    ],
+    "PLAN210": [
+        "PLAN110"
+    ],
+    "PLAN211": [
+        "PLAN210"
+    ],
+    "PLAN240": [
+        "OR_NODE#003"
+    ],
+    "PLAN281": [
+        "OR_NODE#005"
+    ],
+    "PLAN309": [
+        "PLAN211"
+    ],
+    "PLAN320": [
+        "ENVS278"
+    ],
+    "PLAN333": [
+        "PLAN233"
+    ],
+    "PLAN340": [
+        "OR_NODE#003"
+    ],
+    "PLAN341": [
+        "ENVS200"
+    ],
+    "PLAN348": [
+        "PLAN341"
+    ],
+    "PLAN349": [
+        "OR_NODE#002"
+    ],
+    "PLAN350": [
+        "ENVS278",
+        "OR_NODE#001"
+    ],
+    "PLAN351": [
+        "ENVS278"
+    ],
+    "PLAN353": [
+        "ENVS278"
+    ],
+    "PLAN375": [
+        "PLAN103"
+    ],
+    "PLAN381": [
+        "OR_NODE#001"
+    ],
+    "PLAN387": [
+        "OR_NODE#001"
+    ],
+    "PLAN409": [
+        "PLAN309"
+    ],
+    "PLAN415": [
+        "OR_NODE#009"
+    ],
+    "PLAN416": [
+        "ENVS278",
+        "OR_NODE#001"
+    ],
+    "PLAN418": [
+        "ENVS278",
+        "OR_NODE#001"
+    ],
+    "PLAN432": [
+        "OR_NODE#004"
+    ],
+    "PLAN433": [
+        "PLAN233"
+    ],
+    "PLAN441": [
+        "OR_NODE#000"
+    ],
+    "PLAN442": [
+        "OR_NODE#000"
+    ],
+    "PLAN443": [
+        "OR_NODE#000"
+    ],
+    "PLAN445": [
+        "OR_NODE#000"
+    ],
+    "PLAN468": [
+        "ENVS278"
+    ],
+    "PLAN471": [
+        "PLAN103",
+        "ENVS201"
+    ],
+    "PLAN478": [
+        "OR_NODE#010"
+    ],
+    "PLAN481": [
+        "ENVS278",
+        "OR_NODE#007",
+        "OR_NODE#006"
+    ],
+    "PLAN487": [
+        "OR_NODE#008"
+    ]
+}

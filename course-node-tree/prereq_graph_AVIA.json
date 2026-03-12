@@ -1,0 +1,73 @@
+{
+    "AVIA102": [
+        "AVIA101"
+    ],
+    "AVIA142": [
+        "AVIA141"
+    ],
+    "AVIA203": [
+        "AVIA102"
+    ],
+    "AVIA204": [
+        "AVIA203"
+    ],
+    "AVIA205": [
+        "AVIA204"
+    ],
+    "AVIA222": [
+        "AVIA142",
+        "AVIA121"
+    ],
+    "AVIA223": [
+        "AVIA142",
+        "AVIA121"
+    ],
+    "AVIA243": [
+        "AVIA142",
+        "AVIA121"
+    ],
+    "AVIA244": [
+        "AVIA243",
+        "AVIA222"
+    ],
+    "AVIA245": [
+        "AVIA244",
+        "AVIA223"
+    ],
+    "AVIA306": [
+        "AVIA205"
+    ],
+    "AVIA307": [
+        "AVIA306"
+    ],
+    "AVIA310": [
+        "AVIA100"
+    ],
+    "AVIA324": [
+        "AVIA245"
+    ],
+    "AVIA325": [
+        "AVIA324",
+        "AVIA346"
+    ],
+    "AVIA346": [
+        "AVIA245"
+    ],
+    "AVIA347": [
+        "AVIA324",
+        "AVIA346"
+    ],
+    "AVIA408": [
+        "AVIA307"
+    ],
+    "AVIA416": [
+        "AVIA100"
+    ],
+    "AVIA417": [
+        "AVIA310"
+    ],
+    "AVIA426": [
+        "AVIA325",
+        "AVIA347"
+    ]
+}

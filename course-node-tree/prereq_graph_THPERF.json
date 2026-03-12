@@ -1,0 +1,65 @@
+{
+    "OR_NODE#000": [
+        "THPERF221",
+        "THPERF222"
+    ],
+    "OR_NODE#001": [
+        "THPERF307",
+        "THPERF316",
+        "THPERF317",
+        "THPERF306"
+    ],
+    "OR_NODE#002": [
+        "THPERF100",
+        "COMMST102",
+        "THPERF102"
+    ],
+    "OR_NODE#003": [
+        "COMMST102",
+        "THPERF102"
+    ],
+    "THPERF221": [
+        "OR_NODE#002"
+    ],
+    "THPERF222": [
+        "OR_NODE#002"
+    ],
+    "THPERF301": [
+        "OR_NODE#003"
+    ],
+    "THPERF321": [
+        "OR_NODE#000"
+    ],
+    "THPERF322": [
+        "OR_NODE#000"
+    ],
+    "THPERF326": [
+        "OR_NODE#003"
+    ],
+    "THPERF343": [
+        "THPERF243"
+    ],
+    "THPERF361": [
+        "THPERF243",
+        "THPERF200"
+    ],
+    "THPERF368": [
+        "THPERF243",
+        "THPERF200"
+    ],
+    "THPERF400": [
+        "OR_NODE#001"
+    ],
+    "THPERF406": [
+        "OR_NODE#001"
+    ],
+    "THPERF407": [
+        "OR_NODE#001"
+    ],
+    "THPERF416": [
+        "OR_NODE#001"
+    ],
+    "THPERF417": [
+        "OR_NODE#001"
+    ]
+}

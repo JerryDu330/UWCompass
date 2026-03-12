@@ -1,0 +1,54 @@
+{
+    "OR_NODE#000": [
+        "ENBUS102",
+        "SFM101"
+    ],
+    "OR_NODE#001": [
+        "AFM285",
+        "AFM485",
+        "ENVS195",
+        "SFM101",
+        "ENBUS102",
+        "ENVS205"
+    ],
+    "OR_NODE#002": [
+        "ENBUS310",
+        "SFM310"
+    ],
+    "OR_NODE#003": [
+        "AFM272",
+        "AFM273"
+    ],
+    "SFM201": [
+        "OR_NODE#000"
+    ],
+    "SFM205": [
+        "SFM101"
+    ],
+    "SFM310": [
+        "OR_NODE#003"
+    ],
+    "SFM311": [
+        "SFM201",
+        "OR_NODE#002"
+    ],
+    "SFM328": [
+        "OR_NODE#001"
+    ],
+    "SFM329": [
+        "SFM328"
+    ],
+    "SFM403": [
+        "SFM401",
+        "SFM402"
+    ],
+    "SFM411": [
+        "SFM311"
+    ],
+    "SFM412": [
+        "OR_NODE#003"
+    ],
+    "SFM413": [
+        "SFM411"
+    ]
+}

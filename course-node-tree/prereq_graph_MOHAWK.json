@@ -1,0 +1,13 @@
+{
+    "MOHAWK102R": [
+        "OR_NODE#001"
+    ],
+    "OR_NODE#000": [
+        "INDG101",
+        "MOHAWK101R"
+    ],
+    "OR_NODE#001": [
+        "ARTS190 (Topic 6: Introduction to Mohawk Language; Topic 10: Introduction to Mohawk Language 1)",
+        "OR_NODE#000"
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "MTE111": [
+        "CHE102"
+    ],
+    "MTE140": [
+        "OR_NODE#008"
+    ],
+    "MTE201": [
+        "MATH118"
+    ],
+    "MTE202": [
+        "MATH118"
+    ],
+    "MTE203": [
+        "MATH118"
+    ],
+    "MTE204": [
+        "MTE202"
+    ],
+    "MTE219": [
+        "MTE111",
+        "MTE119"
+    ],
+    "MTE220": [
+        "MTE201",
+        "MTE120"
+    ],
+    "MTE241": [
+        "MTE140",
+        "OR_NODE#004"
+    ],
+    "MTE262": [
+        "OR_NODE#006"
+    ],
+    "MTE309": [
+        "MTE202",
+        "MTE203"
+    ],
+    "MTE320": [
+        "MTE120"
+    ],
+    "MTE321": [
+        "MTE203",
+        "MTE219",
+        "SYDE182"
+    ],
+    "MTE322": [
+        "MTE262",
+        "MTE320",
+        "MTE220",
+        "MTE321"
+    ],
+    "MTE325": [
+        "OR_NODE#001"
+    ],
+    "MTE360": [
+        "MTE320",
+        "SYDE252",
+        "SYDE351"
+    ],
+    "MTE420": [
+        "MTE320"
+    ],
+    "MTE421": [
+        "MTE220"
+    ],
+    "MTE460": [
+        "OR_NODE#003",
+        "OR_NODE#000",
+        "OR_NODE#001"
+    ],
+    "MTE481": [
+        "MTE380"
+    ],
+    "MTE482": [
+        "MTE380",
+        "MTE481"
+    ],
+    "MTE484": [
+        "OR_NODE#005"
+    ],
+    "OR_NODE#000": [
+        "ECE380",
+        "ME360",
+        "MTE360"
+    ],
+    "OR_NODE#001": [
+        "MTE262",
+        "ME262"
+    ],
+    "OR_NODE#002": [
+        "MTE320",
+        "MTE325"
+    ],
+    "OR_NODE#003": [
+        "ECE362",
+        "OR_NODE#002"
+    ],
+    "OR_NODE#004": [
+        "GENE121",
+        "MTE121"
+    ],
+    "OR_NODE#005": [
+        "ECE380",
+        "ME360",
+        "SYDE352",
+        "MTE360"
+    ],
+    "OR_NODE#006": [
+        "GENE123",
+        "MTE120"
+    ],
+    "OR_NODE#007": [
+        "MTE121",
+        "ECE150"
+    ],
+    "OR_NODE#008": [
+        "GENE121",
+        "OR_NODE#007"
+    ]
+}

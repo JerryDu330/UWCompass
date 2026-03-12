@@ -1,0 +1,184 @@
+{
+    "EARTH221": [
+        "OR_NODE#010"
+    ],
+    "EARTH231": [
+        "OR_NODE#001"
+    ],
+    "EARTH232": [
+        "EARTH231"
+    ],
+    "EARTH235": [
+        "OR_NODE#012"
+    ],
+    "EARTH238": [
+        "OR_NODE#001"
+    ],
+    "EARTH260": [
+        "OR_NODE#009"
+    ],
+    "EARTH321": [
+        "EARTH221"
+    ],
+    "EARTH322": [
+        "EARTH221",
+        "EARTH121"
+    ],
+    "EARTH331": [
+        "EARTH232"
+    ],
+    "EARTH332": [
+        "EARTH232"
+    ],
+    "EARTH333": [
+        "EARTH235",
+        "EARTH232"
+    ],
+    "EARTH336": [
+        "OR_NODE#016"
+    ],
+    "EARTH342": [
+        "OR_NODE#006"
+    ],
+    "EARTH355": [
+        "OR_NODE#007"
+    ],
+    "EARTH358": [
+        "EARTH221",
+        "OR_NODE#002"
+    ],
+    "EARTH390": [
+        "EARTH235"
+    ],
+    "EARTH421": [
+        "EARTH221"
+    ],
+    "EARTH435": [
+        "EARTH238"
+    ],
+    "EARTH436B": [
+        "EARTH436A"
+    ],
+    "EARTH438": [
+        "EARTH238"
+    ],
+    "EARTH439": [
+        "EARTH458"
+    ],
+    "EARTH440": [
+        "OR_NODE#005"
+    ],
+    "EARTH444": [
+        "OR_NODE#011"
+    ],
+    "EARTH456": [
+        "OR_NODE#004"
+    ],
+    "EARTH458": [
+        "OR_NODE#014"
+    ],
+    "EARTH459": [
+        "OR_NODE#015",
+        "EARTH458"
+    ],
+    "EARTH460": [
+        "EARTH260"
+    ],
+    "EARTH461": [
+        "EARTH260"
+    ],
+    "EARTH471": [
+        "EARTH221",
+        "EARTH232"
+    ],
+    "OR_NODE#000": [
+        "CIVE153",
+        "GEOE153",
+        "ENVE153"
+    ],
+    "OR_NODE#001": [
+        "OR_NODE#000",
+        "EARTH121",
+        "EARTH121L",
+        "EARTH153"
+    ],
+    "OR_NODE#002": [
+        "EARTH122",
+        "EARTH121"
+    ],
+    "OR_NODE#003": [
+        "MATH114",
+        "MATH106"
+    ],
+    "OR_NODE#004": [
+        "OR_NODE#003",
+        "EARTH458",
+        "MATH128"
+    ],
+    "OR_NODE#005": [
+        "EARTH342",
+        "EARTH333"
+    ],
+    "OR_NODE#006": [
+        "GEOE153",
+        "SCI250",
+        "CIVE153",
+        "ENVE153",
+        "EARTH122",
+        "EARTH121"
+    ],
+    "OR_NODE#007": [
+        "EARTH122",
+        "EARTH123",
+        "EARTH121"
+    ],
+    "OR_NODE#008": [
+        "PHYS112",
+        "PHYS122"
+    ],
+    "OR_NODE#009": [
+        "OR_NODE#008",
+        "PHYS125"
+    ],
+    "OR_NODE#010": [
+        "CHEM123",
+        "CHEM125"
+    ],
+    "OR_NODE#011": [
+        "ENVE376",
+        "ENVE375",
+        "BIOL350",
+        "BIOL351",
+        "EARTH322",
+        "EARTH221",
+        "EARTH358"
+    ],
+    "OR_NODE#012": [
+        "OR_NODE#000",
+        "EARTH121",
+        "EARTH121L"
+    ],
+    "OR_NODE#013": [
+        "EARTH122",
+        "EARTH122L",
+        "EARTH121",
+        "EARTH121L"
+    ],
+    "OR_NODE#014": [
+        "EARTH123",
+        "OR_NODE#013",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#015": [
+        "ENVE375",
+        "CIVE375",
+        "EARTH221"
+    ],
+    "OR_NODE#016": [
+        "GEOE153",
+        "CIVE153",
+        "ENVE153",
+        "BIOL359",
+        "EARTH121"
+    ]
+}

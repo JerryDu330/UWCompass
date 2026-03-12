@@ -1,0 +1,61 @@
+{
+    "GRK102": [
+        "OR_NODE#005"
+    ],
+    "GRK201": [
+        "OR_NODE#007"
+    ],
+    "GRK202": [
+        "OR_NODE#003"
+    ],
+    "GRK291": [
+        "GRK202"
+    ],
+    "GRK331": [
+        "OR_NODE#001"
+    ],
+    "GRK332": [
+        "OR_NODE#001"
+    ],
+    "GRK341": [
+        "OR_NODE#001"
+    ],
+    "GRK351": [
+        "OR_NODE#001"
+    ],
+    "GRK451": [
+        "GRK351"
+    ],
+    "OR_NODE#000": [
+        "GRK202",
+        "RCS224"
+    ],
+    "OR_NODE#001": [
+        "RS224",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#002": [
+        "RCS223",
+        "GRK201"
+    ],
+    "OR_NODE#003": [
+        "RS223",
+        "OR_NODE#002"
+    ],
+    "OR_NODE#004": [
+        "RCS101",
+        "GRK101"
+    ],
+    "OR_NODE#005": [
+        "RS101",
+        "OR_NODE#004"
+    ],
+    "OR_NODE#006": [
+        "RCS102",
+        "GRK102"
+    ],
+    "OR_NODE#007": [
+        "RS102",
+        "OR_NODE#006"
+    ]
+}

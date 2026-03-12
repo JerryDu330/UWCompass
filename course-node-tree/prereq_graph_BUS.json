@@ -1,0 +1,190 @@
+{
+    "BUS247W": [
+        "OR_NODE#021"
+    ],
+    "BUS252W": [
+        "OR_NODE#015"
+    ],
+    "BUS283W": [
+        "OR_NODE#005"
+    ],
+    "BUS288W": [
+        "BUS121W",
+        "OR_NODE#015"
+    ],
+    "BUS311W": [
+        "BUS121W",
+        "OR_NODE#015"
+    ],
+    "BUS354W": [
+        "BUS121W",
+        "OR_NODE#015",
+        "OR_NODE#018"
+    ],
+    "BUS362W": [
+        "BUS121W",
+        "OR_NODE#015",
+        "OR_NODE#023"
+    ],
+    "BUS381W": [
+        "BUS121W",
+        "OR_NODE#003",
+        "OR_NODE#000"
+    ],
+    "BUS393W": [
+        "OR_NODE#005",
+        "OR_NODE#007"
+    ],
+    "BUS398W": [
+        "BUS288W"
+    ],
+    "BUS412W": [
+        "BUS362W"
+    ],
+    "BUS432W": [
+        "BUS362W"
+    ],
+    "BUS435W": [
+        "OR_NODE#024"
+    ],
+    "BUS445W": [
+        "OR_NODE#013"
+    ],
+    "BUS452W": [
+        "BUS362W"
+    ],
+    "BUS455W": [
+        "OR_NODE#013"
+    ],
+    "BUS462W": [
+        "BUS121W",
+        "OR_NODE#015",
+        "OR_NODE#020"
+    ],
+    "BUS472W": [
+        "BUS362W"
+    ],
+    "BUS481W": [
+        "BUS121W",
+        "OR_NODE#003",
+        "OR_NODE#000"
+    ],
+    "BUS482W": [
+        "BUS362W"
+    ],
+    "BUS485W": [
+        "OR_NODE#013"
+    ],
+    "BUS491W": [
+        "BUS481W"
+    ],
+    "OR_NODE#000": [
+        "BUS111W",
+        "AFM131"
+    ],
+    "OR_NODE#001": [
+        "AFM272",
+        "ECON371",
+        "MATBUS371",
+        "ACTSC291"
+    ],
+    "OR_NODE#002": [
+        "ACTSC371",
+        "BUS383W",
+        "AFM271"
+    ],
+    "OR_NODE#003": [
+        "OR_NODE#002",
+        "OR_NODE#001"
+    ],
+    "OR_NODE#004": [
+        "BUS127W",
+        "BUS227W"
+    ],
+    "OR_NODE#005": [
+        "OR_NODE#004",
+        "AFM101"
+    ],
+    "OR_NODE#006": [
+        "BUS283W",
+        "BUS383W"
+    ],
+    "OR_NODE#007": [
+        "ECON371",
+        "OR_NODE#006"
+    ],
+    "OR_NODE#008": [
+        "BUS395W",
+        "BUS375W"
+    ],
+    "OR_NODE#009": [
+        "MSE432",
+        "MSCI432"
+    ],
+    "OR_NODE#010": [
+        "CO255",
+        "CO250",
+        "MSE331"
+    ],
+    "OR_NODE#011": [
+        "CO355",
+        "MSCI331",
+        "CO350"
+    ],
+    "OR_NODE#012": [
+        "OR_NODE#010",
+        "OR_NODE#011"
+    ],
+    "OR_NODE#013": [
+        "OR_NODE#008",
+        "OR_NODE#012",
+        "OR_NODE#009"
+    ],
+    "OR_NODE#014": [
+        "ARBUS101",
+        "AFM131"
+    ],
+    "OR_NODE#015": [
+        "BUS111W",
+        "OR_NODE#014"
+    ],
+    "OR_NODE#016": [
+        "MSE211",
+        "PSYCH238"
+    ],
+    "OR_NODE#017": [
+        "PSYCH338",
+        "BUS288W",
+        "MSCI211"
+    ],
+    "OR_NODE#018": [
+        "OR_NODE#016",
+        "OR_NODE#017"
+    ],
+    "OR_NODE#019": [
+        "ECON344",
+        "BUS352W"
+    ],
+    "OR_NODE#020": [
+        "ARBUS302",
+        "OR_NODE#019"
+    ],
+    "OR_NODE#021": [
+        "BUS127W",
+        "AFM101"
+    ],
+    "OR_NODE#022": [
+        "ECON344",
+        "BUS352W",
+        "MGMT344"
+    ],
+    "OR_NODE#023": [
+        "ARBUS302",
+        "OR_NODE#022"
+    ],
+    "OR_NODE#024": [
+        "OR_NODE#012",
+        "OR_NODE#009",
+        "BUS395W"
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "MATBUS371": [
+        "OR_NODE#003"
+    ],
+    "MATBUS470": [
+        "OR_NODE#005",
+        "OR_NODE#006"
+    ],
+    "MATBUS471": [
+        "ACTSC231",
+        "OR_NODE#002"
+    ],
+    "MATBUS472": [
+        "OR_NODE#002"
+    ],
+    "OR_NODE#000": [
+        "ACTSC391",
+        "ACTSC372",
+        "AFM275"
+    ],
+    "OR_NODE#001": [
+        "AFM372",
+        "BUS393W"
+    ],
+    "OR_NODE#002": [
+        "OR_NODE#001",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#003": [
+        "ACTSC221",
+        "ACTSC231"
+    ],
+    "OR_NODE#004": [
+        "ACTSC371",
+        "AFM372",
+        "BUS393W"
+    ],
+    "OR_NODE#005": [
+        "OR_NODE#000",
+        "OR_NODE#004"
+    ],
+    "OR_NODE#006": [
+        "STAT334",
+        "STAT333"
+    ]
+}

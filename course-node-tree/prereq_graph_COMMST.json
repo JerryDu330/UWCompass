@@ -1,0 +1,55 @@
+{
+    "COMMST225": [
+        "OR_NODE#000"
+    ],
+    "COMMST226": [
+        "COMMST101"
+    ],
+    "COMMST227": [
+        "OR_NODE#000"
+    ],
+    "COMMST228": [
+        "OR_NODE#001"
+    ],
+    "COMMST301": [
+        "COMMST201"
+    ],
+    "COMMST326": [
+        "OR_NODE#002"
+    ],
+    "COMMST399": [
+        "COMMST101"
+    ],
+    "COMMST401": [
+        "COMMST201"
+    ],
+    "COMMST402": [
+        "COMMST226"
+    ],
+    "COMMST420": [
+        "COMMST223"
+    ],
+    "COMMST440": [
+        "COMMST220"
+    ],
+    "COMMST471": [
+        "COMMST101"
+    ],
+    "OR_NODE#000": [
+        "EMLS102R",
+        "COMMST100",
+        "ENGL129R",
+        "EMLS101R",
+        "ENGL109",
+        "COMMST223",
+        "EMLS129R"
+    ],
+    "OR_NODE#001": [
+        "COMMST101",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#002": [
+        "COMMST102",
+        "THPERF102"
+    ]
+}

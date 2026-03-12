@@ -1,0 +1,21 @@
+{
+    "ITAL102": [
+        "ITAL101"
+    ],
+    "ITAL201": [
+        "OR_NODE#000"
+    ],
+    "ITAL202": [
+        "ITAL201"
+    ],
+    "ITAL251": [
+        "ITAL202"
+    ],
+    "ITAL396": [
+        "ITAL202"
+    ],
+    "OR_NODE#000": [
+        "ITAL102",
+        "ITAL155"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "ARBUS200": [
+        "ECON101"
+    ],
+    "ARBUS300": [
+        "ARBUS200"
+    ],
+    "ARBUS301": [
+        "OR_NODE#000"
+    ],
+    "ARBUS302": [
+        "ECON101"
+    ],
+    "ARBUS303": [
+        "OR_NODE#002"
+    ],
+    "ARBUS400": [
+        "ARBUS300"
+    ],
+    "OR_NODE#000": [
+        "ARBUS101",
+        "AFM132"
+    ],
+    "OR_NODE#001": [
+        "ARBUS302",
+        "ENBUS211",
+        "MGMT244"
+    ],
+    "OR_NODE#002": [
+        "ECON344",
+        "ENBUS311",
+        "OR_NODE#001"
+    ]
+}

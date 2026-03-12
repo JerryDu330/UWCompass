@@ -1,0 +1,461 @@
+{
+    "OR_NODE#000": [
+        "CS136",
+        "CS116",
+        "CS114",
+        "CS146"
+    ],
+    "OR_NODE#001": [
+        "PHYS112",
+        "PHYS122"
+    ],
+    "OR_NODE#002": [
+        "PHYS263",
+        "AMATH271"
+    ],
+    "OR_NODE#003": [
+        "AMATH261",
+        "OR_NODE#002"
+    ],
+    "OR_NODE#004": [
+        "PHYS334",
+        "AMATH373"
+    ],
+    "OR_NODE#005": [
+        "PHYS364",
+        "AMATH353",
+        "AMATH351"
+    ],
+    "OR_NODE#006": [
+        "PHYS364",
+        "AMATH353"
+    ],
+    "OR_NODE#007": [
+        "PHYS256",
+        "ECE404"
+    ],
+    "OR_NODE#008": [
+        "AMATH231",
+        "PMATH343",
+        "OR_NODE#004"
+    ],
+    "OR_NODE#009": [
+        "CHEM123",
+        "BIOL130",
+        "PHARM141",
+        "CHEM125",
+        "BIOL239",
+        "BIOL280",
+        "PHYS280",
+        "PHYS380"
+    ],
+    "OR_NODE#010": [
+        "PHYS112",
+        "PHYS122",
+        "ECE106"
+    ],
+    "OR_NODE#011": [
+        "OR_NODE#010",
+        "PHYS125"
+    ],
+    "OR_NODE#012": [
+        "PHYS280",
+        "BIOL280"
+    ],
+    "OR_NODE#013": [
+        "MATH148",
+        "MATH128",
+        "MATH118",
+        "MATH119",
+        "MATH138"
+    ],
+    "OR_NODE#014": [
+        "OR_NODE#005",
+        "PHYS342"
+    ],
+    "OR_NODE#015": [
+        "MATH116",
+        "MATH127",
+        "MATH137",
+        "MATH147",
+        "MATH117"
+    ],
+    "OR_NODE#016": [
+        "PHYS111",
+        "ECE105",
+        "PHYS121",
+        "PHYS115"
+    ],
+    "OR_NODE#017": [
+        "PHYS236",
+        "PHYS349"
+    ],
+    "OR_NODE#018": [
+        "MATH114",
+        "MATH136",
+        "PHYS249"
+    ],
+    "OR_NODE#019": [
+        "MATH138",
+        "MATH128",
+        "MATH148"
+    ],
+    "OR_NODE#020": [
+        "AMATH250",
+        "AMATH251",
+        "MATH228"
+    ],
+    "OR_NODE#021": [
+        "MATH108",
+        "OR_NODE#019"
+    ],
+    "OR_NODE#022": [
+        "CS467",
+        "PHYS334",
+        "CO481",
+        "PHYS467"
+    ],
+    "OR_NODE#023": [
+        "MATH227",
+        "AMATH231"
+    ],
+    "OR_NODE#024": [
+        "PHYS364",
+        "AMATH353",
+        "PHYS225"
+    ],
+    "OR_NODE#025": [
+        "AMATH332",
+        "AMATH353",
+        "AMATH351",
+        "PHYS365",
+        "PHYS364"
+    ],
+    "OR_NODE#026": [
+        "AMATH473",
+        "PHYS454"
+    ],
+    "OR_NODE#027": [
+        "PHYS236",
+        "PHYS249 (taken prior to fall 2025)"
+    ],
+    "OR_NODE#028": [
+        "PHYS267",
+        "OR_NODE#027"
+    ],
+    "OR_NODE#029": [
+        "MATH245",
+        "MATH115",
+        "MATH114",
+        "PHYS334",
+        "MATH235"
+    ],
+    "OR_NODE#030": [
+        "PHYS270L",
+        "MNS201L"
+    ],
+    "OR_NODE#031": [
+        "PHYS260L",
+        "OR_NODE#030"
+    ],
+    "OR_NODE#032": [
+        "PHYS236",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#033": [
+        "ECE105",
+        "PHYS121",
+        "PHYS115"
+    ],
+    "OR_NODE#034": [
+        "PHYS111",
+        "OR_NODE#033"
+    ],
+    "OR_NODE#035": [
+        "PHYS111",
+        "PHYS121"
+    ],
+    "OR_NODE#036": [
+        "PHYS242",
+        "PHYS122"
+    ],
+    "OR_NODE#037": [
+        "PHYS224",
+        "OR_NODE#036"
+    ],
+    "OR_NODE#038": [
+        "PHYS358",
+        "ME250",
+        "ECE403",
+        "CHEM254"
+    ],
+    "OR_NODE#039": [
+        "CHEM356",
+        "PHYS234",
+        "PHYS233"
+    ],
+    "OR_NODE#040": [
+        "MATH227",
+        "MATH237",
+        "MATH247"
+    ],
+    "OR_NODE#041": [
+        "PHYS242",
+        "PHYS234",
+        "AMATH271",
+        "PHYS256",
+        "PHYS275",
+        "PHYS358"
+    ],
+    "OR_NODE#042": [
+        "CHEM356",
+        "PHYS234"
+    ],
+    "OR_NODE#043": [
+        "SYDE283",
+        "PHYS242",
+        "CHEM209",
+        "NE241",
+        "AMATH373",
+        "PHYS234",
+        "AMATH231",
+        "ECE375",
+        "PHYS233",
+        "PHYS256",
+        "PHYS280",
+        "PHYS380",
+        "CHEM356"
+    ],
+    "OR_NODE#044": [
+        "ECE209",
+        "PHYS224",
+        "CS473",
+        "ECE370",
+        "NE232"
+    ],
+    "OR_NODE#045": [
+        "OR_NODE#044",
+        "OR_NODE#043"
+    ],
+    "OR_NODE#046": [
+        "SYDE112",
+        "OR_NODE#019",
+        "SYDE111"
+    ],
+    "OR_NODE#047": [
+        "CHEM123",
+        "CHEM125"
+    ],
+    "OR_NODE#048": [
+        "AMATH231",
+        "PHYS364"
+    ],
+    "OR_NODE#049": [
+        "PHYS111",
+        "PHYS121",
+        "PHYS115"
+    ],
+    "PHYS112": [
+        "OR_NODE#035"
+    ],
+    "PHYS122": [
+        "OR_NODE#034"
+    ],
+    "PHYS124": [
+        "OR_NODE#034"
+    ],
+    "PHYS175": [
+        "OR_NODE#049",
+        "OR_NODE#015"
+    ],
+    "PHYS225": [
+        "OR_NODE#015",
+        "OR_NODE#000",
+        "OR_NODE#001"
+    ],
+    "PHYS233": [
+        "OR_NODE#013",
+        "OR_NODE#011"
+    ],
+    "PHYS234": [
+        "OR_NODE#019",
+        "OR_NODE#018",
+        "PHYS122"
+    ],
+    "PHYS242": [
+        "OR_NODE#019",
+        "PHYS122",
+        "OR_NODE#023"
+    ],
+    "PHYS249": [
+        "OR_NODE#000",
+        "OR_NODE#001"
+    ],
+    "PHYS256": [
+        "OR_NODE#021",
+        "OR_NODE#001"
+    ],
+    "PHYS260A": [
+        "PHYS122L"
+    ],
+    "PHYS260B": [
+        "PHYS260A"
+    ],
+    "PHYS263": [
+        "PHYS122",
+        "OR_NODE#021",
+        "OR_NODE#020"
+    ],
+    "PHYS267": [
+        "OR_NODE#032",
+        "PHYS122",
+        "OR_NODE#040"
+    ],
+    "PHYS270L": [
+        "OR_NODE#007"
+    ],
+    "PHYS275": [
+        "OR_NODE#016"
+    ],
+    "PHYS334": [
+        "OR_NODE#042",
+        "OR_NODE#020",
+        "OR_NODE#040"
+    ],
+    "PHYS335": [
+        "PHYS358",
+        "OR_NODE#042",
+        "OR_NODE#048"
+    ],
+    "PHYS342": [
+        "PHYS242",
+        "OR_NODE#020"
+    ],
+    "PHYS349": [
+        "OR_NODE#028",
+        "PHYS234",
+        "PHYS242",
+        "OR_NODE#002"
+    ],
+    "PHYS358": [
+        "OR_NODE#040",
+        "OR_NODE#020",
+        "OR_NODE#001"
+    ],
+    "PHYS359": [
+        "OR_NODE#032",
+        "OR_NODE#038",
+        "OR_NODE#039"
+    ],
+    "PHYS360A": [
+        "OR_NODE#031"
+    ],
+    "PHYS360B": [
+        "PHYS360A"
+    ],
+    "PHYS363": [
+        "OR_NODE#032",
+        "OR_NODE#002",
+        "OR_NODE#040",
+        "OR_NODE#020"
+    ],
+    "PHYS364": [
+        "MATH227",
+        "OR_NODE#020",
+        "OR_NODE#032"
+    ],
+    "PHYS365": [
+        "MATH227",
+        "OR_NODE#020"
+    ],
+    "PHYS370L": [
+        "PHYS267",
+        "PHYS270L"
+    ],
+    "PHYS375": [
+        "OR_NODE#032",
+        "OR_NODE#041",
+        "OR_NODE#001"
+    ],
+    "PHYS380": [
+        "OR_NODE#047",
+        "OR_NODE#001"
+    ],
+    "PHYS383": [
+        "OR_NODE#012",
+        "OR_NODE#013",
+        "OR_NODE#001"
+    ],
+    "PHYS391": [
+        "OR_NODE#037"
+    ],
+    "PHYS393": [
+        "OR_NODE#024",
+        "OR_NODE#007"
+    ],
+    "PHYS394": [
+        "OR_NODE#007",
+        "OR_NODE#006"
+    ],
+    "PHYS395": [
+        "OR_NODE#009",
+        "OR_NODE#011"
+    ],
+    "PHYS396": [
+        "OR_NODE#045",
+        "OR_NODE#011",
+        "OR_NODE#046"
+    ],
+    "PHYS434": [
+        "OR_NODE#005",
+        "OR_NODE#004"
+    ],
+    "PHYS435": [
+        "PHYS335",
+        "PHYS359",
+        "OR_NODE#004"
+    ],
+    "PHYS437B": [
+        "PHYS437A"
+    ],
+    "PHYS442": [
+        "OR_NODE#014"
+    ],
+    "PHYS444": [
+        "PHYS363",
+        "OR_NODE#025",
+        "OR_NODE#004"
+    ],
+    "PHYS449": [
+        "OR_NODE#017"
+    ],
+    "PHYS454": [
+        "OR_NODE#008"
+    ],
+    "PHYS460A": [
+        "PHYS360A"
+    ],
+    "PHYS460B": [
+        "PHYS460A"
+    ],
+    "PHYS467": [
+        "OR_NODE#029"
+    ],
+    "PHYS468": [
+        "OR_NODE#022"
+    ],
+    "PHYS474": [
+        "OR_NODE#003",
+        "PHYS375"
+    ],
+    "PHYS475": [
+        "OR_NODE#003"
+    ],
+    "PHYS476": [
+        "OR_NODE#003",
+        "OR_NODE#023"
+    ],
+    "PHYS484": [
+        "OR_NODE#026"
+    ]
+}

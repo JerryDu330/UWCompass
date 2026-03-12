@@ -1,0 +1,288 @@
+{
+    "KIN121": [
+        "PHYS111",
+        "OR_NODE#005"
+    ],
+    "KIN121L": [
+        "PHYS111",
+        "OR_NODE#005",
+        "KIN104L"
+    ],
+    "KIN202": [
+        "BIOL273"
+    ],
+    "KIN202L": [
+        "BIOL273",
+        "KIN104L"
+    ],
+    "KIN204": [
+        "KIN202L",
+        "KIN202"
+    ],
+    "KIN204L": [
+        "KIN202L",
+        "KIN202"
+    ],
+    "KIN217": [
+        "OR_NODE#010"
+    ],
+    "KIN221": [
+        "KIN121L",
+        "KIN121"
+    ],
+    "KIN221L": [
+        "KIN121L",
+        "KIN121"
+    ],
+    "KIN232": [
+        "KIN104"
+    ],
+    "KIN255": [
+        "BIOL273",
+        "PSYCH101"
+    ],
+    "KIN255L": [
+        "BIOL273",
+        "KIN104L",
+        "PSYCH101"
+    ],
+    "KIN301": [
+        "OR_NODE#002"
+    ],
+    "KIN305": [
+        "OR_NODE#013"
+    ],
+    "KIN307": [
+        "KIN217",
+        "KIN202L",
+        "KIN202"
+    ],
+    "KIN308": [
+        "BIOL273"
+    ],
+    "KIN310": [
+        "BIOL273"
+    ],
+    "KIN312": [
+        "OR_NODE#000"
+    ],
+    "KIN314": [
+        "KIN204L",
+        "KIN204"
+    ],
+    "KIN320": [
+        "KIN221L",
+        "KIN221"
+    ],
+    "KIN326": [
+        "KIN221L",
+        "KIN221"
+    ],
+    "KIN327": [
+        "KIN221L",
+        "KIN221"
+    ],
+    "KIN340": [
+        "OR_NODE#004"
+    ],
+    "KIN342": [
+        "KIN146"
+    ],
+    "KIN343": [
+        "OR_NODE#008",
+        "OR_NODE#009"
+    ],
+    "KIN346": [
+        "OR_NODE#008",
+        "OR_NODE#009"
+    ],
+    "KIN351": [
+        "KIN204L",
+        "KIN204",
+        "KIN340"
+    ],
+    "KIN352": [
+        "OR_NODE#012"
+    ],
+    "KIN354": [
+        "OR_NODE#017"
+    ],
+    "KIN356": [
+        "OR_NODE#003"
+    ],
+    "KIN357": [
+        "OR_NODE#003"
+    ],
+    "KIN359": [
+        "OR_NODE#018"
+    ],
+    "KIN360": [
+        "OR_NODE#003"
+    ],
+    "KIN390": [
+        "OR_NODE#016"
+    ],
+    "KIN397": [
+        "KIN204L",
+        "KIN204"
+    ],
+    "KIN402": [
+        "OR_NODE#007"
+    ],
+    "KIN403": [
+        "KIN202"
+    ],
+    "KIN404": [
+        "BIOL273"
+    ],
+    "KIN406": [
+        "OR_NODE#015"
+    ],
+    "KIN407": [
+        "OR_NODE#007"
+    ],
+    "KIN415": [
+        "OR_NODE#000"
+    ],
+    "KIN416": [
+        "OR_NODE#000"
+    ],
+    "KIN418": [
+        "BIOL273"
+    ],
+    "KIN420": [
+        "KIN320"
+    ],
+    "KIN422": [
+        "KIN221L",
+        "KIN221"
+    ],
+    "KIN425": [
+        "KIN221L",
+        "KIN221"
+    ],
+    "KIN427": [
+        "KIN221L",
+        "KIN221"
+    ],
+    "KIN428": [
+        "KIN221L",
+        "KIN221"
+    ],
+    "KIN429": [
+        "OR_NODE#004"
+    ],
+    "KIN432": [
+        "KIN431"
+    ],
+    "KIN446": [
+        "KIN146",
+        "OR_NODE#009"
+    ],
+    "KIN453": [
+        "KIN354"
+    ],
+    "KIN455": [
+        "OR_NODE#003"
+    ],
+    "KIN459": [
+        "OR_NODE#006"
+    ],
+    "KIN491": [
+        "KIN340"
+    ],
+    "KIN492": [
+        "OR_NODE#016"
+    ],
+    "KIN493": [
+        "KIN422",
+        "KIN416",
+        "OR_NODE#006",
+        "OR_NODE#014"
+    ],
+    "OR_NODE#000": [
+        "BIOL273",
+        "PSYCH261"
+    ],
+    "OR_NODE#001": [
+        "BIOL301",
+        "BIOL201"
+    ],
+    "OR_NODE#002": [
+        "OR_NODE#001",
+        "KIN100L",
+        "KIN100"
+    ],
+    "OR_NODE#003": [
+        "KIN255",
+        "PSYCH261"
+    ],
+    "OR_NODE#004": [
+        "BIOL301",
+        "KIN100L",
+        "KIN100",
+        "BIOL201"
+    ],
+    "OR_NODE#005": [
+        "MATH127",
+        "MATH124"
+    ],
+    "OR_NODE#006": [
+        "KIN359",
+        "KIN456"
+    ],
+    "OR_NODE#007": [
+        "KIN308",
+        "KIN408"
+    ],
+    "OR_NODE#008": [
+        "KIN146",
+        "BIOL373"
+    ],
+    "OR_NODE#009": [
+        "CHEM233",
+        "CHEM237",
+        "HLTH217",
+        "KIN217"
+    ],
+    "OR_NODE#010": [
+        "CHEM120",
+        "CHEM121"
+    ],
+    "OR_NODE#011": [
+        "SOC101R",
+        "SOC101",
+        "HEALTH107",
+        "GSJ101",
+        "GSJ102"
+    ],
+    "OR_NODE#012": [
+        "AHS107",
+        "OR_NODE#011"
+    ],
+    "OR_NODE#013": [
+        "BIOL273",
+        "KIN100",
+        "BIOL201"
+    ],
+    "OR_NODE#014": [
+        "KIN242",
+        "KIN312"
+    ],
+    "OR_NODE#015": [
+        "BME285",
+        "BIOL130"
+    ],
+    "OR_NODE#016": [
+        "KIN314",
+        "KIN414"
+    ],
+    "OR_NODE#017": [
+        "PSYCH101R",
+        "PSYCH101"
+    ],
+    "OR_NODE#018": [
+        "KIN255",
+        "PSYCH306"
+    ]
+}

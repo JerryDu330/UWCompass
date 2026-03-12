@@ -1,0 +1,31 @@
+{
+    "ENBUS202": [
+        "OR_NODE#000"
+    ],
+    "ENBUS204": [
+        "ENBUS102"
+    ],
+    "ENBUS304": [
+        "ENBUS204"
+    ],
+    "ENBUS308": [
+        "ENBUS204",
+        "ENBUS202"
+    ],
+    "ENBUS402B": [
+        "ENBUS402A"
+    ],
+    "ENBUS403B": [
+        "ENBUS403A"
+    ],
+    "ENBUS406": [
+        "ENBUS204"
+    ],
+    "ENBUS409B": [
+        "ENBUS409A"
+    ],
+    "OR_NODE#000": [
+        "ENBUS102",
+        "SFM101"
+    ]
+}

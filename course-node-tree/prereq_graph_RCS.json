@@ -1,0 +1,70 @@
+{
+    "OR_NODE#000": [
+        "RCS102",
+        "GRK102"
+    ],
+    "OR_NODE#001": [
+        "RS102",
+        "OR_NODE#000"
+    ],
+    "OR_NODE#002": [
+        "SOC101",
+        "SOC101R"
+    ],
+    "OR_NODE#003": [
+        "RCS223",
+        "GRK201"
+    ],
+    "OR_NODE#004": [
+        "RS223",
+        "OR_NODE#003"
+    ],
+    "OR_NODE#005": [
+        "RCS101",
+        "GRK101"
+    ],
+    "OR_NODE#006": [
+        "RS101",
+        "OR_NODE#005"
+    ],
+    "OR_NODE#007": [
+        "CLAS104",
+        "CLAS201",
+        "CLAS100",
+        "CLAS202"
+    ],
+    "OR_NODE#008": [
+        "RCS250",
+        "RCS255",
+        "RCS240",
+        "HIST235"
+    ],
+    "OR_NODE#009": [
+        "RS250",
+        "RS255",
+        "RS151",
+        "RS240"
+    ],
+    "OR_NODE#010": [
+        "OR_NODE#008",
+        "OR_NODE#009"
+    ],
+    "RCS102": [
+        "OR_NODE#006"
+    ],
+    "RCS223": [
+        "OR_NODE#001"
+    ],
+    "RCS224": [
+        "OR_NODE#004"
+    ],
+    "RCS262": [
+        "OR_NODE#002"
+    ],
+    "RCS315": [
+        "OR_NODE#007"
+    ],
+    "RCS354": [
+        "OR_NODE#010"
+    ]
+}

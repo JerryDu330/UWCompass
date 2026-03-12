@@ -1,0 +1,173 @@
+{
+    "CIVE105": [
+        "CIVE104"
+    ],
+    "CIVE204": [
+        "CIVE105"
+    ],
+    "CIVE205": [
+        "CIVE204",
+        "CIVE221"
+    ],
+    "CIVE221": [
+        "MATH118"
+    ],
+    "CIVE222": [
+        "CIVE221"
+    ],
+    "CIVE224": [
+        "MATH116"
+    ],
+    "CIVE230": [
+        "OR_NODE#000"
+    ],
+    "CIVE241": [
+        "OR_NODE#007"
+    ],
+    "CIVE280": [
+        "CIVE221",
+        "CIVE105"
+    ],
+    "CIVE303": [
+        "CIVE205"
+    ],
+    "CIVE306": [
+        "CIVE205"
+    ],
+    "CIVE310": [
+        "CIVE205"
+    ],
+    "CIVE332": [
+        "OR_NODE#010",
+        "OR_NODE#009",
+        "OR_NODE#011"
+    ],
+    "CIVE341": [
+        "OR_NODE#013"
+    ],
+    "CIVE343": [
+        "CIVE224",
+        "CIVE341"
+    ],
+    "CIVE353": [
+        "OR_NODE#008"
+    ],
+    "CIVE354": [
+        "CIVE353"
+    ],
+    "CIVE375": [
+        "CHE102",
+        "OR_NODE#001"
+    ],
+    "CIVE382": [
+        "CIVE224",
+        "CIVE280",
+        "CIVE105"
+    ],
+    "CIVE392": [
+        "MATH116"
+    ],
+    "CIVE413": [
+        "OR_NODE#003"
+    ],
+    "CIVE414": [
+        "OR_NODE#003"
+    ],
+    "CIVE415": [
+        "CIVE413",
+        "CIVE414",
+        "OR_NODE#003"
+    ],
+    "CIVE422": [
+        "OR_NODE#012"
+    ],
+    "CIVE440": [
+        "CIVE241"
+    ],
+    "CIVE460": [
+        "OR_NODE#006"
+    ],
+    "CIVE505": [
+        "OR_NODE#005",
+        "OR_NODE#004"
+    ],
+    "CIVE512": [
+        "CIVE414",
+        "OR_NODE#003",
+        "OR_NODE#002"
+    ],
+    "CIVE542": [
+        "CIVE353"
+    ],
+    "CIVE554": [
+        "CIVE353",
+        "CIVE354"
+    ],
+    "CIVE583": [
+        "CIVE382"
+    ],
+    "OR_NODE#000": [
+        "CIVE224",
+        "GEOE224"
+    ],
+    "OR_NODE#001": [
+        "CIVE280",
+        "GEOE280"
+    ],
+    "OR_NODE#002": [
+        "CIVE265",
+        "AE265"
+    ],
+    "OR_NODE#003": [
+        "CIVE310",
+        "AE310"
+    ],
+    "OR_NODE#004": [
+        "CIVE222",
+        "AE223"
+    ],
+    "OR_NODE#005": [
+        "CIVE303",
+        "AE303"
+    ],
+    "OR_NODE#006": [
+        "SYDE286",
+        "ME219",
+        "CIVE105",
+        "AE105"
+    ],
+    "OR_NODE#007": [
+        "GEOE224",
+        "ENVE224"
+    ],
+    "OR_NODE#008": [
+        "CIVE153",
+        "EARTH121",
+        "EARTH121L"
+    ],
+    "OR_NODE#009": [
+        "GEOE221",
+        "CIVE221",
+        "AE221"
+    ],
+    "OR_NODE#010": [
+        "GEOE223",
+        "CIVE222",
+        "AE223"
+    ],
+    "OR_NODE#011": [
+        "CIVE224",
+        "GEOE224",
+        "AE224"
+    ],
+    "OR_NODE#012": [
+        "GEOE223",
+        "CIVE222",
+        "AE223",
+        "ENVE223"
+    ],
+    "OR_NODE#013": [
+        "CIVE224",
+        "ENVE224"
+    ]
+}
