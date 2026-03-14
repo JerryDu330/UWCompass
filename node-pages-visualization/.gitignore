@@ -1,9 +1,3 @@
-
-*.json
-Courses/
-.git/
-.DS_Store
-
 node_modules/
 datasets/
 
@@ -11,3 +5,5 @@ dist/
 .vite/
 
 .env
+
+.DS_Store

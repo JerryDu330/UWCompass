@@ -1,0 +1,84 @@
+/* App.css */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.sidebar {
+  width: 240px;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #334155;
+}
+
+.sidebar-header {
+  padding: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #334155;
+  color: #3b82f6;
+}
+
+.course-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.course-item {
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #94a3b8;
+}
+
+.course-item:hover {
+  background: #334155;
+  color: white;
+}
+
+.course-item.active {
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+}
+
+.canvas-container {
+  flex: 1;
+  position: relative;
+  height: 100vh;
+  background: #f8fafc;
+}
+
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Force ReactFlow edges to be visible and above nodes */
+.react-flow__edges {
+  z-index: 5000 !important;
+}
+
+.react-flow__edge-path {
+  stroke-linecap: round;
+}
+
+.react-flow__node {
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* When a trace is active, slightly blur the non-active nodes */
+.react-flow__node:not([style*="opacity: 1"]) {
+  filter: blur(4px);
+}
