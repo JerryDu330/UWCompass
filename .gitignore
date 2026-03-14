@@ -1,11 +1,10 @@
-
-*.json
-Courses/
 .git/
+*.json
 .DS_Store
 
 node_modules/
 datasets/
+data/
 
 dist/
 .vite/
