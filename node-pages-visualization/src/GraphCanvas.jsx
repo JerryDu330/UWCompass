@@ -12,46 +12,48 @@ import 'reactflow/dist/style.css';
 const elk = new ELK();
 
 const THEME = {
-  nonSubject: { bg: '#94a3b8', border: '#64748b' },
+  nonSubject: { bg: '#cbd5e1', border: '#94a3b8' },
   levels: {
-    '1': { bg: '#6366f1', border: '#4338ca' },
-    '2': { bg: '#10b981', border: '#059669' },
-    '3': { bg: '#f59e0b', border: '#d97706' },
+    '1': { bg: '#5568ff', border: '#3b4cff' }, 
+    '2': { bg: '#10b981', border: '#059669' }, 
+    '3': { bg: '#f59e0b', border: '#d97706' }, 
     '4': { bg: '#ef4444', border: '#dc2626' },
   },
-  glow: {
-    direct: '0 0 80px 25px rgba(255, 215, 0, 0.9)', 
-    indirect: '0 0 60px 10px rgba(56, 189, 248, 0.5)', 
+  traceColors: {
+    direct: '#5a08de',  
+    indirect: '#38bdf8',
   }
 };
 
 const CustomCourseNode = ({ data }) => {
-  const shadow = data.isDirect 
-    ? THEME.glow.direct 
+  const traceBorder = data.isDirect 
+    ? `30px solid ${THEME.traceColors.direct}`    // Direct: Thick Gold Border
     : data.isIndirect 
-      ? THEME.glow.indirect 
-      : '0 15px 20px -5px rgba(0,0,0,0.1)';
+      ? `30px solid ${THEME.traceColors.indirect}` // Indirect: Thick Blue Border
+      : `12px solid ${data.borderColor}`;
+
+  const defaultShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
 
   return (
     <div style={{
       background: data.color,
-      border: `12px solid ${data.borderColor}`,
-      color: '#fff',
+      border: traceBorder,
+      color: data.textColor || '#fff',
       boxSizing: 'border-box',
-      borderRadius: '30px',
+      borderRadius: '40px',
       padding: '20px',
       width: 1200,
       height: 300,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      boxShadow: shadow,
+      boxShadow: defaultShadow,
       fontSize: '180px',
       fontWeight: '900',
       fontFamily: 'Inter, system-ui, sans-serif',
       textShadow: '2px 4px 8px rgba(0,0,0,0.2)',
-      transition: 'all 0.3s ease',
-      transform: data.isDirect ? 'scale(1.05)' : 'scale(1)',
+      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+      transform: data.isDirect ? 'scale(1.02)' : 'scale(1)',
     }}>
       {data.label}
     </div>
@@ -183,7 +185,7 @@ const GraphCanvas = ({ data, subject }) => {
   });
 
   return (
-    <div style={{ width: '100%', height: '100%', background: '#020617' }}>
+    <div style={{ width: '100%', height: '100%', background: '#f8faff' }}>
       <ReactFlow
         nodes={finalNodes}
         edges={edges.map(e => ({ ...e, hidden: true }))}
@@ -196,7 +198,7 @@ const GraphCanvas = ({ data, subject }) => {
         maxZoom={1.5}
         nodesDraggable={false}
       >
-        <Background variant="dots" gap={80} size={2} color="#1e293b" />
+        <Background variant="dots" gap={80} size={2} color="#cbd5e1" />
         <Controls />
       </ReactFlow>
     </div>

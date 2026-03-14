@@ -1,27 +1,41 @@
 /* App.css */
+
+@keyframes fadeInPage {
+  from { 
+    opacity: 0; 
+    transform: scale(0.98); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
 .app-container {
   display: flex;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  animation: fadeInPage 0.6s ease-out forwards; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .sidebar {
   width: 240px;
-  background: #1e293b;
-  color: white;
+  background: #ffffff; /* Was #1e293b */
+  color: #1a1a1a;      /* Was white */
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #334155;
+  border-right: 1px solid rgba(0,0,0,0.05); /* Softer border */
 }
 
+/* Change Sidebar Header text to match Logo */
 .sidebar-header {
   padding: 20px;
   font-weight: 800;
   letter-spacing: 1px;
-  border-bottom: 1px solid #334155;
-  color: #3b82f6;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: #5568ff; /* Match your Logo color */
 }
 
 .course-list {
@@ -36,18 +50,19 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
-  color: #94a3b8;
+  color: #666;
 }
 
 .course-item:hover {
-  background: #334155;
-  color: white;
+  background: #e2e7f3; /* Light blue tint */
+  color: #5568ff;
 }
 
 .course-item.active {
-  background: #3b82f6;
+  background: #5568ff;
   color: white;
   font-weight: 600;
+  box-shadow: 0 4px 12px rgba(85, 104, 255, 0.3);
 }
 
 .canvas-container {
@@ -62,6 +77,39 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.back-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: calc(100% - 32px);
+  margin: 16px;
+  padding: 12px;
+  background: #e0e5f6;
+  border: 2px solid #e0e5f6;
+  border-radius: 12px;
+  color: #5568ff;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.back-home-btn:hover {
+  background: #5568ff; 
+  color: white;
+  border-color: #5568ff;
+  transform: translateX(-4px); /* Moves slightly left on hover */
+  box-shadow: 0 0 20px rgba(85, 104, 255, 0.2);
+}
+
+.back-home-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.back-home-btn:hover svg {
+  transform: scale(1.2);
 }
 
 
@@ -81,4 +129,8 @@
 /* When a trace is active, slightly blur the non-active nodes */
 .react-flow__node:not([style*="opacity: 1"]) {
   filter: blur(4px);
+}
+
+.react-flow__background {
+  opacity: 0.15; /* Makes the grid very subtle */
 }
