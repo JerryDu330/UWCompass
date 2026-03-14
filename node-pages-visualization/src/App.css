@@ -53,5 +53,32 @@
 .canvas-container {
   flex: 1;
   position: relative;
+  height: 100vh;
   background: #f8fafc;
+}
+
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Force ReactFlow edges to be visible and above nodes */
+.react-flow__edges {
+  z-index: 5000 !important;
+}
+
+.react-flow__edge-path {
+  stroke-linecap: round;
+}
+
+.react-flow__node {
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* When a trace is active, slightly blur the non-active nodes */
+.react-flow__node:not([style*="opacity: 1"]) {
+  filter: blur(4px);
 }

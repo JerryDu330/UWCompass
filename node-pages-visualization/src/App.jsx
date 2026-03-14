@@ -4,29 +4,26 @@ import GraphCanvas from './GraphCanvas';
 import './App.css';
 
 export default function App() {
-  const [subjectFiles, setSubjectFiles] = useState([]); // Start empty
-  const [selected, setSelected] = useState('');        // Start empty
+  const [subjectFiles, setSubjectFiles] = useState([]);
+  const [selected, setSelected] = useState('');
   const [data, setData] = useState(null);
 
-  // Phase 1: Fetch the list of subjects on mount
   useEffect(() => {
     fetch('/subjects.json')
       .then(res => res.json())
       .then(list => {
         setSubjectFiles(list);
-        setSelected(list[0]); // Set default selection once list is loaded
+        if (list.length > 0) setSelected(list[0]);
       })
-      .catch(err => console.error("Error loading subject list:", err));
+      .catch(err => console.error(err));
   }, []);
 
   useEffect(() => {
     if (!selected) return;
-    
-    // Fetch from the public/data folder
     fetch(`/data/${selected}.json`)
       .then(res => res.json())
       .then(json => setData(json))
-      .catch(err => console.error("Load error:", err));
+      .catch(err => console.error(err));
   }, [selected]);
 
   return (
@@ -46,8 +43,9 @@ export default function App() {
         </div>
       </aside>
       <main className="canvas-container">
+        {/* Only ONE provider here */}
         <ReactFlowProvider>
-          <GraphCanvas data={data} />
+          {data && <GraphCanvas data={data} subject={selected} />}
         </ReactFlowProvider>
       </main>
     </div>

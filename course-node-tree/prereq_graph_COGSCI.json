@@ -1,9 +1,0 @@
-{
-    "COGSCI300": [
-        "OR_NODE#000"
-    ],
-    "OR_NODE#000": [
-        "PHIL256",
-        "PSYCH256"
-    ]
-}

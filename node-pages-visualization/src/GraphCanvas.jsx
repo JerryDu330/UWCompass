@@ -1,11 +1,9 @@
-import React, { useMemo, useEffect, useState, useCallback, useRef } from 'react';
+import React, { useMemo, useEffect, useState, useCallback } from 'react';
 import ReactFlow, {
   Background,
   Controls,
-  MiniMap,
   useNodesState,
   useEdgesState,
-  MarkerType,
   useReactFlow,
 } from 'reactflow';
 import ELK from 'elkjs';
@@ -13,208 +11,193 @@ import 'reactflow/dist/style.css';
 
 const elk = new ELK();
 
-const elkOptions = {
-  'elk.algorithm': 'layered',
-  'elk.direction': 'RIGHT',
-  'elk.aspectRatio': '2.0',
-  'elk.separateConnectedComponents': 'true',
-  'elk.spacing.componentComponent': '30',
-  'elk.componentPacking.strategy': 'RECT_PACKING',
-  'elk.layered.spacing.nodeNodeLayered': '200',
-  'elk.spacing.nodeNode': '50',
-  'elk.edgeRouting': 'ORTHOGONAL',
-  'elk.layered.nodePlacement.strategy': 'BRANDES_KOEPF',
+const THEME = {
+  nonSubject: { bg: '#94a3b8', border: '#64748b' },
+  levels: {
+    '1': { bg: '#6366f1', border: '#4338ca' },
+    '2': { bg: '#10b981', border: '#059669' },
+    '3': { bg: '#f59e0b', border: '#d97706' },
+    '4': { bg: '#ef4444', border: '#dc2626' },
+  },
+  glow: {
+    direct: '0 0 80px 25px rgba(255, 215, 0, 0.9)', 
+    indirect: '0 0 60px 10px rgba(56, 189, 248, 0.5)', 
+  }
 };
 
-const CustomCourseNode = ({ data }) => (
-  <div style={{
-    background: data.color || '#3b82f6',
-    border: `2px solid ${data.borderColor || '#1d4ed8'}`,
-    color: '#fff',
-    borderRadius: '10px',
-    padding: '10px',
-    width: 950,
-    height: 300,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '10px 10px 0px rgba(0,0,0,0.1)',
-    fontSize: '150px',
-    fontWeight: 'bold'
-  }}>
-    {data.label}
-  </div>
-);
+const CustomCourseNode = ({ data }) => {
+  const shadow = data.isDirect 
+    ? THEME.glow.direct 
+    : data.isIndirect 
+      ? THEME.glow.indirect 
+      : '0 15px 20px -5px rgba(0,0,0,0.1)';
+
+  return (
+    <div style={{
+      background: data.color,
+      border: `12px solid ${data.borderColor}`,
+      color: '#fff',
+      boxSizing: 'border-box',
+      borderRadius: '30px',
+      padding: '20px',
+      width: 1200,
+      height: 300,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: shadow,
+      fontSize: '180px',
+      fontWeight: '900',
+      fontFamily: 'Inter, system-ui, sans-serif',
+      textShadow: '2px 4px 8px rgba(0,0,0,0.2)',
+      transition: 'all 0.3s ease',
+      transform: data.isDirect ? 'scale(1.05)' : 'scale(1)',
+    }}>
+      {data.label}
+    </div>
+  );
+};
 
 const nodeTypes = {
   courseNode: CustomCourseNode,
-  orNode: () => <div style={{ width: 1, height: 1, background: '#94a3b8', borderRadius: '50%' }} />,
+  orNode: () => <div style={{ width: 15, height: 15, background: '#94a3b8', borderRadius: '50%' }} />,
 };
 
-const GraphCanvas = ({ data }) => {
+const GraphCanvas = ({ data, subject }) => {
   const { fitView } = useReactFlow();
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [hoveredNode, setHoveredNode] = useState(null);
-  const currentDataRef = useRef(null);
 
   const getTrace = useCallback((nodeId, allEdges) => {
-    const activeNodes = new Set([nodeId]);
-    const activeEdges = new Set();
-    const find = (id, dir) => {
+    const directNodes = new Set([nodeId]);
+    const indirectNodes = new Set();
+
+    // 1. GOLD LOGIC (Direct Enablement/Requirement)
+    allEdges.forEach(e => {
+      // If hover A (Dependent), turn its direct source (B or OR_NODE) Gold
+      if (e.target === nodeId) {
+        directNodes.add(e.source);
+      }
+      // If hover B (Prereq), find what it unlocks (A). Jump through OR_NODE if necessary.
+      if (e.source === nodeId) {
+        directNodes.add(e.target);
+        if (e.target.includes('OR_NODE')) {
+          allEdges.forEach(subE => {
+            if (subE.source === e.target) directNodes.add(subE.target);
+          });
+        }
+      }
+    });
+
+    // 2. BLUE LOGIC (Full Chain - show all relevant courses)
+    const traverse = (currId, dir) => {
       allEdges.forEach(e => {
-        const match = dir === 'up' ? e.target === id : e.source === id;
+        const match = dir === 'up' ? e.target === currId : e.source === currId;
         const next = dir === 'up' ? e.source : e.target;
-        if (match && !activeEdges.has(e.id)) {
-          activeEdges.add(e.id); activeNodes.add(next); find(next, dir);
+        if (match && !indirectNodes.has(next)) {
+          // If it's not already Gold, make it Blue
+          if (!directNodes.has(next)) {
+            indirectNodes.add(next);
+          }
+          traverse(next, dir);
         }
       });
     };
-    find(nodeId, 'up'); find(nodeId, 'down');
-    return { activeNodes, activeEdges };
+
+    traverse(nodeId, 'up');
+    traverse(nodeId, 'down');
+
+    return { directNodes, indirectNodes };
   }, []);
 
   useEffect(() => {
-    // Only run if data exists and is different from the last loaded data
-    if (!data || data === currentDataRef.current) return;
-
+    if (!data) return;
     const allIds = new Set();
-    Object.entries(data).forEach(([target, prereqs]) => {
-      allIds.add(target); 
-      prereqs.forEach(p => allIds.add(p));
-    });
+    Object.entries(data).forEach(([t, p]) => { allIds.add(t); p.forEach(id => allIds.add(id)); });
 
-    const initialNodes = [];
-    const initialEdges = [];
-    const colorMap = { 
-      '1': { bg: '#2563eb', border: '#1e3a8a' }, 
-      '2': { bg: '#059669', border: '#064e3b' }, 
-      '3': { bg: '#d97706', border: '#78350f' }, 
-      '4': { bg: '#dc2626', border: '#7f1d1d' } 
-    };
-
-    allIds.forEach(id => {
-      const isOr = id.startsWith('OR_NODE');
-      const level = id.match(/\d/)?.[0] || '1';
-      const colors = colorMap[level] || colorMap['1'];
-      initialNodes.push({
+    const initialNodes = Array.from(allIds).map(id => {
+      const isOr = id.includes('OR_NODE');
+      const lvl = id.match(/[1-4]/)?.[0] || '1';
+      const isMain = subject && id.toUpperCase().includes(subject.toUpperCase());
+      const theme = isMain ? (THEME.levels[lvl] || THEME.levels['1']) : THEME.nonSubject;
+      return {
         id,
         type: isOr ? 'orNode' : 'courseNode',
-        data: { label: isOr ? '' : id, color: colors.bg, borderColor: colors.border },
+        data: { label: isOr ? '' : id, color: theme.bg, borderColor: theme.border, level: lvl },
         position: { x: 0, y: 0 },
-      });
+      };
     });
 
-    Object.entries(data).forEach(([targetId, prereqs]) => {
-      prereqs.forEach(sourceId => {
-        const isOrLink = sourceId.startsWith('OR_NODE') || targetId.startsWith('OR_NODE');
-        initialEdges.push({
-          id: `e-${sourceId}-${targetId}`,
-          source: sourceId,
-          target: targetId,
-          type: 'step',
-          style: { 
-            stroke: isOrLink ? '#cbd5e1' : '#1e293b', 
-            strokeWidth: isOrLink ? 1.5 : 3.5,
-            strokeDasharray: isOrLink ? '5,5' : '0' 
-          },
-          markerEnd: { type: MarkerType.ArrowClosed, color: isOrLink ? '#cbd5e1' : '#1e293b' }
-        });
+    const initialEdges = [];
+    Object.entries(data).forEach(([target, prereqs]) => {
+      prereqs.forEach(source => {
+        initialEdges.push({ id: `e-${source}-${target}`, source, target });
       });
     });
 
     const runLayout = async () => {
       const elkGraph = {
         id: 'root',
-        layoutOptions: elkOptions,
+        layoutOptions: {
+          'elk.algorithm': 'layered',
+          'elk.direction': 'RIGHT',
+          'elk.spacing.nodeNode': '60',
+          'elk.layered.spacing.nodeNodeLayered': '600',
+        },
         children: initialNodes.map(n => ({
           id: n.id,
-          width: n.type === 'orNode' ? 1 : 950,
-          height: n.type === 'orNode' ? 1 : 300
+          width: n.type === 'orNode' ? 20 : 1210,
+          height: n.type === 'orNode' ? 20 : 310,
+          layoutOptions: { 'elk.layered.layering.layerIndex': n.data.level }
         })),
         edges: initialEdges.map(e => ({ id: e.id, sources: [e.source], targets: [e.target] }))
       };
-
-      try {
-        const layouted = await elk.layout(elkGraph);
-        setNodes(initialNodes.map(node => {
-          const elkNode = layouted.children.find(n => n.id === node.id);
-          return { ...node, position: { x: elkNode.x, y: elkNode.y } };
-        }));
-        setEdges(initialEdges);
-        currentDataRef.current = data; // Mark this data as processed
-        setTimeout(() => fitView({ padding: 0.2, duration: 800 }), 100);
-      } catch (e) { console.error("ELK Layout Error:", e); }
+      const layouted = await elk.layout(elkGraph);
+      setNodes(initialNodes.map(node => {
+        const n = layouted.children.find(l => l.id === node.id);
+        return { ...node, position: { x: n.x + 5, y: n.y + 5 } };
+      }));
+      setEdges(initialEdges);
+      setTimeout(() => fitView({ padding: 0.5, duration: 800, maxZoom: 0.2 }), 200);
     };
-
     runLayout();
-  }, [data, setNodes, setEdges, fitView]);
+  }, [data, subject, setNodes, setEdges, fitView]);
 
   const trace = useMemo(() => 
     hoveredNode ? getTrace(hoveredNode, edges) : null, 
     [hoveredNode, edges, getTrace]
   );
 
-  const finalNodes = nodes.map(n => ({
-    ...n,
-    style: { 
-      opacity: !trace || trace.activeNodes.has(n.id) ? 1 : 0.1,
-      transition: 'opacity 0.2s',
-      zIndex: trace?.activeNodes.has(n.id) ? 10 : 1,
-    }
-  }));
-
-  const finalEdges = edges.map(e => {
-    const isActive = trace?.activeEdges.has(e.id);
+  const finalNodes = nodes.map(n => {
+    const isDirect = trace?.directNodes.has(n.id);
+    const isIndirect = trace?.indirectNodes.has(n.id);
     return {
-      ...e,
-      hidden: true,
+      ...n,
+      data: { ...n.data, isDirect, isIndirect },
       style: { 
-        ...e.style, 
-        stroke: isActive ? '#3b82f6' : e.style.stroke, 
-        strokeWidth: isActive ? 5 : e.style.strokeWidth,
-        opacity: !trace || isActive ? 1 : 0.1
-      },
-      zIndex: isActive ? 20 : 1
+        opacity: !trace || isDirect || isIndirect ? 1 : 0.08,
+        zIndex: isDirect ? 50 : (isIndirect ? 20 : 1),
+      }
     };
   });
 
-  // const finalEdges = edges.map(e => {
-  //   const isActive = trace?.activeEdges.has(e.id);
-  //   return {
-  //     ...e,
-  //     animated: isActive, // 激活时开启动画
-  //     style: { 
-  //       ...e.style, 
-  //       stroke: isActive ? '#3b82f6' : e.style.stroke, 
-  //       strokeWidth: isActive ? 4 : e.style.strokeWidth,
-  //       opacity: !trace || isActive ? 1 : 0.1,
-  //       transition: 'stroke 0.3s, stroke-width 0.3s'
-  //     },
-  //     markerEnd: { 
-  //       ...e.markerEnd, 
-  //       color: isActive ? '#3b82f6' : e.markerEnd.color 
-  //     },
-  //     zIndex: isActive ? 20 : 1
-  //   };
-  // });
-
   return (
-    <div style={{ width: '100%', height: '100%', background: '#fff' }}>
+    <div style={{ width: '100%', height: '100%', background: '#020617' }}>
       <ReactFlow
         nodes={finalNodes}
-        edges={finalEdges}
+        edges={edges.map(e => ({ ...e, hidden: true }))}
         nodeTypes={nodeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onNodeMouseEnter={(_, n) => setHoveredNode(n.id)}
+        onNodeMouseEnter={(_, n) => !n.id.includes('OR_NODE') && setHoveredNode(n.id)}
         onNodeMouseLeave={() => setHoveredNode(null)}
-        minZoom={0.048}
+        minZoom={0.01}
+        maxZoom={1.5}
+        nodesDraggable={false}
       >
-        <Background variant="lines" gap={20} color="#f1f5f9" />
+        <Background variant="dots" gap={80} size={2} color="#1e293b" />
         <Controls />
-        <MiniMap />
       </ReactFlow>
     </div>
   );
