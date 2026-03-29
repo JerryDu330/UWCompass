@@ -1,4 +1,5 @@
-import React, { useMemo, useEffect, useState, useCallback } from 'react';
+import { useMemo, useEffect, useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ReactFlow, {
   Background,
   Controls,
@@ -62,6 +63,7 @@ const CustomCourseNode = ({ data }) => {
       fontFamily: 'Inter, system-ui, sans-serif',
       textShadow: '2px 4px 8px rgba(0,0,0,0.2)',
       transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      cursor: 'pointer',
       ...glowStyle,
     }}>
       {data.label}
@@ -161,15 +163,22 @@ const HoverPanel = ({ nodeId }) => {
         <span style={{ fontSize: 12, color: '#475569' }}>Full prerequisite &amp; dependent chain</span>
       </div>
       <div style={{ fontSize: 11, color: '#94a3b8' }}>Other nodes are faded out.</div>
+      <div style={{ borderTop: '1px solid rgba(0,0,0,0.05)', margin: '8px 0 6px' }} />
+      <div style={{ fontSize: 11, color: '#5568ff', fontWeight: 500 }}>Click to explore course tree →</div>
     </div>
   );
 };
 
 const GraphCanvas = ({ data, subject }) => {
   const { fitView } = useReactFlow();
+  const navigate = useNavigate();
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [hoveredNode, setHoveredNode] = useState(null);
+
+  const onNodeClick = useCallback((_, node) => {
+    if (!node.id.includes('OR_NODE')) navigate(`/course/${node.id}`);
+  }, [navigate]);
 
   const getTrace = useCallback((nodeId, allEdges) => {
     const directNodes = new Set([nodeId]);
@@ -281,6 +290,7 @@ const GraphCanvas = ({ data, subject }) => {
         nodeTypes={nodeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
+        onNodeClick={onNodeClick}
         onNodeMouseEnter={(_, n) => !n.id.includes('OR_NODE') && setHoveredNode(n.id)}
         onNodeMouseLeave={() => setHoveredNode(null)}
         minZoom={0.01}

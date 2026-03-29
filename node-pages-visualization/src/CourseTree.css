@@ -1,0 +1,339 @@
+/* CourseTree.css — styles for CourseTreePage and CourseTreeCanvas */
+
+/* ── Course tree page layout ─────────────────────────────────────────────── */
+
+.ct-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: #f8faff;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Header bar ──────────────────────────────────────────────────────────── */
+
+.ct-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  height: 52px;
+  flex-shrink: 0;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+
+.ct-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  color: #64748b;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.ct-back-btn:hover {
+  background: #eef2ff;
+  color: #5568ff;
+  transform: translateX(-2px);
+}
+
+.ct-header-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.ct-header-logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #5568ff;
+  flex-shrink: 0;
+}
+
+.ct-header-course {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.ct-header-label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ── Subject filter bar ──────────────────────────────────────────────────── */
+
+.ct-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ct-filter-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+.ct-chip {
+  padding: 4px 13px;
+  border-radius: 999px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.14s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.ct-chip:hover {
+  background: #eef2ff;
+  border-color: #a5b4fc;
+  color: #5568ff;
+}
+
+.ct-chip.active {
+  background: #5568ff;
+  border-color: #5568ff;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(85, 104, 255, 0.35);
+}
+
+/* ── Canvas container ────────────────────────────────────────────────────── */
+
+.ct-canvas {
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Empty / loading states ──────────────────────────────────────────────── */
+
+.ct-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+  text-align: center;
+  padding: 40px;
+}
+
+.ct-state-icon { font-size: 40px; margin-bottom: 4px; }
+.ct-state-title { font-size: 18px; font-weight: 700; color: #475569; }
+.ct-state-subtitle { font-size: 13px; color: #94a3b8; max-width: 320px; line-height: 1.6; }
+
+/* ── Info and help panels ────────────────────────────────────────────────── */
+
+.ct-info-panel,
+.ct-help-panel {
+  position: absolute;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  font-family: inherit;
+}
+
+.ct-info-panel {
+  top: 16px;
+  right: 16px;
+  width: 240px;
+  padding: 16px;
+}
+
+.ct-help-panel {
+  bottom: 16px;
+  right: 16px;
+  width: 256px;
+  padding: 16px;
+}
+
+.ct-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #94a3b8;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: all 0.12s;
+  font-family: inherit;
+}
+
+.ct-close-btn:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.ct-info-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+  padding-right: 24px;
+  letter-spacing: -0.01em;
+}
+
+.ct-info-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ct-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.ct-info-list li {
+  font-size: 12px;
+  padding: 5px 9px;
+  margin: 3px 0;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #f1f5f9;
+}
+
+.ct-info-note {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+  font-style: italic;
+}
+
+.ct-help-heading {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 0 28px 12px 0;
+}
+
+.ct-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 12px;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.ct-legend-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.ct-divider {
+  border: none;
+  border-top: 1px solid #f1f5f9;
+  margin: 10px 0;
+}
+
+.ct-help-note {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Help toggle button ──────────────────────────────────────────────────── */
+
+.ct-help-toggle {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  transition: all 0.14s ease;
+  font-family: inherit;
+}
+
+.ct-help-toggle:hover {
+  background: #eef2ff;
+  border-color: #a5b4fc;
+  color: #5568ff;
+  box-shadow: 0 4px 14px rgba(85, 104, 255, 0.2);
+}
+
+/* ── ReactFlow controls override ─────────────────────────────────────────── */
+
+.ct-canvas .react-flow__controls {
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.ct-canvas .react-flow__controls-button {
+  background: white !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  color: #64748b !important;
+}
+
+.ct-canvas .react-flow__controls-button:hover {
+  background: #eef2ff !important;
+  color: #5568ff !important;
+}

@@ -1,13 +1,9 @@
-.git/
-*.json
-.DS_Store
-
 node_modules/
 datasets/
-data/
-public/
 
 dist/
 .vite/
 
 .env
+
+.DS_Store

@@ -26,7 +26,7 @@ export default function App() {
     if (!selected) return;
     setData(null);
     setNoData(false);
-    fetch(`/data/${selected}.json`)
+    fetch(`/subject/${selected}.json`)
       .then(res => res.json())
       .then(json => {
         if (!json || Object.keys(json).length === 0) {
