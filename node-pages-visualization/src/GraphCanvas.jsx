@@ -12,32 +12,42 @@ import 'reactflow/dist/style.css';
 const elk = new ELK();
 
 const THEME = {
-  nonSubject: { bg: '#cbd5e1', border: '#94a3b8' },
+  nonSubject: { bg: '#b4bdc7', border: '#b4bdc7' },
   levels: {
-    '1': { bg: '#5568ff', border: '#3b4cff' }, 
-    '2': { bg: '#10b981', border: '#059669' }, 
-    '3': { bg: '#f59e0b', border: '#d97706' }, 
-    '4': { bg: '#ef4444', border: '#dc2626' },
+    '1': { bg: '#33bfff', border: '#33bfff' }, 
+    '2': { bg: 'rgb(221, 95, 221)', border: 'rgb(221, 95, 221)' }, 
+    '3': { bg: '#307cff', border: '#307cff' }, 
+    '4': { bg: '#8a4fff', border: '#8a4fff' }, 
   },
+  // Updated to include RGBA for the "glow" transparency
   traceColors: {
-    direct: '#5a08de',  
-    indirect: '#38bdf8',
+    direct: 'rgba(10, 13, 3, 0.9)',   // Red Glow
+    indirect: 'rgba(236, 136, 29, 0.9)', // Blue Glow
   }
 };
 
 const CustomCourseNode = ({ data }) => {
-  const traceBorder = data.isDirect 
-    ? `30px solid ${THEME.traceColors.direct}`    // Direct: Thick Gold Border
-    : data.isIndirect 
-      ? `30px solid ${THEME.traceColors.indirect}` // Indirect: Thick Blue Border
-      : `12px solid ${data.borderColor}`;
+  const isHighlighted = data.isDirect || data.isIndirect;
+  const glowColor = data.isDirect ? THEME.traceColors.direct : THEME.traceColors.indirect;
 
-  const defaultShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+  // Layered shadows create the "Radiant" depth
+  const glowStyle = isHighlighted ? {
+    boxShadow: `
+      0 0 15px 5px ${glowColor}, 
+      0 0 40px 15px ${glowColor.replace('0.9', '0.4')},
+      0 0 90px 30px ${glowColor.replace('0.9', '0.1')}
+    `,
+    border: `10px solid ${glowColor}`,
+    transform: data.isDirect ? 'scale(1.02)' : 'scale(1)',
+  } : {
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+    border: `12px solid ${data.borderColor}`,
+    transform: 'scale(1)',
+  };
 
   return (
     <div style={{
       background: data.color,
-      border: traceBorder,
       color: data.textColor || '#fff',
       boxSizing: 'border-box',
       borderRadius: '40px',
@@ -47,13 +57,12 @@ const CustomCourseNode = ({ data }) => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      boxShadow: defaultShadow,
       fontSize: '180px',
       fontWeight: '900',
       fontFamily: 'Inter, system-ui, sans-serif',
       textShadow: '2px 4px 8px rgba(0,0,0,0.2)',
-      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-      transform: data.isDirect ? 'scale(1.02)' : 'scale(1)',
+      transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      ...glowStyle,
     }}>
       {data.label}
     </div>
@@ -63,6 +72,97 @@ const CustomCourseNode = ({ data }) => {
 const nodeTypes = {
   courseNode: CustomCourseNode,
   orNode: () => <div style={{ width: 15, height: 15, background: '#94a3b8', borderRadius: '50%' }} />,
+};
+
+const LEGEND_ITEMS = [
+  { color: THEME.levels['1'].bg, label: '100-level courses' },
+  { color: THEME.levels['2'].bg, label: '200-level courses' },
+  { color: THEME.levels['3'].bg, label: '300-level courses' },
+  { color: THEME.levels['4'].bg, label: '400-level courses' },
+  { color: THEME.nonSubject.bg, label: 'Other subject courses' },
+];
+
+const TRACE_LEGEND = [
+  { color: THEME.traceColors.direct, label: 'Direct prereqs / dependents' },
+  { color: THEME.traceColors.indirect, label: 'Indirect chain' },
+];
+
+const panelStyle = {
+  position: 'absolute',
+  zIndex: 10,
+  background: 'white',
+  borderRadius: 14,
+  padding: '14px 18px',
+  boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
+  border: '1px solid rgba(0,0,0,0.05)',
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+};
+
+const sectionLabel = {
+  fontSize: 10,
+  fontWeight: 700,
+  color: '#5568ff',
+  letterSpacing: '0.1em',
+  textTransform: 'uppercase',
+  marginBottom: 8,
+};
+
+const Legend = () => (
+  <div style={{ ...panelStyle, bottom: 16, left: 16, minWidth: 196 }}>
+    <div style={sectionLabel}>Course Levels</div>
+    {LEGEND_ITEMS.map(({ color, label }) => (
+      <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: 5 }}>
+        <div style={{ width: 11, height: 11, borderRadius: 3, background: color, flexShrink: 0 }} />
+        <span style={{ fontSize: 12, color: '#475569' }}>{label}</span>
+      </div>
+    ))}
+    <div style={{ borderTop: '1px solid rgba(0,0,0,0.05)', margin: '10px 0 8px' }} />
+    <div style={sectionLabel}>Hover Highlight</div>
+    {TRACE_LEGEND.map(({ color, label }) => (
+      <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: 5 }}>
+        <div style={{
+          width: 11, height: 11, borderRadius: 3, background: color, flexShrink: 0,
+          boxShadow: `0 0 6px 2px ${color}`,
+        }} />
+        <span style={{ fontSize: 12, color: '#475569' }}>{label}</span>
+      </div>
+    ))}
+  </div>
+);
+
+const HoverPanel = ({ nodeId }) => {
+  if (!nodeId) return null;
+  return (
+    <div style={{
+      ...panelStyle,
+      top: 16, right: 16,
+      minWidth: 220, maxWidth: 270,
+      borderColor: 'rgba(85,104,255,0.2)',
+      boxShadow: '0 15px 40px rgba(85,104,255,0.12)',
+    }}>
+      <div style={{ fontSize: 14, fontWeight: 700, color: '#1a1a1a', marginBottom: 10 }}>
+        {nodeId}
+      </div>
+      <div style={sectionLabel}>Highlighting</div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+        <div style={{
+          width: 10, height: 10, borderRadius: 2, flexShrink: 0,
+          background: THEME.traceColors.direct,
+          boxShadow: `0 0 5px 1px ${THEME.traceColors.direct}`,
+        }} />
+        <span style={{ fontSize: 12, color: '#475569' }}>Direct prerequisites &amp; dependents</span>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+        <div style={{
+          width: 10, height: 10, borderRadius: 2, flexShrink: 0,
+          background: THEME.traceColors.indirect,
+          boxShadow: `0 0 5px 1px ${THEME.traceColors.indirect}`,
+        }} />
+        <span style={{ fontSize: 12, color: '#475569' }}>Full prerequisite &amp; dependent chain</span>
+      </div>
+      <div style={{ fontSize: 11, color: '#94a3b8' }}>Other nodes are faded out.</div>
+    </div>
+  );
 };
 
 const GraphCanvas = ({ data, subject }) => {
@@ -75,13 +175,8 @@ const GraphCanvas = ({ data, subject }) => {
     const directNodes = new Set([nodeId]);
     const indirectNodes = new Set();
 
-    // 1. GOLD LOGIC (Direct Enablement/Requirement)
     allEdges.forEach(e => {
-      // If hover A (Dependent), turn its direct source (B or OR_NODE) Gold
-      if (e.target === nodeId) {
-        directNodes.add(e.source);
-      }
-      // If hover B (Prereq), find what it unlocks (A). Jump through OR_NODE if necessary.
+      if (e.target === nodeId) directNodes.add(e.source);
       if (e.source === nodeId) {
         directNodes.add(e.target);
         if (e.target.includes('OR_NODE')) {
@@ -92,16 +187,12 @@ const GraphCanvas = ({ data, subject }) => {
       }
     });
 
-    // 2. BLUE LOGIC (Full Chain - show all relevant courses)
     const traverse = (currId, dir) => {
       allEdges.forEach(e => {
         const match = dir === 'up' ? e.target === currId : e.source === currId;
         const next = dir === 'up' ? e.source : e.target;
         if (match && !indirectNodes.has(next)) {
-          // If it's not already Gold, make it Blue
-          if (!directNodes.has(next)) {
-            indirectNodes.add(next);
-          }
+          if (!directNodes.has(next)) indirectNodes.add(next);
           traverse(next, dir);
         }
       });
@@ -109,7 +200,6 @@ const GraphCanvas = ({ data, subject }) => {
 
     traverse(nodeId, 'up');
     traverse(nodeId, 'down');
-
     return { directNodes, indirectNodes };
   }, []);
 
@@ -151,14 +241,13 @@ const GraphCanvas = ({ data, subject }) => {
           id: n.id,
           width: n.type === 'orNode' ? 20 : 1210,
           height: n.type === 'orNode' ? 20 : 310,
-          layoutOptions: { 'elk.layered.layering.layerIndex': n.data.level }
         })),
         edges: initialEdges.map(e => ({ id: e.id, sources: [e.source], targets: [e.target] }))
       };
       const layouted = await elk.layout(elkGraph);
       setNodes(initialNodes.map(node => {
         const n = layouted.children.find(l => l.id === node.id);
-        return { ...node, position: { x: n.x + 5, y: n.y + 5 } };
+        return { ...node, position: { x: n.x, y: n.y } };
       }));
       setEdges(initialEdges);
       setTimeout(() => fitView({ padding: 0.5, duration: 800, maxZoom: 0.2 }), 200);
@@ -185,7 +274,7 @@ const GraphCanvas = ({ data, subject }) => {
   });
 
   return (
-    <div style={{ width: '100%', height: '100%', background: '#f8faff' }}>
+    <div style={{ width: '100%', height: '100%', background: 'transparent', position: 'relative' }}>
       <ReactFlow
         nodes={finalNodes}
         edges={edges.map(e => ({ ...e, hidden: true }))}
@@ -201,6 +290,8 @@ const GraphCanvas = ({ data, subject }) => {
         <Background variant="dots" gap={80} size={2} color="#cbd5e1" />
         <Controls />
       </ReactFlow>
+      <Legend />
+      <HoverPanel nodeId={hoveredNode} />
     </div>
   );
 };
