@@ -52,7 +52,10 @@ const Home = () => {
         <div className="logo">UWCompass</div>
         <nav className="nav">
             <a href="#">Home</a>
-            <a href="#">Features</a>
+            <a><button onClick={() => navigate('/features')}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
+                Features</button>
+            </a>
             <a><button onClick={() => navigate('/visualizer')}
                 style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
                 Visualizer</button>
@@ -61,7 +64,10 @@ const Home = () => {
                 style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
                 CS Planner</button>
             </a>
-            <a href="#">About</a>
+            <a><button onClick={() => navigate('/about')}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
+                About</button>
+            </a>
         </nav>
 
         <div class="search">
