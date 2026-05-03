@@ -1,48 +1,73 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const SELECTABLE_COURSES = [
+  { group: 'CS Courses', courses: ['CS135', 'CS136', 'CS138', 'CS145', 'CS146', 'CS240', 'CS241', 'CS245', 'CS246', 'CS251'] },
+  { group: 'Math & Stats', courses: ['MATH135', 'MATH136', 'MATH138', 'MATH239', 'STAT230', 'STAT231'] },
+];
+
+const isSatisfied = (nodeId, graph, completedSet) => {
+  if (nodeId.startsWith('OR_NODE')) {
+    return (graph[nodeId] || []).some(c => isSatisfied(c, graph, completedSet));
+  }
+  if (nodeId.startsWith('LEVEL_') || nodeId.startsWith('PROGRAM_')) return true;
+  return completedSet.has(nodeId);
+};
+
 const Home = () => {
   const navigate = useNavigate();
   const [selectedCourses, setSelectedCourses] = useState([]);
-  const [recommendation, setRecommendation] = useState("");
+  const [recommendation, setRecommendation] = useState(null);
+  const [prereqGraph, setPrereqGraph] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    fetch('/subject/CS.json')
+      .then(r => r.json())
+      .then(setPrereqGraph)
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const reveals = document.querySelectorAll(".reveal");
       const windowHeight = window.innerHeight;
-
       reveals.forEach((el) => {
-        let top = el.getBoundingClientRect().top;
-        if (top < windowHeight - 100) {
+        if (el.getBoundingClientRect().top < windowHeight - 100) {
           el.classList.add("active");
         }
       });
     };
-
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleRecommend = () => {
-    let available = [];
-    if (selectedCourses.includes("CS135")) available.push("CS136");
-    if (selectedCourses.includes("CS136")) available.push("CS246");
-    if (selectedCourses.includes("MATH135")) available.push("MATH136");
-    if (selectedCourses.includes("MATH137")) available.push("MATH138");
-
-    if (available.length === 0) {
-      setRecommendation("Complete more prerequisites first.");
-    } else {
-      setRecommendation("You can take: " + available.join(", "));
+    if (!prereqGraph) {
+      setRecommendation({ type: 'loading' });
+      return;
     }
+    const completedSet = new Set(selectedCourses);
+    const eligible = Object.keys(prereqGraph)
+      .filter(c => !c.startsWith('OR_NODE') && !c.startsWith('LEVEL_'))
+      .filter(c => !completedSet.has(c))
+      .filter(c => (prereqGraph[c] || []).every(p => isSatisfied(p, prereqGraph, completedSet)))
+      .sort();
+    setRecommendation({ type: 'result', courses: eligible });
   };
 
   const toggleCourse = (course) => {
     setSelectedCourses(prev =>
       prev.includes(course) ? prev.filter(c => c !== course) : [...prev, course]
     );
+    setRecommendation(null);
+  };
+
+  const handleSearchKey = (e) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      navigate(`/course/${searchQuery.trim().toUpperCase()}`);
+    }
   };
 
   return (
@@ -70,10 +95,15 @@ const Home = () => {
             </a>
         </nav>
 
-        <div class="search">
-            <input placeholder="Search courses..."/>
+        <div className="search">
+            <input
+              placeholder="Search courses… (e.g. CS341)"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              onKeyDown={handleSearchKey}
+            />
         </div>
-        
+
         </header>
 
         <section className="hero">
@@ -115,29 +145,67 @@ const Home = () => {
 
         <section className="interactive">
             <h2 className="reveal">What Courses Can I Take?</h2>
-            <div className="course-select reveal">
-                {['CS135', 'CS136', 'MATH135', 'MATH137'].map(course => (
-                <label key={course}>
-                    <input 
-                    type="checkbox" 
-                    onChange={() => toggleCourse(course)} 
-                    checked={selectedCourses.includes(course)}
-                    /> {course}
-                </label>
-                ))}
-            </div>
+            <p className="reveal" style={{ color: '#64748b', marginBottom: '16px', fontSize: '14px' }}>
+              Select completed courses, then check which CS courses you're eligible for next.
+            </p>
+
+            {SELECTABLE_COURSES.map(({ group, courses }) => (
+              <div key={group} className="reveal" style={{ marginBottom: '12px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#5568ff', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  {group}
+                </div>
+                <div className="course-select">
+                  {courses.map(course => (
+                    <label key={course}>
+                      <input
+                        type="checkbox"
+                        onChange={() => toggleCourse(course)}
+                        checked={selectedCourses.includes(course)}
+                      /> {course}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            ))}
 
             <button onClick={handleRecommend} className="secondary-btn reveal">
                 Check Available Courses
             </button>
 
-            <div id="result" style={{ marginTop: '20px', fontWeight: 'bold' }}>
-                {recommendation}
+            <div style={{ marginTop: '20px' }}>
+              {recommendation?.type === 'loading' && (
+                <span style={{ color: '#94a3b8' }}>Loading course data…</span>
+              )}
+              {recommendation?.type === 'result' && recommendation.courses.length === 0 && (
+                <span style={{ fontWeight: 600 }}>Select some completed courses to see recommendations.</span>
+              )}
+              {recommendation?.type === 'result' && recommendation.courses.length > 0 && (
+                <div>
+                  <div style={{ fontWeight: 600, marginBottom: '10px' }}>
+                    You can take {recommendation.courses.length} CS course{recommendation.courses.length !== 1 ? 's' : ''}:
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                    {recommendation.courses.map(c => (
+                      <button
+                        key={c}
+                        onClick={() => navigate(`/course/${c}`)}
+                        style={{
+                          padding: '4px 12px', borderRadius: '20px', fontSize: '13px',
+                          background: '#eef2ff', color: '#4338ca', border: '1px solid #c7d2fe',
+                          cursor: 'pointer', fontWeight: 500,
+                        }}
+                      >
+                        {c}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
         </section>
 
-        <footer class="footer">
+        <footer className="footer">
             <p>© 2026 UWCompass</p>
         </footer>
 

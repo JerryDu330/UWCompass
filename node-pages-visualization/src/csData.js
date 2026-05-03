@@ -48,10 +48,10 @@ export const COURSE_INFO = {
   CS350:     { name: 'Operating Systems',                  type: 'cs',      note: 'Processes, threads, scheduling, memory, file systems — prereq: CS240 + CS241' },
 
   // ── 3B (core) ───────────────────────────────────────────────────────────────
-  // CS360 prereq: CS350 → satisfied after 3A ✓
-  // CS365 prereq: typically CS245/CS251 → satisfied well before 3B ✓
-  CS360:     { name: 'Theory of Computing',                type: 'cs',      note: 'Automata, decidability, Turing machines — prereq: CS350' },
-  CS365:     { name: 'Models of Computation',              type: 'cs',      note: 'Lambda calculus, type theory, computability, semantics — prereq: CS251 + CS241' },
+  // CS360 prereqs: CS240 + CS241 + MATH239 → all satisfied after 2B ✓
+  // CS365 prereqs: CS240 + CS241 + MATH239 → same as CS360 ✓
+  CS360:     { name: 'Theory of Computing',                type: 'cs',      note: 'Automata, decidability, Turing machines — prereq: CS240 + CS241 + MATH239' },
+  CS365:     { name: 'Models of Computation',              type: 'cs',      note: 'Lambda calculus, type theory, computability, semantics — prereq: CS240 + CS241 + MATH239' },
 
   // ── Career electives — AI / ML ───────────────────────────────────────────────
   // CS479: STAT230 → available 2B+ ✓

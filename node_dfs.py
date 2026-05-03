@@ -69,6 +69,11 @@ def parse_node(node, is_or_node = False):
                 return or_id
         return create_or_node(children)
 
+    if node_type == "LEVEL":
+        level = node.get("level", "")
+        op = node.get("op", ">=")
+        return f"LEVEL_{op}_{level}" if level else None
+
     return None
 
 for course_code, course_data in courses.items():

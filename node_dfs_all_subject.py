@@ -76,6 +76,12 @@ def parse_node(
         or_id, or_graph, or_node_count = create_or_node(children, or_graph, or_node_count)
         return or_id, or_graph, or_node_count
 
+    if node_type == "LEVEL":
+        level = node.get("level", "")
+        op = node.get("op", ">=")
+        result = f"LEVEL_{op}_{level}" if level else None
+        return result, or_graph, or_node_count
+
     return None, or_graph, or_node_count
 
 

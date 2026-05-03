@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CAREER_PATHS, COURSE_INFO, generatePlan, TYPE_COLORS } from './csData';
 import './CSPlanner.css';
@@ -52,7 +52,18 @@ function TermRow({ term, completed, onToggle }) {
 export default function CSPlanner() {
   const navigate = useNavigate();
   const [selectedPath, setSelectedPath] = useState(null);
-  const [completed, setCompleted] = useState(new Set());
+  const [completed, setCompleted] = useState(() => {
+    try {
+      const saved = localStorage.getItem('uwcompass-completed');
+      return saved ? new Set(JSON.parse(saved)) : new Set();
+    } catch {
+      return new Set();
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('uwcompass-completed', JSON.stringify([...completed]));
+  }, [completed]);
 
   const toggleCompleted = (code) => {
     if (COURSE_INFO[code]?.placeholder) return;
@@ -122,7 +133,13 @@ export default function CSPlanner() {
                 key={path.id}
                 className={`path-card${selectedPath?.id === path.id ? ' path-selected' : ''}`}
                 style={{ '--pc': path.color, '--pl': path.colorLight }}
-                onClick={() => { setSelectedPath(path); setCompleted(new Set()); }}
+                onClick={() => {
+                  const newPlanCourses = new Set(
+                    generatePlan(path).flatMap(t => t.courses).filter(c => !COURSE_INFO[c]?.placeholder)
+                  );
+                  setCompleted(prev => new Set([...prev].filter(c => newPlanCourses.has(c))));
+                  setSelectedPath(path);
+                }}
               >
                 <div className="path-icon" style={{ background: path.colorLight, color: path.color }}>
                   {path.icon}
