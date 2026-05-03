@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocalStorage } from './useLocalStorage';
+import NavHeader from './NavHeader';
 
 const SELECTABLE_COURSES = [
   { group: 'CS Courses', courses: ['CS135', 'CS136', 'CS138', 'CS145', 'CS146', 'CS240', 'CS241', 'CS245', 'CS246', 'CS251'] },
@@ -16,7 +18,8 @@ const isSatisfied = (nodeId, graph, completedSet) => {
 
 const Home = () => {
   const navigate = useNavigate();
-  const [selectedCourses, setSelectedCourses] = useState([]);
+  const [selectedCourses, setSelectedCourses] = useLocalStorage('uwcompass-home-selected', []);
+  const [recentCourses] = useLocalStorage('uwcompass-recent-courses', []);
   const [recommendation, setRecommendation] = useState(null);
   const [prereqGraph, setPrereqGraph] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -73,38 +76,16 @@ const Home = () => {
   return (
     <div className="home-container">
         <div className="background-grid"></div>
-        <header className="header">
-        <div className="logo">UWCompass</div>
-        <nav className="nav">
-            <a href="#">Home</a>
-            <a><button onClick={() => navigate('/features')}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
-                Features</button>
-            </a>
-            <a><button onClick={() => navigate('/visualizer')}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
-                Visualizer</button>
-            </a>
-            <a><button onClick={() => navigate('/cs-planner')}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
-                CS Planner</button>
-            </a>
-            <a><button onClick={() => navigate('/about')}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
-                About</button>
-            </a>
-        </nav>
-
-        <div className="search">
+        <NavHeader right={
+          <div className="search">
             <input
               placeholder="Search courses… (e.g. CS341)"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               onKeyDown={handleSearchKey}
             />
-        </div>
-
-        </header>
+          </div>
+        } />
 
         <section className="hero">
         <div className="hero-content">
@@ -115,6 +96,29 @@ const Home = () => {
             </button>
         </div>
         </section>
+
+        {recentCourses.length > 0 && (
+          <section style={{ padding: '0 40px 40px', maxWidth: 900, margin: '0 auto' }}>
+            <div style={{ fontSize: '12px', fontWeight: 700, color: '#5568ff', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
+              Recently Viewed
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {recentCourses.map(course => (
+                <button
+                  key={course}
+                  onClick={() => navigate(`/course/${course}`)}
+                  style={{
+                    padding: '4px 14px', borderRadius: '20px', fontSize: '13px',
+                    background: '#f8faff', color: '#4338ca', border: '1px solid #c7d2fe',
+                    cursor: 'pointer', fontWeight: 500,
+                  }}
+                >
+                  {course}
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="features">
         <h2 className="reveal">Core Features</h2>

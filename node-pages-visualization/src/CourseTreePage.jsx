@@ -4,6 +4,17 @@ import { ReactFlowProvider } from 'reactflow';
 import CourseTreeCanvas from './CourseTreeCanvas';
 import './CourseTree.css';
 
+const RECENTLY_VIEWED_KEY = 'uwcompass-recent-courses';
+const MAX_RECENT = 10;
+
+function addRecentCourse(courseId) {
+  try {
+    const saved = JSON.parse(localStorage.getItem(RECENTLY_VIEWED_KEY) || '[]');
+    const updated = [courseId, ...saved.filter(c => c !== courseId)].slice(0, MAX_RECENT);
+    localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(updated));
+  } catch {}
+}
+
 function getSubject(courseId) {
   return courseId.replace(/\d.*$/, '');
 }
@@ -18,6 +29,7 @@ export default function CourseTreePage() {
   const [selectedSubject, setSelectedSubject] = useState('All');
 
   useEffect(() => {
+    addRecentCourse(courseId);
     setData([]);
     setNoData(false);
     setSelectedSubject('All');
@@ -46,6 +58,10 @@ export default function CourseTreePage() {
     <div className="ct-page">
       {/* Header */}
       <header className="ct-header">
+        <button className="ct-back-btn" onClick={() => navigate('/')}>
+          Home
+        </button>
+        <div className="ct-header-divider" />
         <button className="ct-back-btn" onClick={() => navigate('/visualizer')}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="m15 18-6-6 6-6"/>
@@ -53,10 +69,20 @@ export default function CourseTreePage() {
           Visualizer
         </button>
         <div className="ct-header-divider" />
-        <span className="ct-header-logo">UWCompass</span>
+        <button
+          className="ct-header-logo"
+          onClick={() => navigate('/')}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', padding: 0 }}
+        >
+          UWCompass
+        </button>
         <div className="ct-header-divider" />
         <span className="ct-header-course">{courseId}</span>
         <span className="ct-header-label">Course Tree</span>
+        <div style={{ flex: 1 }} />
+        <button className="ct-back-btn" onClick={() => navigate('/cs-planner')}>CS Planner</button>
+        <button className="ct-back-btn" onClick={() => navigate('/features')}>Features</button>
+        <button className="ct-back-btn" onClick={() => navigate('/about')}>About</button>
       </header>
 
       {/* Subject filter */}

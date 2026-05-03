@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavHeader from './NavHeader';
 import './About.css';
 
 const STATS = [
@@ -15,8 +16,6 @@ const STACK = [
   { icon: '🐍', tech: 'Python',        role: 'Data pipeline & parsing'   },
   { icon: '🧭', tech: 'React Router',  role: 'Client-side routing'       },
 ];
-
-const navBtn = { background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' };
 
 export default function About() {
   const navigate = useNavigate();
@@ -36,16 +35,7 @@ export default function About() {
     <div className="about-page">
       <div className="background-grid" />
 
-      <header className="header">
-        <div className="logo">UWCompass</div>
-        <nav className="nav">
-          <a><button onClick={() => navigate('/')} style={navBtn}>Home</button></a>
-          <a><button onClick={() => navigate('/features')} style={navBtn}>Features</button></a>
-          <a><button onClick={() => navigate('/visualizer')} style={navBtn}>Visualizer</button></a>
-          <a><button onClick={() => navigate('/cs-planner')} style={navBtn}>CS Planner</button></a>
-        </nav>
-        <div />
-      </header>
+      <NavHeader />
 
       <div className="about-hero">
         <span className="about-badge">About UWCompass</span>

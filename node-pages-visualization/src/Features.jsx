@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavHeader from './NavHeader';
+import { GraphDemo, TreeDemo, PlannerDemo, EligibilityDemo } from './FeatureAnimations';
 import './Features.css';
+
+const DEMOS = [GraphDemo, TreeDemo, PlannerDemo, EligibilityDemo];
 
 const FEATURES = [
   {
@@ -45,8 +49,6 @@ const FEATURES = [
   },
 ];
 
-const navBtn = { background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' };
-
 export default function Features() {
   const navigate = useNavigate();
 
@@ -65,16 +67,7 @@ export default function Features() {
     <div className="features-page">
       <div className="background-grid" />
 
-      <header className="header">
-        <div className="logo">UWCompass</div>
-        <nav className="nav">
-          <a><button onClick={() => navigate('/')} style={navBtn}>Home</button></a>
-          <a><button onClick={() => navigate('/visualizer')} style={navBtn}>Visualizer</button></a>
-          <a><button onClick={() => navigate('/cs-planner')} style={navBtn}>CS Planner</button></a>
-          <a><button onClick={() => navigate('/about')} style={navBtn}>About</button></a>
-        </nav>
-        <div />
-      </header>
+      <NavHeader />
 
       <div className="fp-hero">
         <span className="fp-badge">What UWCompass Offers</span>
@@ -85,11 +78,8 @@ export default function Features() {
       <div className="fp-list">
         {FEATURES.map((f, i) => (
           <div key={f.title} className={`fp-row reveal${i % 2 === 1 ? ' fp-row-flip' : ''}`}>
-            <div className="fp-visual" style={{ background: f.color + '10', border: `1.5px solid ${f.color}28` }}>
-              <div className="fp-icon-wrap" style={{ background: f.color + '1a', color: f.color }}>
-                {f.icon}
-              </div>
-              <div className="fp-tagline" style={{ color: f.color }}>{f.tagline}</div>
+            <div className="fp-visual" style={{ background: f.color + '08', border: `1.5px solid ${f.color}28` }}>
+              {React.createElement(DEMOS[i], { color: f.color })}
             </div>
             <div className="fp-text">
               <h2>{f.title}</h2>

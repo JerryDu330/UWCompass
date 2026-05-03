@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CAREER_PATHS, COURSE_INFO, generatePlan, TYPE_COLORS } from './csData';
+import { useLocalStorage } from './useLocalStorage';
+import NavHeader from './NavHeader';
 import './CSPlanner.css';
 
 // ─── Course chip ─────────────────────────────────────────────────────────────
@@ -51,7 +53,10 @@ function TermRow({ term, completed, onToggle }) {
 // ─── Main page ───────────────────────────────────────────────────────────────
 export default function CSPlanner() {
   const navigate = useNavigate();
-  const [selectedPath, setSelectedPath] = useState(null);
+  const [savedPathId, setSavedPathId] = useLocalStorage('uwcompass-path', null);
+  const [selectedPath, setSelectedPath] = useState(
+    () => CAREER_PATHS.find(p => p.id === savedPathId) ?? null
+  );
   const [completed, setCompleted] = useState(() => {
     try {
       const saved = localStorage.getItem('uwcompass-completed');
@@ -88,24 +93,7 @@ export default function CSPlanner() {
       <div className="background-grid" />
 
       {/* ── Header ──────────────────────────────────────────────────────────── */}
-      <header className="header">
-        <div className="logo">UWCompass</div>
-        <nav className="nav">
-          <a>
-            <button
-              onClick={() => navigate('/')}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}
-            >Home</button>
-          </a>
-          <a>
-            <button
-              onClick={() => navigate('/visualizer')}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}
-            >Visualizer</button>
-          </a>
-        </nav>
-        <div />
-      </header>
+      <NavHeader />
 
       <div className="planner-content">
 
@@ -139,6 +127,7 @@ export default function CSPlanner() {
                   );
                   setCompleted(prev => new Set([...prev].filter(c => newPlanCourses.has(c))));
                   setSelectedPath(path);
+                  setSavedPathId(path.id);
                 }}
               >
                 <div className="path-icon" style={{ background: path.colorLight, color: path.color }}>
