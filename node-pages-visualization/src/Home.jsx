@@ -53,11 +53,14 @@ const Home = () => {
         <nav className="nav">
             <a href="#">Home</a>
             <a href="#">Features</a>
-            <a><button onClick={() => navigate('/visualizer')} 
+            <a><button onClick={() => navigate('/visualizer')}
                 style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
                 Visualizer</button>
             </a>
-            <a href="#">Recommendations</a>
+            <a><button onClick={() => navigate('/cs-planner')}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'inherit' }}>
+                CS Planner</button>
+            </a>
             <a href="#">About</a>
         </nav>
 
@@ -96,9 +99,9 @@ const Home = () => {
                 <p>Instantly determine which courses you are eligible to take next.</p>
             </div>
 
-            <div className="card reveal">
-                <h3>Degree Planner</h3>
-                <p>Build semester plans that satisfy prerequisite constraints automatically.</p>
+            <div className="card reveal" onClick={() => navigate('/cs-planner')} style={{ cursor: 'pointer' }}>
+                <h3>Degree Planner ↗</h3>
+                <p>Build semester plans that satisfy prerequisite constraints automatically. Try the CS planner now.</p>
             </div>
 
         </div>

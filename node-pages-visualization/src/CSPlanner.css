@@ -1,0 +1,379 @@
+/* ─── Page wrapper ─────────────────────────────────────────────────────────── */
+.planner-page {
+  min-height: 100vh;
+  animation: fadeInHome 0.6s ease-out forwards;
+}
+
+.planner-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 40px 80px;
+}
+
+/* ─── Hero ─────────────────────────────────────────────────────────────────── */
+.planner-hero {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+
+.planner-hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 14px;
+}
+
+.planner-hero p {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ─── Sections ─────────────────────────────────────────────────────────────── */
+.planner-section {
+  margin-bottom: 64px;
+}
+
+.section-head {
+  margin-bottom: 28px;
+}
+
+.section-head h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 8px 0 6px;
+}
+
+.section-head p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.step-pill {
+  display: inline-block;
+  background: #5568ff;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* ─── Career path grid ─────────────────────────────────────────────────────── */
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.path-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 22px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+  font-family: inherit;
+  width: 100%;
+}
+
+.path-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+.path-selected {
+  border-color: var(--pc);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pc) 18%, transparent), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.path-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.path-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.path-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+
+.path-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-chip {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+
+.path-selected-label {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ─── Progress bar ─────────────────────────────────────────────────────────── */
+.progress-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: #374151;
+}
+
+.progress-pct {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.progress-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+/* ─── Legend ───────────────────────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ─── Term rows ────────────────────────────────────────────────────────────── */
+.terms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.term-row {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 18px;
+  align-items: start;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.15s;
+}
+
+.term-row:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.term-fixed {
+  border-left: 3px solid #5568ff;
+}
+
+.term-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.term-id {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.term-label-text {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+.core-badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #5568ff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 8px;
+  margin-top: 4px;
+  width: fit-content;
+}
+
+.term-note {
+  font-size: 10px;
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.term-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+/* ─── Course chips ─────────────────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border: 1.5px solid;
+  border-radius: 8px;
+  padding: 6px 11px;
+  font-size: 12.5px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+  white-space: nowrap;
+  max-width: 240px;
+}
+
+.chip:hover:not(.chip-placeholder) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.chip-done {
+  opacity: 0.6;
+}
+
+.chip-done .chip-name {
+  text-decoration: line-through;
+}
+
+.chip-placeholder {
+  cursor: default;
+  border-style: dashed;
+  opacity: 0.55;
+}
+
+.chip-check {
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.chip-code {
+  font-weight: 700;
+}
+
+.chip-name {
+  font-weight: 500;
+}
+
+/* ─── Disclaimer ───────────────────────────────────────────────────────────── */
+.disclaimer {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 28px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.disclaimer a {
+  color: #5568ff;
+  text-decoration: underline;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .path-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .term-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+  .planner-content {
+    padding: 32px 18px 60px;
+  }
+  .planner-hero h1 {
+    font-size: 28px;
+  }
+}

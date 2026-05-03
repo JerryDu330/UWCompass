@@ -39,14 +39,14 @@ def parse_node(
     if not isinstance(node, dict):
         return None, or_graph, or_node_count
 
-    node_type = node.get("Type")
+    node_type = node.get("type")
     if node_type in ("COURSE", "GRADE"):
-        code = iscoursecode(node.get("Code"))
+        code = iscoursecode(node.get("code"))
         return code, or_graph, or_node_count
 
     if node_type == "AND":
         deps: Set[str] = set()
-        for child in node.get("Items", []):
+        for child in node.get("items", []):
             res, or_graph, or_node_count = parse_node(child, or_graph, or_node_count)
             if isinstance(res, str):
                 deps.add(res)
@@ -56,7 +56,7 @@ def parse_node(
 
     if node_type == "OR":
         children: List[str] = []
-        for child in node.get("Items", []):
+        for child in node.get("items", []):
             res, or_graph, or_node_count = parse_node(child, or_graph, or_node_count, True)
             if isinstance(res, str):
                 children.append(res)

@@ -130,7 +130,7 @@ class LevelRule(Rule):
             return (int(ctx.level[0]) > int(self.level[0]) or
                      (int(ctx.level[0]) == int(self.level[0]) and ctx.level[1] >= self.level[1]))
         except Exception as e:
-            raise "Error: {e}"
+            raise ValueError(f"Error: {e}")
             
 
 
@@ -140,7 +140,10 @@ class GradeRule(Rule):
     grade: Ref_grade
 
     def satisfies(self, ctx: Context) -> bool:
-        pass
+        return any(
+            g.code == self.grade.code and g.min_grade >= self.grade.min_grade
+            for g in ctx.grades
+        )
 
 
 @dataclass

@@ -286,7 +286,7 @@ const GraphCanvas = ({ data, subject }) => {
     <div style={{ width: '100%', height: '100%', background: 'transparent', position: 'relative' }}>
       <ReactFlow
         nodes={finalNodes}
-        edges={edges.map(e => ({ ...e, hidden: true }))}
+        edges={edges}
         nodeTypes={nodeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}

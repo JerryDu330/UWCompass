@@ -6,6 +6,7 @@ import './styles.css';
 const Home           = lazy(() => import('./Home'));
 const VisualizerApp  = lazy(() => import('./App'));
 const CourseTreePage = lazy(() => import('./CourseTreePage'));
+const CSPlanner      = lazy(() => import('./CSPlanner'));
 
 const Loading = () => (
   <div style={{
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/"                 element={<Home />} />
           <Route path="/visualizer"       element={<VisualizerApp />} />
           <Route path="/course/:courseId" element={<CourseTreePage />} />
+          <Route path="/cs-planner"       element={<CSPlanner />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
