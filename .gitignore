@@ -1,3 +1,11 @@
 node-pages-visualization/
 single_course_visualization/
 data/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
