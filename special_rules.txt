@@ -1,12 +1,76 @@
+AFM100: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM101: Not open to students enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM112: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM113: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM121: Enrolled in H-Biotechnology/Chartered Professional Accountancy
 AFM123: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies, H-Recreation & Business, H-Recreation & Sport Business, JH-Recreation & Sport Business, H-Science-Biotechnology/Economics
+AFM127: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM182: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM191: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM200: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM205: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM206: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM207: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM208: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM212: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM231: Not open to students enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM241: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM244: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM272: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM273: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM274: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM276: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM285: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM291: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM321: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM322: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM324: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM326: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM328: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM329: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM334: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM335: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM341: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM345: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM346: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM347: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM362: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM373: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM382: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM391: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM401: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM418: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM426: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM427: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM428: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM429: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM433: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM434: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM442: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM443: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM444: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM445: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM446: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM447: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM448: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM451: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM452: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM462: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM470: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM479: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM480: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM482: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM483: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+AFM491: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+ACTSC127: Enrolled in H-Biotechnology/Chartered Professional Accountancy
 ACTSC221: The following antirequisites are only for students in the Faculty of Mathematics.
 ACTSC231: Corequisite (see below)
-ASL101R: Not open to students with native, near-native, or similar advanced ability
-ASL102R: Not open to students with native, near-native, or similar advanced ability
+ACTSC291: Enrolled in H-Biotechnology/Chartered Professional Accountancy
+ASL101R: Not open to students with advanced ability.
+ASL102R: Not open to students with advanced ability.
 ANTH499A: Must have earned a minimum ANTH average of 80.0%
 ANTH499B: Earned a minimum Anthropology average of 80.0%
 AMATH382: Enrolled in an Honours program
-AMATH474: Enrolled in a Faculty of Mathematics or Faculty of Science program
 AMATH475: Enrolled in an Honours Faculty of Mathematics or a Faculty of Science program
 AMATH499: Enrolled in H-Applied Mathematics with Scientific Computing
 ARABIC101R: Placement test is required
@@ -21,17 +85,15 @@ ARABIC302R: Not open to students with native, near native, or similar advanced a
 ARABIC410R: Native, near-native, or similar advanced ability
 ARABIC410R: Placement test is required
 ARTS111: Not open to Arts and Business students in level 1A or 1B
-BIOL110: Not open to students in a Faculty of Environment program
+BIOL110: Not open to students enrolled in Faculty of Environment programs
 BIOL280: Enrolled in a Faculty of Engineering program or an Honours Science program
 BIOL331: Enrolled in H-Biotechnology/Economics
 BIOL331: Corequisite
 BIOL382: Enrolled in an Honours program
-BIOL461: Not open to students in a Faculty of Mathematics program
 BIOL499A: Earned a minimum cumulative major average of 73
 BIOL499A: Enrolled in Life Physics - Biophysics Specialization
 BIOL499B: Earned a minimum cumulative major average of 73
 BIOL499B: Enrolled in Life Physics - Biophysics Specialization
-BME544: Enrolled in Hnours Life Physics (Biophysics Specialization)
 BME582: Enrolled in a BASc program
 BUS111W: Enrolled in an undergraduate degree program or MATH/ELAS
 BUS121W: Enrolled in an undergraduate degree program or MATH/ELAS
@@ -47,10 +109,10 @@ BUS435W: Must have completed any Waterloo introductory statistics course
 BUS445W: Must have completed any Waterloo introductory statistics course
 BUS455W: Must have completed any Waterloo introductory statistics course
 BUS485W: Must have completed any Waterloo introductory statistics course
-CHEM140: Not open to students in a Faculty of Mathematics program
+CHEM140: Not open to students enrolled in Faculty of Mathematics programs
 CHEM212: Enrolled in an Honours program
 CHEM220: Enrolled in an Honours program
-CHEM240: Not open to students in a Faculty of Mathematics program
+CHEM240: Not open to students enrolled in Faculty of Mathematics programs
 CHEM250L: Enrolled in an Honours program
 CHEM254: Enrolled in an Honours program
 CHEM264: Enrolled in an Honours program
@@ -61,15 +123,16 @@ CHEM313: Enrolled in an Honours program
 CHEM323: Enrolled in an Honours Science program
 CHEM350: Enrolled in an Honours program
 CHEM350L: Enrolled in an Honours program
+CHEM356: Students must be in at least level 2A
 CHEM360: Enrolled in an Honours program
 CHEM400: Enrolled in Chemical Physics
 CHEM494A: Enrolled in Chemical Physics
 CHEM495: Students visiting on an exchange agreement
 CHEM496: Students visiting on an exchange agreement
 CHEM497: Students visiting on an exchange agreement
-CHINA101R: Not open to students with native, near-native, or similar advanced ability
-CHINA102R: Not open to students with native, near-native, or similar advanced ability
-CHINA120R: Not open to students with native, near-native, or similar advanced ability
+CHINA101R: Not open to students with advanced ability.
+CHINA102R: Not open to students with advanced ability.
+CHINA120R: Not open to students with advanced ability
 CHINA401R: Placement test
 CHINA402R: Placement test
 CLAS100: Earned between 0.00 and 0.50 units from CLAS
@@ -86,6 +149,7 @@ CO463: Earned a minimum cumulative average of 80
 CO466: Earned a minimum cumulative average of 80
 CO471: Earned a minimum cumulative average of 80.0
 CO485: Earned a minimum cumulative average of 80
+COMMST111: Enrolled in H-Biotechnology/Chartered Professional Accountancy
 COMMST193: Enrolled in a Bachelor of Science program in the Faculty of Science
 COMMST225: The following prerequisites are applicable to students enrolled in a Faculty of Mathematics program
 COMMST227: The following prerequisites are applicable to students enrolled in a Faculty of Mathematics program
@@ -98,7 +162,6 @@ CS245: Enrolled in an Honours Mathematics program
 CS245E: Enrolled in an Honours Mathematics program
 CS246: Enrolled in an Honours Mathematics program
 CS246E: Enrolled in an Honours Mathematics program
-CS350: Not completed nor concurrently enrolled in ECE254
 CS487: Enrolled in an Honours Mathematics program
 CROAT101: Not open to students with native, near-native, or similar advanced ability
 CROAT102: Not open to students with native, near-native, or similar advanced ability
@@ -106,13 +169,10 @@ DUTCH101: Not open to students with native, near-native, or similar advanced abi
 DUTCH102: Not open to students with native, near-native, or similar advanced ability
 EARTH436A: Enrolled in Geochemistry
 EARTH456: Not open to students enrolled in the Faculty of Mathematics
-ECON211: Not open to students in a Faculty of Mathematics program
+ECON211: Not open to students enrolled in Faculty of Mathematics programs
 ECON221: Not open to students enrolled in Faculty of Mathematics programs
 ECON311: Not open to students enrolled in Faculty of Mathematics programs
-ECON322: Enrolled in a Faculty of Mathematics program
-ECON371: Must have completed any prior course in probability and/or basic statistics
-ECON372: Enrolled in a program offered by all faculties, excluding Faculty of Mathematics
-ECON412: Enrolled in Science Biotechnology/Economics
+ECON412: Enrolled in an Honours program
 ECON421: Enrolled in an Honours program
 ECON422: Enrolled in an Honours program
 ECON423: Enrolled in an Honours program
@@ -123,10 +183,10 @@ ECON445: Enrolled in an Honours program
 ECON451: Enrolled in an Honours program
 ECON452: Enrolled in an Honours program
 ECON456: Enrolled in an Honours program
+ECON491: Enrolled in an Honours program
 ECON496: Enrolled in an Honours program
 ECE222: Enrolled in a BASc program
 ECE224: Enrolled in a BASc program
-ECE224: Not completed nor concurrently enrolled in MTE325
 ECE252: Enrolled in a BASc program
 ECE320: Enrolled in a BASc program
 ECE327: Enrolled in a BASc program
@@ -134,7 +194,6 @@ ECE350: Enrolled in a BASc program
 ECE360: Enrolled in a BASc program
 ECE409: Enrolled in a BASc program
 ECE423: Enrolled in a BASc program
-ECE423: Not completed nor concurrently enrolled in SYDE524
 ECE451: Enrolled in a BASc program
 ECE452: Enrolled in a BASc program
 ECE453: Enrolled in a BASc program
@@ -191,8 +250,11 @@ GENE501: Visiting exchange students only
 GENE502: Visiting exchange students only
 GENE503: Visiting exchange students only
 GENE599: Enrolled in a BASc program
+GEOG187: Enrolled in H-Geomatics, or JH-Geomatics
+GEOG293: Enrolled in H-Geomatics
+GEOG294: Enrolled in H-Geomatics
 GEOG316: Not open to students enrolled in a program offered by Faculty of Mathematics
-GEOG318: Not open to students enrolled in programs offered by Faculty of Mathematics
+GEOG318: Not open to students enrolled in Faculty of Mathematics programs
 GEOG430A: Enrolled in an Honours program
 GEOG430B: Enrolled in an Honours program
 GEOG430C: Enrolled in an Honours program
@@ -206,8 +268,8 @@ GER201: Not open to students with native, near-native, or similar advanced abili
 GER202: Not open to students with native, near-native, or similar advanced ability
 HEALTH150: Not open to students enrolled in programs offered by the Faculty of Science
 INDG101: Not open to students with advanced ability in Mohawk
-JAPAN101R: Not open to students with native, near-native, or similar advanced ability
-JAPAN111R: Not open to students with native, near-native, or similar advanced ability
+JAPAN101R: Not open to students with advanced ability
+JAPAN111R: Not open to students with advanced ability
 KIN104: Corequisite is for H-Kinesiology students only
 KIN121: Corequisite is for H-Kinesiology students only
 KIN140L: Current first aid and CPR certification is required
@@ -216,15 +278,18 @@ KIN217: Enrolled in an Honours Science plan
 KIN255: Corequisite is for H-Kinesiology students only
 KIN493: Earned a minimum cumulative average of 75
 INTEG230: Enrolled in Joint Honours Knowledge Integration
-KOREA101R: Not open to students with native, near-native, or similar advanced ability
+KOREA101R: Not open to students with advanced ability
+KOREA102R: Not open to students with advanced ability
 LS221: Not open to students enrolled in a Faculty of Mathematics program
 LS280: Not open to students enrolled in a Faculty of Mathematics program
-LS322: Not open to students enrolled in a Faculty of Mathematics program
+LS283: Not open to students enrolled in H-Biotechnology/Chartered Professional Accountancy
+LS322: Not open to students enrolled in Faculty of Mathematics programs
 MSE331: Not open to students enrolled in Bachelor of Computer Science or Bachelor of Mathematics programs
 MSE343: Enrolled in a BASc program
-MSE431: Not open to students enrolled in Bachelor of Computer Science or Bachelor of Mathematics
+MSE431: Not open to students enrolled in Bachelor of Computer Science or Bachelor of Mathematics programs
 MATH103: Enrolled in a program offered by the Faculties of Arts, Environment, or Health
 MATH104: Enrolled in a program offered by the Faculties of Arts, Environment, Health, or Science
+MATH114: Enrolled in H-Geomatics, or JH-Geomatics
 MATH135: Enrolled in an Honours Mathematics program or Mathematics/BASE
 MATH136: Enrolled in an Honours Mathematics program or Mathematics/BASE
 MATH145: Enrolled in an Honours Mathematics program
@@ -232,11 +297,11 @@ MATH146: Enrolled in an Honours Mathematics program
 MATH147: Enrolled in an Honours Mathematics program
 MATH148: Enrolled in an Honours Mathematics program
 MATH211: Not open to students enrolled in Faculty of Mathematics programs
-MATH212: Not open to students in a Faculty of Mathematics program
+MATH212: Not open to students enrolled in Faculty of Mathematics programs
 MATH217: Not open to students in Faculty of Mathematics programs
 MATH218: Enrolled in Bachelor of Applied Science or Bachelor of Software Engineering
 MATH227: Enrolled in an Honours Science program
-MATH228: Not open to students in Faculty of Mathematics programs
+MATH228: Not open to students enrolled in Faculty of Mathematics programs
 MATH235: Enrolled in an Honours Mathematics program
 MATH237: Enrolled in an Honours Mathematics program
 MATH239: Enrolled in an Honours Mathematics program
@@ -256,15 +321,15 @@ MUSIC316: Audition required
 MUSIC317: Audition required
 MUSIC416: Audition required
 MUSIC417: Audition required
-OPTOM342A: Must have advanced standing status
-OPTOM346: Must have advanced standing status
-OPTOM347: Must have advanced standing status
-OPTOM367: Must have advanced standing status
-OPTOM375: Must have advanced standing status
-OPTOM377: Must have advanced standing status
-OPTOM385: Must have advanced standing status
-OPTOM387: Must have advanced standing status
-PHIL240: Not open to students in a Faculty of Mathematics program
+OPTOM342A: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+OPTOM346: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+OPTOM347: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+OPTOM367: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+OPTOM375: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+OPTOM377: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+OPTOM385: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+OPTOM387: Must have completed the Advanced Standing Optometry Preparatory Program (ASOPP)
+PHIL240: Not open to students enrolled in Faculty of Mathematics programs
 PHYS105: Not open to students enrolled in a Bachelor of Applied Science program
 PHYS115: Enrolled in a program offered by the Faculty of Engineering
 PHYS242: AMATH231 can be taken concurrently
@@ -281,14 +346,13 @@ PHYS437B: Earned a minimum cumulative average of 70
 PHYS474: Enrolled in a program in Faculties of Mathematics or Science
 PHYS475: Enrolled in a program offered by the Faculties of Mathematics or Science
 PHYS476: Enrolled in a program offered by the Faculties of Mathematics or Science
-PHYS483: Enrolled in Life Physics - Medical Physics Specialization
 PHYS484: Enrolled in a program offered by the Faculties of Mathematics or Science
 PLAN351: Not open to students enrolled in a program offered by Faculty of Mathematics
-PLAN353: Not open to students enrolled in a program offered by Faculty of Mathematics
+PLAN353: Not open to students enrolled in Faculty of Mathematics programs
 PSCI314: Not open to students enrolled in Faculty of Mathematics program
 PSCI400: Earned a minimum Political Science major average of 75.0%
 PSCI499A: Earned a minimum Political Science average of 75.0%
-PD1: Not open to students enrolled in a Faculty of Engineering program
+PD1: Not open to students enrolled in Faculty of Engineering programs
 PD3: Enrolled in a co-operative program
 PD4: Enrolled in a co-operative program
 PD5: Enrolled in a co-operative program
@@ -302,11 +366,10 @@ PD12: Enrolled in a co-operative program
 PD13: Enrolled in a co-operative program
 PD14: Enrolled in a co-operative program
 PD22: Enrolled in a co-operative program
-PSYCH291: Corequisite is required if students have not completed 4U Math
 PSYCH389: Earned a minimum Psychology major average of 74.0%
 PSYCH389: Enrolled in Make-up Psychology
 PSYCH390: Enrolled in Make-up Psychology
-PSYCH391: Earned a minimum Psychology major average of 74.0%
+PSYCH391: Earned a minimum Psychology major average of 75.0%
 PSYCH392: Earned a minimum Psychology major average of 74.0%
 PSYCH392: Enrolled in Make-up Psychology
 PSYCH393: Earned a minimum Psychology major average of 74.0%
@@ -363,13 +426,11 @@ PSYCH485: Enrolled in Make-up Psychology
 PSYCH486: Earned a minimum Psychology major average of 75.0%
 PSYCH486: Enrolled in Make-up Psychology
 PSYCH487: Earned a minimum Psychology average of 75.0%
-PSYCH492: Earned a minimum Psychology average of 74.0%
+PSYCH492: Earned a minimum Psychology average of 75.0%
 PSYCH493: Earned a minimum Psychology major average of 75.0%
 PSYCH499A: Earned a minimum Psychology major average of 82.0%
 PSYCH499A: Enrolled in Make-up Psychology
-PSYCH499B: Earned a minimum Psychology major average of 75.0%
 PSYCH499B: Enrolled in Make-up Psychology
-PSYCH499C: Earned a minimum Psychology major average of 75.0%
 PSYCH499C: Enrolled in Make-up Psychology
 HLTH202: Enrolled in Health Studies
 HLTH204: Enrolled in Health Studies
@@ -379,6 +440,7 @@ HLTH344: Enrolled in Health Studies, Mathematics Health Informatics Option
 HLTH400: Enrolled in Health Studies
 HLTH427: Enrolled in Health Studies
 HLTH430: Enrolled in Health Studies
+HLTH432A: Earned a minimum cumulative average of 75
 HLTH433: Enrolled in Health Studies
 HLTH442: Enrolled in Health Studies
 HLTH448: Enrolled in Health Studies
@@ -411,7 +473,9 @@ REC471A: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Stu
 REC475: Enrolled in H-Recreation & Leisure Studies, JH-Recreation & Leisure Studies; H-Recreation & Sport Business, JH-Recreation & Sport Business
 RUSS101: Not open to students with native, near-native, or similar advanced ability
 RUSS102: Not open to students with native, near-native, or similar advanced ability
+SCBUS122: Enrolled in H-Biotechnology/Chartered Professional Accountancy
 SCBUS223: Enrolled in Biotechnology/Economics
+SCBUS225: Enrolled in H-Biotechnology/Chartered Professional Accountancy
 SCBUS323: Enrolled in Biotechnology/Economics
 SCBUS423: Enrolled in Biotechnology/Economics
 SRF490: Earned a minimum major average of 73.0%
@@ -419,15 +483,16 @@ SRF490: An application is required
 SRF491: Earned a minimum major average of 73.0%
 SRF499A: Earned a minimum major average of 75.0%
 SRF499B: Earned a minimum major average of 75.0%
-SDS250R: Not open to students enrolled in a Faculty of Mathematics program
+SDS250R: Not open to students enrolled in Faculty of Mathematics programs
 SDS251R: Not open to students enrolled in a Faculty of Mathematics program
 STV400: Enrolled in Society, Technology & Values Option
 SOC221: Not open to students enrolled in a Faculty of Mathematics program
 SOC280: Not open to students in a Faculty of Mathematics program
-SOC322: Not open to students in a Faculty of Mathematics program
+SOC322: Not open to students enrolled in Faculty of Mathematics programs
 SPAN101: Not open to students with native, near-native, or similar advanced ability
 SPAN102: Not open to students with native, near-native, or similar advanced ability
 STAT202: Enrolled in a Faculty of Science program
+STAT211: Enrolled in H-Biotechnology/Chartered Professional Accountancy
 STAT230: Enrolled in an Honours Mathematics program
 STAT231: Enrolled in an Honours Mathematics program
 STAT240: Enrolled in an Honours Mathematics program

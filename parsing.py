@@ -4,14 +4,6 @@ import os
 from lxml import html
 import pandas as pd
 import json
-import course_info as cc
-
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 def extract_grade_or_level(rule: str):
@@ -228,28 +220,25 @@ def find_req(html_text, class_name):
 
 
 if __name__ == "__main__":
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--window-size=1920,1080")
-
-    driver = webdriver.Chrome(options=chrome_options)
-
     df = pd.read_csv("courses_table.csv")
-    num_to_link = dict(zip(df["code"], zip(df["link"], df["subject"])))
+    rows = list(zip(df["code"], df["subject"]))
 
     open("special_rules.txt", "w", encoding="utf-8").close()
 
+    for i, (code, subject) in enumerate(rows):
+        html_path = os.path.join("data", "Course_HTML", subject, f"{code}.html")
 
-    x = 0
-    for code, (link, subject) in list(num_to_link.items()):
-        print(code + " " + str(x) + "\n")
-        x += 1
-        html_text = cc.extract_course(link, driver)
+        if not os.path.exists(html_path):
+            print(f"{code} {i} (skipped — HTML not found)")
+            continue
+
+        print(f"{code} {i}")
+        with open(html_path, "r", encoding="utf-8") as f:
+            html_text = f.read()
+
         data = find_req(html_text, code)
 
-        folder_path = os.path.join("Courses", subject)
+        folder_path = os.path.join("data", "Courses", subject)
         os.makedirs(folder_path, exist_ok=True)
-        file_path = os.path.join(folder_path, f"{code}.json")
-        with open(file_path, "w", encoding="utf-8") as f:
+        with open(os.path.join(folder_path, f"{code}.json"), "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)

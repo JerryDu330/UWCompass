@@ -1,8 +1,0 @@
-{
-    "Prerequisites": {
-        "type": "OR",
-        "items": []
-    },
-    "Antirequisites": "",
-    "Corequisites": ""
-}
