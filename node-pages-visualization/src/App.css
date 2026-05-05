@@ -216,6 +216,26 @@
   line-height: 1.65;
 }
 
+/* ── Header ↔ sidebar alignment ─────────────────────────────── */
+/* Make the logo zone the same width as the sidebar so they form
+   one visual column. Only applies inside the visualizer layout. */
+
+.app-container .header {
+  padding-left: 0;
+  padding-right: 24px;
+}
+
+.app-container .logo-btn {
+  width: 210px;
+  flex-shrink: 0;
+  padding-left: 20px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
 /* ── ReactFlow overrides ─────────────────────────────────────── */
 
 .react-flow__edges { z-index: 5000 !important; }

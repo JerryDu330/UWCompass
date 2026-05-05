@@ -1,5 +1,5 @@
 import { useMemo, useState, useCallback, useRef, useEffect } from 'react';
-import ReactFlow, { Background, Controls, MarkerType } from 'reactflow';
+import ReactFlow, { Background, Controls, MarkerType, Handle, Position } from 'reactflow';
 import dagre from 'dagre';
 import 'reactflow/dist/style.css';
 import './CourseTree.css';
@@ -15,13 +15,21 @@ const MAX_ROW_H = 100;
 const FOLLOW_X1 = 430;
 const FOLLOW_X2 = 800;
 
+// Extra prereq group block dimensions
+const EGRP_PAD_V          = 6;
+const EGRP_PAD_H          = 8;
+const EGRP_ITEM_GAP       = 6;
+const EGRP_COL_GAP        = 8;
+const EGRP_W              = WS + EGRP_PAD_H * 2;
+const EGRP_W_2COL         = WS * 2 + EGRP_PAD_H * 3 + EGRP_COL_GAP;
+const EGRP_ITEM_GAP_OUTER = 10;
+const EGRP_TWO_COL_MIN    = 8; // split into 2 cols when group has this many courses
+
 // ─── Left-wing dagre layout ───────────────────────────────────────────────────
-// Handles empty fwdEdges (no base_prereq in collapsed files) gracefully.
 function buildLeftPositions(fwdEdges, typeOf, centerCourse) {
   const ids = new Set();
   fwdEdges.forEach(e => { ids.add(e.from); ids.add(e.to); });
 
-  // No left-wing data — place center at origin
   if (!ids.size) {
     return new Map([[centerCourse, { x: -WC / 2, y: -HC / 2 }]]);
   }
@@ -35,7 +43,7 @@ function buildLeftPositions(fwdEdges, typeOf, centerCourse) {
     const or = typeOf.get(id) === 'OR';
     g.setNode(id, { width: or ? WO : WC, height: or ? HO : HC });
   });
-  fwdEdges.forEach(e => g.setEdge(e.to, e.from)); // reversed so prereqs go left
+  fwdEdges.forEach(e => g.setEdge(e.to, e.from));
 
   dagre.layout(g);
 
@@ -64,29 +72,30 @@ function colPlace(items, baseX, rowH) {
 function makeNode(id, x, y, role, typeOf, displayLabel) {
   const origId = id.includes('@') ? id.split('@')[0] : id;
   const or    = typeOf?.get(origId) === 'OR';
-  const small = role === 'extra_prereq';
+  const small = role === 'extra_prereq' || role === 'center_ref';
   const w     = or ? WO : small ? WS : WC;
   const h     = or ? HO : small ? HS : HC;
 
-  let bg, border, color, shadow;
+  let bg, border, color, shadow, borderStyle = 'solid';
   switch (role) {
     case 'center':
-      bg = '#5568ff'; border = '#3d52e0'; color = '#fff';
-      shadow = '0 0 0 4px rgba(85,104,255,0.18), 0 2px 10px rgba(85,104,255,0.3)'; break;
+    case 'center_ref':
+      bg = '#5568ff'; border = '#5568ff'; color = '#fff';
+      shadow = '0 0 16px 4px #5568ff40'; break;
     case 'left_or':
     case 'extra_or':
       bg = '#94a3b8'; border = ''; color = '#fff'; shadow = 'none'; break;
     case 'left_prereq':
-      bg = '#fff'; border = '#d1d5db'; color = '#111827';
-      shadow = '0 1px 3px rgba(0,0,0,.07)'; break;
+      bg = '#64748b15'; border = '#64748b55'; color = '#475569';
+      shadow = 'none'; break;
     case 'extra_prereq':
-      bg = '#f0fdf4'; border = '#6ee7b7'; color = '#065f46';
-      shadow = '0 1px 3px rgba(0,0,0,.07)'; break;
+      bg = '#16a34a15'; border = '#16a34a55'; color = '#16a34a';
+      shadow = 'none'; break;
     case 'following':
-      bg = '#fff'; border = '#c7d2fe'; color = '#312e81';
-      shadow = '0 1px 3px rgba(0,0,0,.07)'; break;
+      bg = '#a855f715'; border = '#a855f780'; color = '#7e22ce';
+      shadow = 'none'; break;
     default:
-      bg = '#fff'; border = '#e5e7eb'; color = '#374151'; shadow = 'none';
+      bg = '#64748b15'; border = '#64748b40'; color = '#475569'; shadow = 'none';
   }
 
   const label = displayLabel || (or ? '' : origId);
@@ -99,12 +108,12 @@ function makeNode(id, x, y, role, typeOf, displayLabel) {
     targetPosition: 'left',
     style: {
       width: w, height: h,
-      fontSize: role === 'center' ? '13px' : small ? '11px' : '12px',
-      fontWeight: role === 'center' ? '700' : '500',
+      fontSize: role === 'center' || role === 'center_ref' ? '13px' : small ? '11px' : '12px',
+      fontWeight: role === 'center' || role === 'center_ref' ? '700' : '500',
       letterSpacing: '-0.01em',
       borderRadius: or ? 0 : '8px',
       background: bg, color,
-      border: or ? 'none' : `1.5px solid ${border}`,
+      border: or ? 'none' : `1.5px ${borderStyle} ${border}`,
       clipPath: or ? 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' : undefined,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       boxShadow: or ? 'none' : shadow,
@@ -127,84 +136,235 @@ function makeEdge(source, target, role, color = '#94a3b8', visible = true, type 
   };
 }
 
-// ─── Hover cluster ────────────────────────────────────────────────────────────
-function buildHoverCluster(fc, fcScreenX, fcScreenY, extraEdgesByFrom, typeOf, containerH) {
-  const courseLeaves = new Set();
-  const visited = new Set([fc]);
-  const queue = [fc];
-  while (queue.length) {
-    const curr = queue.shift();
-    (extraEdgesByFrom.get(curr) || []).forEach(e => {
-      if (visited.has(e.to)) return;
-      visited.add(e.to);
-      if (typeOf.get(e.to) === 'OR') queue.push(e.to);
-      else courseLeaves.add(e.to);
-    });
-  }
+// ─── Group dimensions helper ──────────────────────────────────────────────────
+function groupDims(n) {
+  const twoCol = n >= EGRP_TWO_COL_MIN;
+  const perCol = twoCol ? Math.ceil(n / 2) : n;
+  const w = twoCol ? EGRP_W_2COL : EGRP_W;
+  const h = EGRP_PAD_V * 2 + perCol * HS + (perCol - 1) * EGRP_ITEM_GAP;
+  return { w, h, twoCol, perCol };
+}
 
-  const leaves = [...courseLeaves].sort();
-  if (!leaves.length) return { nodes: [], edges: [] };
+// ─── Hover cluster with OR group blocks ───────────────────────────────────────
+function buildHoverCluster(fc, fcScreenX, fcScreenY, extraEdgesByFrom, orAllMembers, typeOf, containerH, center) {
+  const andCourses = [];
+  const orGroups   = [];
 
-  const spacing = HS + 18;
-  const hGap    = 110;
-  const col1X   = fcScreenX - WS - hGap;
+  (extraEdgesByFrom.get(fc) || []).forEach(e => {
+    if (typeOf.get(e.to) === 'OR') {
+      const courses = [...new Set(orAllMembers.get(e.to) || [])].sort();
+      if (courses.length) orGroups.push({ orId: e.to, courses });
+    } else {
+      andCourses.push(e.to);
+    }
+  });
+  andCourses.sort();
 
-  const buildCol = (list, x) => {
-    const startY = (fcScreenY + HS / 2) - ((list.length - 1) * spacing / 2) - HS / 2;
-    return list.map((id, i) =>
-      makeNode(`${id}@${fc}`, x, startY + i * spacing, 'extra_prereq', typeOf, id));
-  };
+  if (!andCourses.length && !orGroups.length) return { nodes: [], edges: [] };
 
-  const colH   = leaves.length * spacing;
-  const twoCol = colH > containerH * 0.70;
-  const perCol = twoCol ? Math.ceil(leaves.length / 2) : leaves.length;
-
-  const nodes = [
-    ...buildCol(leaves.slice(0, perCol), col1X),
-    ...(twoCol ? buildCol(leaves.slice(perCol), col1X - WS - 20) : []),
+  const layoutItems = [
+    ...orGroups.map(g => { const d = groupDims(g.courses.length); return { type: 'group', ...g, ...d }; }),
+    ...andCourses.map(c => ({ type: 'and', courseId: c, h: HS, w: WS })),
   ];
-  const edges = leaves.map(id =>
-    makeEdge(`${id}@${fc}`, fc, 'extra', '#94a3b8', true, 'smoothstep')
+
+  const maxItemW = Math.max(...layoutItems.map(item => item.w));
+  const totalH   = layoutItems.reduce(
+    (sum, item, i) => sum + item.h + (i < layoutItems.length - 1 ? EGRP_ITEM_GAP_OUTER : 0), 0
   );
+
+  const hGap     = 110;
+  const clusterX = fcScreenX - maxItemW - hGap;
+  const startY   = (fcScreenY + HS / 2) - totalH / 2;
+
+  const nodes = [];
+  const edges = [];
+
+  // MERGE junction
+  const MERGE_ID = `MERGE@${fc}`;
+  const mergeX   = clusterX + maxItemW + (hGap - 8) / 2;
+  const mergeY   = fcScreenY + HS / 2 - 4;
+  nodes.push({ id: MERGE_ID, type: 'mergeNode', data: {}, position: { x: mergeX, y: mergeY } });
+  edges.push({
+    id: `e-MERGE@${fc}-${fc}`,
+    source: MERGE_ID, target: fc, type: 'straight',
+    style: { stroke: '#94a3b8', strokeWidth: 1.5 },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#94a3b8', width: 10, height: 10 },
+    data: { role: 'extra-merge', color: '#94a3b8' },
+  });
+
+  let curY = startY;
+  layoutItems.forEach(item => {
+    if (item.type === 'group') {
+      const gbId = `EGRP_${item.orId}@${fc}`;
+      nodes.push({
+        id: gbId, type: 'extraGroupBg',
+        data: { role: 'extraGroupBg' },
+        position: { x: clusterX, y: curY },
+        style: { width: item.w, height: item.h, background: 'transparent', border: 'none', padding: 0 },
+        zIndex: 0, selectable: false,
+      });
+      edges.push({
+        id: `e-${gbId}-MERGE`,
+        source: gbId, target: MERGE_ID, type: 'straight',
+        style: { stroke: '#94a3b8', strokeWidth: 1.5 },
+      });
+      item.courses.forEach((courseId, i) => {
+        const col = item.twoCol && i >= item.perCol ? 1 : 0;
+        const row = item.twoCol && i >= item.perCol ? i - item.perCol : i;
+        const nx  = clusterX + EGRP_PAD_H + col * (WS + EGRP_PAD_H + EGRP_COL_GAP);
+        const ny  = curY + EGRP_PAD_V + row * (HS + EGRP_ITEM_GAP);
+        const role = courseId === center ? 'center_ref' : 'extra_prereq';
+        nodes.push(makeNode(`${courseId}@${fc}`, nx, ny, role, typeOf, courseId));
+      });
+    } else {
+      const nodeId = `${item.courseId}@${fc}`;
+      nodes.push(makeNode(nodeId, clusterX + (maxItemW - WS) / 2, curY, 'extra_prereq', typeOf, item.courseId));
+      edges.push({
+        id: `e-${nodeId}-MERGE`,
+        source: nodeId, target: MERGE_ID, type: 'straight',
+        style: { stroke: '#94a3b8', strokeWidth: 1.5 },
+      });
+    }
+    curY += item.h + EGRP_ITEM_GAP_OUTER;
+  });
+
   return { nodes, edges };
 }
 
-// ─── Custom edge for center→following routing ─────────────────────────────────
-function CenterFollowEdge({ sourceX, sourceY, targetX, targetY, data, style, markerEnd }) {
-  const corridorX = sourceX + 80;
-  const yRoute    = data?.yRoute ?? sourceY + 60;
-  const d = [
-    `M ${sourceX} ${sourceY}`,
-    `L ${corridorX} ${sourceY}`,
-    `L ${corridorX} ${yRoute}`,
-    `L ${targetX} ${yRoute}`,
-    `L ${targetX} ${targetY}`,
-  ].join(' ');
-  return (
-    <path
-      d={d} fill="none"
-      stroke={style?.stroke ?? '#94a3b8'}
-      strokeWidth={style?.strokeWidth ?? 1.5}
-      markerEnd={markerEnd}
-      className="react-flow__edge-path"
-    />
-  );
-}
+// ─── Custom nodes ─────────────────────────────────────────────────────────────
+const MergeNode = () => (
+  <div style={{ width: 8, height: 8, background: '#94a3b8', borderRadius: '50%' }}>
+    <Handle type="target" position={Position.Left}  style={{ opacity: 0 }} />
+    <Handle type="source" position={Position.Right} style={{ opacity: 0 }} />
+  </div>
+);
 
-const edgeTypes = { centerFollow: CenterFollowEdge };
+const ExtraGroupBgNode = () => (
+  <div style={{
+    width: '100%', height: '100%', boxSizing: 'border-box',
+    borderRadius: 8, border: '1.5px dashed #16a34a80', background: '#16a34a06',
+    position: 'relative',
+  }}>
+    <Handle type="source" position={Position.Right} style={{ opacity: 0 }} />
+    <div style={{
+      position: 'absolute', top: 3, left: 6,
+      fontSize: 9, fontWeight: 700, color: '#16a34a55', letterSpacing: '0.06em',
+    }}>OR</div>
+  </div>
+);
+
+const nodeTypes = { mergeNode: MergeNode, extraGroupBg: ExtraGroupBgNode };
+
+// ─── Fixed (click) panel ──────────────────────────────────────────────────────
+const FixedPanel = ({ fixedNode, graph, onClear }) => {
+  if (!fixedNode) return null;
+
+  const orGroups   = [];
+  const andCourses = [];
+  (graph.extraEdgesByFrom.get(fixedNode) || []).forEach(e => {
+    if (graph.typeOf.get(e.to) === 'OR') {
+      const courses = [...new Set(graph.orAllMembers.get(e.to) || [])].sort();
+      if (courses.length) orGroups.push({ orId: e.to, courses });
+    } else {
+      andCourses.push(e.to);
+    }
+  });
+  andCourses.sort();
+
+  const chip = (courseId) => (
+    <span key={courseId} style={{
+      display: 'inline-block', padding: '2px 8px', borderRadius: 6,
+      fontSize: 11, fontWeight: 600, margin: '2px 3px',
+      background: courseId === graph.CENTER ? '#5568ff' : '#16a34a15',
+      color:      courseId === graph.CENTER ? '#fff'     : '#16a34a',
+      border: `1px solid ${courseId === graph.CENTER ? '#5568ff' : '#16a34a55'}`,
+    }}>{courseId}</span>
+  );
+
+  return (
+    <div style={{
+      position: 'absolute', top: 16, right: 16,
+      background: 'white', borderRadius: 12, padding: '14px 16px',
+      boxShadow: '0 8px 32px rgba(85,104,255,0.12)',
+      border: '1px solid rgba(85,104,255,0.15)',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      minWidth: 220, maxWidth: 300, zIndex: 20,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+        <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a1a' }}>{fixedNode}</span>
+        <button onClick={onClear} style={{
+          background: 'none', border: '1px solid #e2e8f0', borderRadius: 6,
+          cursor: 'pointer', fontSize: 11, color: '#64748b', padding: '2px 8px',
+        }}>Clear</button>
+      </div>
+
+      {(orGroups.length > 0 || andCourses.length > 0) && (
+        <div style={{ fontSize: 10, fontWeight: 700, color: '#5568ff', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>
+          Prerequisites
+        </div>
+      )}
+
+      {orGroups.length > 1 && (
+        <p style={{ fontSize: 11, color: '#64748b', margin: '0 0 8px', lineHeight: 1.4 }}>
+          All groups are required — pick one course from each.
+        </p>
+      )}
+
+      {orGroups.map((g) => (
+        <div key={g.orId} style={{
+          marginBottom: 8, padding: '6px 8px', borderRadius: 8,
+          border: '1.5px dashed #16a34a70', background: '#16a34a05',
+        }}>
+          <div style={{ fontSize: 9, fontWeight: 700, color: '#16a34a60', marginBottom: 4, letterSpacing: '0.06em' }}>
+            Pick one of:
+          </div>
+          <div style={{ lineHeight: 1.6 }}>
+            {g.courses.map(chip)}
+          </div>
+        </div>
+      ))}
+
+      {andCourses.length > 0 && orGroups.length > 0 && (
+        <div style={{ fontSize: 10, fontWeight: 600, color: '#94a3b8', margin: '2px 0 6px', letterSpacing: '0.04em' }}>
+          + also required:
+        </div>
+      )}
+
+      {andCourses.length > 0 && (
+        <div style={{ lineHeight: 1.6 }}>
+          {andCourses.map(c => (
+            <span key={c} style={{
+              display: 'inline-block', padding: '2px 8px', borderRadius: 6,
+              fontSize: 11, fontWeight: 600, margin: '2px 3px',
+              background: '#64748b15', color: '#475569', border: '1px solid #64748b55',
+            }}>{c}</span>
+          ))}
+        </div>
+      )}
+
+      {!orGroups.length && !andCourses.length && (
+        <p style={{ fontSize: 12, color: '#94a3b8', margin: 0 }}>No additional prerequisites.</p>
+      )}
+    </div>
+  );
+};
 
 // ─── Main component ───────────────────────────────────────────────────────────
-const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
+const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId }) => {
   const containerRef  = useRef(null);
   const rfInstanceRef = useRef(null);
   const leaveTimer    = useRef(null);
 
-  const [containerH, setContainerH]   = useState(600);
-  const [activeNode, setActiveNode]   = useState(null);
-  const [clickedNode, setClickedNode] = useState(null);
-  const [showHelp, setShowHelp]       = useState(true);
+  const [containerH, setContainerH] = useState(600);
+  const [activeNode, setActiveNode] = useState(null);  // hover
+  const [fixedNode,  setFixedNode]  = useState(null);  // click-locked
+  const [clickedNode, setClickedNode] = useState(null); // center/prereq info
+  const [showHelp, setShowHelp]     = useState(true);
 
   const CENTER = courseId;
+
+  // Clear fixed node when course changes
+  useEffect(() => { setFixedNode(null); setClickedNode(null); }, [courseId]);
 
   useEffect(() => {
     const update = () => {
@@ -219,7 +379,7 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
     if (!rfInstanceRef.current) return;
     const timer = setTimeout(() => rfInstanceRef.current?.fitView({ padding: 0.14 }), 60);
     return () => clearTimeout(timer);
-  }, [rawData, selectedSubject, containerH]);
+  }, [rawData, selectedSubjects, selectedLevels, containerH]);
 
   useEffect(() => () => {
     if (leaveTimer.current) clearTimeout(leaveTimer.current);
@@ -237,9 +397,14 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
     const allFollowing = [...new Set(
       followEdges.filter(d => d.from_type === 'COURSE').map(d => d.from)
     )].sort();
-    const filtered = selectedSubject === 'All'
-      ? allFollowing
-      : allFollowing.filter(c => c.replace(/\d.*$/, '') === selectedSubject);
+
+    const filtered = allFollowing.filter(c => {
+      const sub = c.replace(/\d.*$/, '');
+      const lvl = c.match(/\d/)?.[0] || '1';
+      const subMatch = selectedSubjects === null || selectedSubjects.has(sub);
+      const lvlMatch = selectedLevels.has(lvl);
+      return subMatch && lvlMatch;
+    });
 
     const N        = filtered.length;
     const avail    = containerH - 90;
@@ -261,9 +426,16 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
       extraEdgesByFrom.get(e.from).push(e);
     });
 
+    const orAllMembers = new Map();
+    rawData.forEach(d => {
+      if (d.from_type === 'OR' && d.to_type === 'COURSE') {
+        if (!orAllMembers.has(d.from)) orAllMembers.set(d.from, []);
+        orAllMembers.get(d.from).push(d.to);
+      }
+    });
+
     const leftPos = buildLeftPositions(fwdEdges, typeOf, CENTER);
 
-    // OR-node bypass for left-wing edge routing
     const leftOrTarget = new Map();
     fwdEdges.forEach(e => {
       if (typeOf.get(e.to) === 'OR') leftOrTarget.set(e.to, e.from);
@@ -282,8 +454,9 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
       if (typeOf.get(id) === 'OR') return;
       nodes.push(makeNode(id, pos.x, pos.y, id === CENTER ? 'center' : 'left_prereq', typeOf));
     });
-    [...col1Placements, ...col2Placements].forEach(({ id, x, y }) =>
-      nodes.push(makeNode(id, x, y, 'following', typeOf)));
+    [...col1Placements, ...col2Placements].forEach(({ id, x, y }) => {
+      nodes.push(makeNode(id, x, y, 'following', typeOf));
+    });
 
     const edgeSet = new Set();
     const edges = [];
@@ -294,39 +467,28 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
       const eid = `${e.to}|${tgt}`;
       if (edgeSet.has(eid)) return;
       edgeSet.add(eid);
-      edges.push(makeEdge(e.to, tgt, 'left', '#94a3b8', true, 'smoothstep'));
+      edges.push(makeEdge(e.to, tgt, 'left', '#94a3b8', true, 'straight'));
     });
 
-    return { nodes, edges, typeOf, extraEdgesByFrom, followPos,
+    return { nodes, edges, typeOf, extraEdgesByFrom, orAllMembers, followPos,
       followingSet: new Set(filtered), CENTER, hasLeftWing: fwdEdges.length > 0 };
-  }, [rawData, selectedSubject, containerH, CENTER]);
+  }, [rawData, selectedSubjects, selectedLevels, containerH, CENTER]);
 
-  // ── Build display graph (base + hover cluster) ──────────────────────────────
+  // ── Build display graph ─────────────────────────────────────────────────────
   const { displayNodes, displayEdges } = useMemo(() => {
-    if (!activeNode || !graph.followingSet.has(activeNode)) {
+    // Hover takes priority; fall back to fixed node
+    const target = activeNode || fixedNode;
+    if (!target || !graph.followingSet.has(target)) {
       return { displayNodes: graph.nodes, displayEdges: graph.edges };
     }
 
-    const fc  = activeNode;
+    const fc  = target;
     const pos = graph.followPos.get(fc);
     if (!pos) return { displayNodes: graph.nodes, displayEdges: graph.edges };
 
     const cluster = buildHoverCluster(
-      fc, pos.x, pos.y, graph.extraEdgesByFrom, graph.typeOf, containerH,
+      fc, pos.x, pos.y, graph.extraEdgesByFrom, graph.orAllMembers, graph.typeOf, containerH, graph.CENTER,
     );
-
-    let yRoute = 0;
-    graph.followPos.forEach(p => { yRoute = Math.max(yRoute, p.y + HC + 30); });
-
-    const statEdges = [{
-      id: `e-${graph.CENTER}-${fc}`,
-      source: graph.CENTER,
-      target: fc,
-      type: 'centerFollow',
-      style: { stroke: '#94a3b8', strokeWidth: 1.5 },
-      markerEnd: { type: MarkerType.ArrowClosed, color: '#94a3b8', width: 10, height: 10 },
-      data: { yRoute },
-    }];
 
     const updatedBase = graph.nodes.map(n =>
       n.data.role === 'following' && n.id !== fc
@@ -336,9 +498,9 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
 
     return {
       displayNodes: [...updatedBase, ...cluster.nodes],
-      displayEdges: [...graph.edges, ...statEdges, ...cluster.edges],
+      displayEdges: [...graph.edges, ...cluster.edges],
     };
-  }, [graph, activeNode, containerH]);
+  }, [graph, activeNode, fixedNode, containerH]);
 
   // ── Event handlers ──────────────────────────────────────────────────────────
   const onNodeMouseEnter = useCallback((_, node) => {
@@ -352,7 +514,14 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
   }, []);
 
   const onNodeClick = useCallback((_, node) => {
-    setClickedNode(prev => prev === node.id ? null : node.id);
+    const role = node.data.role;
+    if (role === 'following') {
+      setFixedNode(prev => prev === node.id ? null : node.id);
+      setClickedNode(null);
+    } else if (role === 'center' || role === 'left_prereq') {
+      setClickedNode(prev => prev === node.id ? null : node.id);
+      setFixedNode(null);
+    }
   }, []);
 
   const onInit = useCallback((instance) => {
@@ -375,13 +544,16 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
         onNodeClick={onNodeClick}
         nodesDraggable={false}
         minZoom={0.15}
-        edgeTypes={edgeTypes}
+        nodeTypes={nodeTypes}
       >
         <Background variant="dots" color="#d1d5db" gap={20} size={1.5} />
         <Controls />
       </ReactFlow>
 
-      {/* ── Click info panel ─────────────────────────────────────────────── */}
+      {/* ── Fixed (click) panel — following course detail ─────────────────── */}
+      <FixedPanel fixedNode={fixedNode} graph={graph} onClear={() => setFixedNode(null)} />
+
+      {/* ── Click info panel — center / prereq ───────────────────────────── */}
       {clickedNode && clickedRole && (
         <div className="ct-info-panel">
           <button className="ct-close-btn" onClick={() => setClickedNode(null)}>✕</button>
@@ -392,31 +564,6 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
           {clickedRole === 'left_prereq' && (
             <p className="ct-info-label">A prerequisite option for {CENTER}.</p>
           )}
-          {clickedRole === 'following' && (() => {
-            const leaves = new Set();
-            const vis = new Set([clickedNode]);
-            const q   = [clickedNode];
-            while (q.length) {
-              const curr = q.shift();
-              (graph.extraEdgesByFrom.get(curr) || []).forEach(e => {
-                if (e.to_type === 'COURSE') {
-                  leaves.add(e.to);
-                } else if (e.to_type === 'OR' && !vis.has(e.to)) {
-                  vis.add(e.to); q.push(e.to);
-                }
-              });
-            }
-            const extras = [...leaves].sort();
-            return (
-              <>
-                <p className="ct-info-label">Requires {CENTER}, plus:</p>
-                {extras.length > 0
-                  ? <ul className="ct-info-list">{extras.map(ep => <li key={ep}>{ep}</li>)}</ul>
-                  : <p className="ct-info-note">No additional prerequisites listed.</p>
-                }
-              </>
-            );
-          })()}
         </div>
       )}
 
@@ -431,25 +578,28 @@ const CourseTreeCanvas = ({ rawData, selectedSubject, courseId }) => {
           </div>
           {graph.hasLeftWing && (
             <div className="ct-legend-row">
-              <span className="ct-legend-dot" style={{ background: '#fff', border: '1.5px solid #d1d5db' }} />
+              <span className="ct-legend-dot" style={{ background: '#64748b15', border: '1.5px solid #64748b55' }} />
               <span><strong>Left</strong> — prerequisites of {CENTER}</span>
             </div>
           )}
           <div className="ct-legend-row">
-            <span className="ct-legend-dot" style={{ background: '#fff', border: '1.5px solid #c7d2fe' }} />
-            <span><strong>Right</strong> — courses that need {CENTER}</span>
+            <span className="ct-legend-dot" style={{ background: '#a855f715', border: '1.5px solid #a855f780' }} />
+            <span><strong>Purple</strong> — courses that need {CENTER}</span>
           </div>
           <div className="ct-legend-row">
-            <span className="ct-legend-dot" style={{ background: '#f0fdf4', border: '1.5px solid #6ee7b7' }} />
-            <span><strong>Green</strong> — extra prerequisites (hover)</span>
+            <span className="ct-legend-dot" style={{ background: '#16a34a15', border: '1.5px solid #16a34a55' }} />
+            <span><strong>Green</strong> — extra prerequisites (hover/click)</span>
+          </div>
+          <div className="ct-legend-row">
+            <span className="ct-legend-dot" style={{ background: '#16a34a06', border: '1.5px dashed #16a34a80', borderRadius: 4 }} />
+            <span><strong>Green dashed box</strong> — pick one of these</span>
           </div>
           <hr className="ct-divider" />
           <p className="ct-help-note">
-            <strong>Hover</strong> a right-side course to reveal its extra prerequisites.
+            <strong>Hover</strong> a purple course to preview prerequisites.
           </p>
-          <p className="ct-help-note" style={{ marginTop: 8 }}>
-            <strong>Click</strong> any course for details.
-            Use the filter bar to narrow by department.
+          <p className="ct-help-note" style={{ marginTop: 6 }}>
+            <strong>Click</strong> to lock and see AND/OR details.
           </p>
         </div>
       )}

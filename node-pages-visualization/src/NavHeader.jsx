@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { label: 'Features',   path: '/features' },
   { label: 'Visualizer', path: '/visualizer' },
   { label: 'CS Planner', path: '/cs-planner' },
+  { label: 'History',    path: '/history' },
   { label: 'About',      path: '/about' },
 ];
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ReactFlow, {
   Background,
   Controls,
+  MarkerType,
   useNodesState,
   useEdgesState,
   useReactFlow,
@@ -13,58 +14,54 @@ import 'reactflow/dist/style.css';
 const elk = new ELK();
 
 const THEME = {
-  nonSubject: { bg: '#b4bdc7', border: '#b4bdc7' },
+  nonSubject: { bg: '#64748b' },
   levels: {
-    '1': { bg: '#33bfff', border: '#33bfff' }, 
-    '2': { bg: 'rgb(221, 95, 221)', border: 'rgb(221, 95, 221)' }, 
-    '3': { bg: '#307cff', border: '#307cff' }, 
-    '4': { bg: '#8a4fff', border: '#8a4fff' }, 
+    '1': { bg: '#0ea5e9' },
+    '2': { bg: '#a855f7' },
+    '3': { bg: '#5568ff' },
+    '4': { bg: '#7c3aed' },
   },
-  // Updated to include RGBA for the "glow" transparency
-  traceColors: {
-    direct: 'rgba(10, 13, 3, 0.9)',   // Red Glow
-    indirect: 'rgba(236, 136, 29, 0.9)', // Blue Glow
-  }
 };
 
-const CustomCourseNode = ({ data }) => {
-  const isHighlighted = data.isDirect || data.isIndirect;
-  const glowColor = data.isDirect ? THEME.traceColors.direct : THEME.traceColors.indirect;
+const FILTER_ITEMS = [
+  { key: '1',     color: THEME.levels['1'].bg, label: '100-level courses' },
+  { key: '2',     color: THEME.levels['2'].bg, label: '200-level courses' },
+  { key: '3',     color: THEME.levels['3'].bg, label: '300-level courses' },
+  { key: '4',     color: THEME.levels['4'].bg, label: '400-level courses' },
+  { key: 'other', color: THEME.nonSubject.bg,  label: 'Other subject courses' },
+];
 
-  // Layered shadows create the "Radiant" depth
-  const glowStyle = isHighlighted ? {
-    boxShadow: `
-      0 0 15px 5px ${glowColor}, 
-      0 0 40px 15px ${glowColor.replace('0.9', '0.4')},
-      0 0 90px 30px ${glowColor.replace('0.9', '0.1')}
-    `,
-    border: `10px solid ${glowColor}`,
-    transform: data.isDirect ? 'scale(1.02)' : 'scale(1)',
-  } : {
-    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-    border: `12px solid ${data.borderColor}`,
-    transform: 'scale(1)',
-  };
+const TRACE_LEGEND = [
+  { solid: true,  label: 'Direct prereqs / dependents' },
+  { solid: false, label: 'Indirect chain' },
+];
+
+const CustomCourseNode = ({ data }) => {
+  const c = data.color;
+  let bg, border, textColor, shadow;
+
+  if (data.isDirect) {
+    bg = c; border = `6px solid ${c}`; textColor = '#fff';
+    shadow = `0 0 40px 10px ${c}50`;
+  } else if (data.isIndirect) {
+    bg = c + '30'; border = `4px solid ${c}80`; textColor = c;
+    shadow = `0 0 16px 4px ${c}25`;
+  } else {
+    bg = c + '15'; border = `4px solid ${c}55`; textColor = c;
+    shadow = '0 2px 8px rgba(0,0,0,0.06)';
+  }
 
   return (
     <div style={{
-      background: data.color,
-      color: data.textColor || '#fff',
+      width: 1200, height: 300,
       boxSizing: 'border-box',
-      borderRadius: '40px',
-      padding: '20px',
-      width: 1200,
-      height: 300,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '180px',
-      fontWeight: '900',
+      borderRadius: 40,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontSize: 170, fontWeight: 700,
       fontFamily: 'Inter, system-ui, sans-serif',
-      textShadow: '2px 4px 8px rgba(0,0,0,0.2)',
-      transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      transition: 'all 0.25s ease',
       cursor: 'pointer',
-      ...glowStyle,
+      background: bg, border, color: textColor, boxShadow: shadow,
     }}>
       {data.label}
     </div>
@@ -75,19 +72,6 @@ const nodeTypes = {
   courseNode: CustomCourseNode,
   orNode: () => <div style={{ width: 15, height: 15, background: '#94a3b8', borderRadius: '50%' }} />,
 };
-
-const LEGEND_ITEMS = [
-  { color: THEME.levels['1'].bg, label: '100-level courses' },
-  { color: THEME.levels['2'].bg, label: '200-level courses' },
-  { color: THEME.levels['3'].bg, label: '300-level courses' },
-  { color: THEME.levels['4'].bg, label: '400-level courses' },
-  { color: THEME.nonSubject.bg, label: 'Other subject courses' },
-];
-
-const TRACE_LEGEND = [
-  { color: THEME.traceColors.direct, label: 'Direct prereqs / dependents' },
-  { color: THEME.traceColors.indirect, label: 'Indirect chain' },
-];
 
 const panelStyle = {
   position: 'absolute',
@@ -109,22 +93,80 @@ const sectionLabel = {
   marginBottom: 8,
 };
 
-const Legend = () => (
-  <div style={{ ...panelStyle, bottom: 16, left: 16, minWidth: 196 }}>
-    <div style={sectionLabel}>Course Levels</div>
-    {LEGEND_ITEMS.map(({ color, label }) => (
-      <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: 5 }}>
-        <div style={{ width: 11, height: 11, borderRadius: 3, background: color, flexShrink: 0 }} />
-        <span style={{ fontSize: 12, color: '#475569' }}>{label}</span>
-      </div>
-    ))}
-    <div style={{ borderTop: '1px solid rgba(0,0,0,0.05)', margin: '10px 0 8px' }} />
-    <div style={sectionLabel}>Hover Highlight</div>
-    {TRACE_LEGEND.map(({ color, label }) => (
+// ─── Filter + Legend panel ────────────────────────────────────────────────────
+const FilterLegend = ({ hiddenLevels, onToggle, onClose }) => (
+  <div style={{ ...panelStyle, bottom: 16, right: 16, minWidth: 210 }}>
+    {/* Header row */}
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+      <div style={{ ...sectionLabel, marginBottom: 0 }}>Course Levels</div>
+      <button
+        onClick={onClose}
+        title="Hide legend"
+        style={{
+          background: 'none', border: 'none', cursor: 'pointer',
+          fontSize: 14, lineHeight: 1, color: '#94a3b8', padding: '0 2px',
+        }}
+      >✕</button>
+    </div>
+
+    {/* Clickable filter rows */}
+    {FILTER_ITEMS.map(({ key, color, label }) => {
+      const active = !hiddenLevels.has(key);
+      return (
+        <div
+          key={key}
+          onClick={() => onToggle(key)}
+          title={active ? `Hide ${label}` : `Show ${label}`}
+          style={{
+            display: 'flex', alignItems: 'center', gap: 9, marginBottom: 5,
+            cursor: 'pointer', userSelect: 'none',
+            opacity: active ? 1 : 0.45,
+            transition: 'opacity 0.15s',
+          }}
+        >
+          <div style={{
+            width: 11, height: 11, borderRadius: 3, flexShrink: 0,
+            background: active ? color : '#cbd5e1',
+            transition: 'background 0.15s',
+          }} />
+          <span style={{
+            fontSize: 12,
+            color: active ? '#475569' : '#94a3b8',
+            textDecoration: active ? 'none' : 'line-through',
+            transition: 'color 0.15s',
+          }}>{label}</span>
+        </div>
+      );
+    })}
+
+    {/* All / None shortcuts */}
+    <div style={{ display: 'flex', gap: 8, margin: '6px 0 10px' }}>
+      <button
+        onClick={() => FILTER_ITEMS.forEach(f => hiddenLevels.has(f.key) && onToggle(f.key))}
+        style={{
+          fontSize: 10, padding: '2px 8px', borderRadius: 6, cursor: 'pointer',
+          background: 'none', border: '1px solid #e2e8f0', color: '#64748b',
+        }}
+      >All</button>
+      <button
+        onClick={() => FILTER_ITEMS.forEach(f => !hiddenLevels.has(f.key) && onToggle(f.key))}
+        style={{
+          fontSize: 10, padding: '2px 8px', borderRadius: 6, cursor: 'pointer',
+          background: 'none', border: '1px solid #e2e8f0', color: '#64748b',
+        }}
+      >None</button>
+    </div>
+
+    <div style={{ borderTop: '1px solid rgba(0,0,0,0.05)', margin: '0 0 8px' }} />
+
+    {/* Hover highlight section (read-only) */}
+    <div style={{ ...sectionLabel, marginBottom: 8 }}>Hover Highlight</div>
+    {TRACE_LEGEND.map(({ solid, label }) => (
       <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: 5 }}>
         <div style={{
-          width: 11, height: 11, borderRadius: 3, background: color, flexShrink: 0,
-          boxShadow: `0 0 6px 2px ${color}`,
+          width: 11, height: 11, borderRadius: 3, flexShrink: 0,
+          background: solid ? '#5568ff' : '#5568ff30',
+          border: '1.5px solid #5568ff',
         }} />
         <span style={{ fontSize: 12, color: '#475569' }}>{label}</span>
       </div>
@@ -132,8 +174,10 @@ const Legend = () => (
   </div>
 );
 
-const HoverPanel = ({ nodeId }) => {
+// ─── HoverPanel ───────────────────────────────────────────────────────────────
+const HoverPanel = ({ nodeId, starred, onToggleStar }) => {
   if (!nodeId) return null;
+  const isStarred = starred?.has(nodeId);
   return (
     <div style={{
       ...panelStyle,
@@ -142,23 +186,32 @@ const HoverPanel = ({ nodeId }) => {
       borderColor: 'rgba(85,104,255,0.2)',
       boxShadow: '0 15px 40px rgba(85,104,255,0.12)',
     }}>
-      <div style={{ fontSize: 14, fontWeight: 700, color: '#1a1a1a', marginBottom: 10 }}>
-        {nodeId}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+        <div style={{ fontSize: 14, fontWeight: 700, color: '#1a1a1a' }}>{nodeId}</div>
+        <button
+          onClick={(e) => { e.stopPropagation(); onToggleStar(nodeId); }}
+          title={isStarred ? 'Unstar' : 'Star this course'}
+          style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            fontSize: 18, padding: '0 2px', lineHeight: 1,
+            color: isStarred ? '#f59e0b' : '#d1d5db',
+          }}
+        >
+          {isStarred ? '★' : '☆'}
+        </button>
       </div>
       <div style={sectionLabel}>Highlighting</div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
         <div style={{
           width: 10, height: 10, borderRadius: 2, flexShrink: 0,
-          background: THEME.traceColors.direct,
-          boxShadow: `0 0 5px 1px ${THEME.traceColors.direct}`,
+          background: '#5568ff', border: '1.5px solid #5568ff',
         }} />
         <span style={{ fontSize: 12, color: '#475569' }}>Direct prerequisites &amp; dependents</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
         <div style={{
           width: 10, height: 10, borderRadius: 2, flexShrink: 0,
-          background: THEME.traceColors.indirect,
-          boxShadow: `0 0 5px 1px ${THEME.traceColors.indirect}`,
+          background: '#5568ff30', border: '1.5px solid #5568ff',
         }} />
         <span style={{ fontSize: 12, color: '#475569' }}>Full prerequisite &amp; dependent chain</span>
       </div>
@@ -169,12 +222,37 @@ const HoverPanel = ({ nodeId }) => {
   );
 };
 
+const STARRED_KEY = 'uwcompass-starred-courses';
+
 const GraphCanvas = ({ data, subject }) => {
   const { fitView } = useReactFlow();
   const navigate = useNavigate();
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [hoveredNode, setHoveredNode] = useState(null);
+  const [hiddenLevels, setHiddenLevels] = useState(new Set());
+  const [showLegend, setShowLegend] = useState(true);
+  const [starred, setStarred] = useState(() => {
+    try { return new Set(JSON.parse(localStorage.getItem(STARRED_KEY) || '[]')); }
+    catch { return new Set(); }
+  });
+
+  const toggleStar = useCallback((courseId) => {
+    setStarred(prev => {
+      const next = new Set(prev);
+      if (next.has(courseId)) next.delete(courseId); else next.add(courseId);
+      localStorage.setItem(STARRED_KEY, JSON.stringify([...next]));
+      return next;
+    });
+  }, []);
+
+  const toggleLevel = useCallback((key) => {
+    setHiddenLevels(prev => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key); else next.add(key);
+      return next;
+    });
+  }, []);
 
   const onNodeClick = useCallback((_, node) => {
     if (!node.id.includes('OR_NODE')) navigate(`/course/${node.id}`);
@@ -221,19 +299,24 @@ const GraphCanvas = ({ data, subject }) => {
       const isOr = id.includes('OR_NODE');
       const lvl = id.match(/[1-4]/)?.[0] || '1';
       const isMain = subject && id.toUpperCase().includes(subject.toUpperCase());
-      const theme = isMain ? (THEME.levels[lvl] || THEME.levels['1']) : THEME.nonSubject;
+      const color = isMain ? (THEME.levels[lvl] || THEME.levels['1']).bg : THEME.nonSubject.bg;
       return {
         id,
         type: isOr ? 'orNode' : 'courseNode',
-        data: { label: isOr ? '' : id, color: theme.bg, borderColor: theme.border, level: lvl },
+        data: { label: isOr ? '' : id, color, level: lvl, isMain: !!isMain },
         position: { x: 0, y: 0 },
       };
     });
 
+    const EDGE_COLOR = '#94a3b8';
     const initialEdges = [];
     Object.entries(data).forEach(([target, prereqs]) => {
       prereqs.forEach(source => {
-        initialEdges.push({ id: `e-${source}-${target}`, source, target });
+        initialEdges.push({
+          id: `e-${source}-${target}`, source, target,
+          style: { stroke: EDGE_COLOR, strokeWidth: 8 },
+          markerEnd: { type: MarkerType.ArrowClosed, color: EDGE_COLOR, width: 40, height: 40 },
+        });
       });
     });
 
@@ -264,21 +347,47 @@ const GraphCanvas = ({ data, subject }) => {
     runLayout();
   }, [data, subject, setNodes, setEdges, fitView]);
 
-  const trace = useMemo(() => 
-    hoveredNode ? getTrace(hoveredNode, edges) : null, 
+  // Compute which node IDs are hidden by the level filter
+  const hiddenNodeIds = useMemo(() => {
+    const ids = new Set();
+    nodes.forEach(n => {
+      if (n.type === 'orNode') return;
+      const key = n.data.isMain ? n.data.level : 'other';
+      if (hiddenLevels.has(key)) ids.add(n.id);
+    });
+    return ids;
+  }, [nodes, hiddenLevels]);
+
+  const trace = useMemo(() =>
+    hoveredNode ? getTrace(hoveredNode, edges) : null,
     [hoveredNode, edges, getTrace]
   );
 
   const finalNodes = nodes.map(n => {
-    const isDirect = trace?.directNodes.has(n.id);
-    const isIndirect = trace?.indirectNodes.has(n.id);
+    const isHidden = hiddenNodeIds.has(n.id);
+    const isDirect  = !isHidden && !!trace?.directNodes.has(n.id);
+    const isIndirect = !isHidden && !!trace?.indirectNodes.has(n.id);
     return {
       ...n,
       data: { ...n.data, isDirect, isIndirect },
-      style: { 
-        opacity: !trace || isDirect || isIndirect ? 1 : 0.08,
+      style: {
+        opacity: isHidden ? 0 : (!trace || isDirect || isIndirect ? 1 : 0.18),
+        pointerEvents: isHidden ? 'none' : 'auto',
         zIndex: isDirect ? 50 : (isIndirect ? 20 : 1),
-      }
+        transition: 'opacity 0.2s',
+      },
+    };
+  });
+
+  const finalEdges = edges.map(e => {
+    const edgeHidden = hiddenNodeIds.has(e.source) || hiddenNodeIds.has(e.target);
+    return {
+      ...e,
+      style: {
+        ...e.style,
+        opacity: edgeHidden ? 0 : e.style?.opacity ?? 1,
+        transition: 'opacity 0.2s',
+      },
     };
   });
 
@@ -286,7 +395,7 @@ const GraphCanvas = ({ data, subject }) => {
     <div style={{ width: '100%', height: '100%', background: 'transparent', position: 'relative' }}>
       <ReactFlow
         nodes={finalNodes}
-        edges={edges}
+        edges={finalEdges}
         nodeTypes={nodeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
@@ -300,8 +409,27 @@ const GraphCanvas = ({ data, subject }) => {
         <Background variant="dots" gap={80} size={2} color="#cbd5e1" />
         <Controls />
       </ReactFlow>
-      <Legend />
-      <HoverPanel nodeId={hoveredNode} />
+
+      {/* Filter + legend panel at bottom-right */}
+      {showLegend
+        ? <FilterLegend hiddenLevels={hiddenLevels} onToggle={toggleLevel} onClose={() => setShowLegend(false)} />
+        : (
+          <button
+            onClick={() => setShowLegend(true)}
+            title="Show legend / filters"
+            style={{
+              position: 'absolute', bottom: 16, right: 16, zIndex: 10,
+              width: 32, height: 32, borderRadius: 8,
+              background: 'white', border: '1px solid rgba(0,0,0,0.08)',
+              boxShadow: '0 4px 14px rgba(0,0,0,0.07)',
+              cursor: 'pointer', fontSize: 14, color: '#5568ff',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}
+          >⊞</button>
+        )
+      }
+
+      <HoverPanel nodeId={hoveredNode} starred={starred} onToggleStar={toggleStar} />
     </div>
   );
 };

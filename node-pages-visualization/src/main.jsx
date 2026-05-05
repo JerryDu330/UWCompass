@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles.css';
 
-const Home           = lazy(() => import('./Home'));
-const VisualizerApp  = lazy(() => import('./App'));
-const CourseTreePage = lazy(() => import('./CourseTreePage'));
-const CSPlanner      = lazy(() => import('./CSPlanner'));
-const Features       = lazy(() => import('./Features'));
-const About          = lazy(() => import('./About'));
+const Home              = lazy(() => import('./Home'));
+const VisualizerApp     = lazy(() => import('./App'));
+const CourseTreePage    = lazy(() => import('./CourseTreePage'));
+const CSPlanner         = lazy(() => import('./CSPlanner'));
+const Features          = lazy(() => import('./Features'));
+const About             = lazy(() => import('./About'));
+const RecentlyViewed    = lazy(() => import('./RecentlyViewed'));
 
 const Loading = () => (
   <div style={{
@@ -73,6 +74,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/visualizer"       element={<VisualizerApp />} />
             <Route path="/course/:courseId" element={<CourseTreePage />} />
             <Route path="/cs-planner"       element={<CSPlanner />} />
+            <Route path="/history"          element={<RecentlyViewed />} />
             <Route path="*"                 element={<NotFound />} />
           </Routes>
         </Suspense>
