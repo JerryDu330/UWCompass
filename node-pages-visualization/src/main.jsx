@@ -7,6 +7,11 @@ const Home              = lazy(() => import('./Home'));
 const VisualizerApp     = lazy(() => import('./App'));
 const CourseTreePage    = lazy(() => import('./CourseTreePage'));
 const CSPlanner         = lazy(() => import('./CSPlanner'));
+const SEPlanner         = lazy(() => import('./SEPlanner'));
+const MathPlanner       = lazy(() => import('./MathPlanner'));
+const StatPlanner       = lazy(() => import('./StatPlanner'));
+const ECEPlanner        = lazy(() => import('./ECEPlanner'));
+const PlannerHub        = lazy(() => import('./PlannerHub'));
 const Features          = lazy(() => import('./Features'));
 const About             = lazy(() => import('./About'));
 const RecentlyViewed    = lazy(() => import('./RecentlyViewed'));
@@ -73,6 +78,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/about"            element={<About />} />
             <Route path="/visualizer"       element={<VisualizerApp />} />
             <Route path="/course/:courseId" element={<CourseTreePage />} />
+            <Route path="/planners"         element={<PlannerHub />} />
+            <Route path="/planner/cs"       element={<CSPlanner />} />
+            <Route path="/planner/se"       element={<SEPlanner />} />
+            <Route path="/planner/math"     element={<MathPlanner />} />
+            <Route path="/planner/stat"     element={<StatPlanner />} />
+            <Route path="/planner/ece"      element={<ECEPlanner />} />
             <Route path="/cs-planner"       element={<CSPlanner />} />
             <Route path="/history"          element={<RecentlyViewed />} />
             <Route path="*"                 element={<NotFound />} />

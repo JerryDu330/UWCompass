@@ -237,7 +237,7 @@ export const CAREER_PATHS = [
   },
 ];
 
-// ─── Plan generator ──────────────────────────────────────────────────────────
+// ─── Plan generator ─────────────────────────────────────────────────────────
 // Prereq-respecting 8-term plan.
 //
 // Key correction vs naïve ordering:
@@ -293,3 +293,28 @@ export function generatePlan(path) {
     },
   ];
 }
+
+// ─── Program config (consumed by ProgramPlanner) ────────────────────────────
+export const PROGRAM_CONFIG = {
+  id: 'cs',
+  shortTitle: 'CS',
+  badge: 'CS Honours · Degree Planner',
+  heroTitle: 'Build Your CS Roadmap',
+  heroDesc:
+    'Choose a career path to generate a personalised 8-term plan built on the UW Computer Science Honours checklist. Click any course chip to mark it complete.',
+  calendarUrl: 'https://ugradcalendar.uwaterloo.ca/page/MATH-Computer-Science',
+  calendarLabel: 'UW undergraduate calendar',
+  courseInfo: COURSE_INFO,
+  typeColors: TYPE_COLORS,
+  legend: [
+    ['cs',       'CS Course'],
+    ['math',     'MATH Course'],
+    ['stat',     'STAT Course'],
+    ['commst',   'Communication'],
+    ['breadth',  'Breadth / Depth'],
+    ['elective', 'CS Elective'],
+    ['free',     'Free Elective'],
+  ],
+  paths: CAREER_PATHS,
+  generatePlan,
+};

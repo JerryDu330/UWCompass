@@ -1,0 +1,216 @@
+/* ─── Page wrapper ─────────────────────────────────────────────────────────── */
+.hub-page {
+  min-height: 100vh;
+  animation: fadeInHome 0.6s ease-out forwards;
+}
+
+.hub-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 40px 80px;
+}
+
+/* ─── Hero ─────────────────────────────────────────────────────────────────── */
+.hub-hero {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.hub-hero-badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+
+.hub-hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 14px;
+}
+
+.hub-hero p {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ─── Program grid ─────────────────────────────────────────────────────────── */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 40px;
+  /* 5 cards: 3 top row + 2 centered on bottom */
+  justify-items: stretch;
+}
+
+/* ─── Program cards ─────────────────────────────────────────────────────────── */
+.hub-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 26px 24px 22px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.hub-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--hc);
+}
+
+.hub-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hub-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.hub-faculty-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.3px;
+}
+
+.hub-card-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hub-prog-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.hub-prog-subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.hub-prog-desc {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.hub-highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.hub-highlights li {
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hub-highlight-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hub-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: auto;
+}
+
+.hub-paths-count {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.hub-cta {
+  font-size: 13px;
+  font-weight: 700;
+  transition: opacity 0.15s;
+}
+
+.hub-card:hover .hub-cta {
+  opacity: 0.8;
+}
+
+/* ─── Disclaimer ───────────────────────────────────────────────────────────── */
+.hub-disclaimer {
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+.hub-disclaimer a {
+  color: #5568ff;
+  text-decoration: underline;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hub-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .hub-content {
+    padding: 32px 18px 60px;
+  }
+  .hub-hero h1 {
+    font-size: 28px;
+  }
+}

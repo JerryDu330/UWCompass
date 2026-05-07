@@ -297,7 +297,7 @@
 /* ─── Course chips ─────────────────────────────────────────────────────────── */
 .chip {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: 3px;
   border: 1.5px solid;
   border-radius: 8px;
@@ -306,8 +306,6 @@
   font-family: inherit;
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
-  white-space: nowrap;
-  max-width: 240px;
 }
 
 .chip:hover:not(.chip-placeholder) {

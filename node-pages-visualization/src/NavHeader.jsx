@@ -4,7 +4,7 @@ const NAV_LINKS = [
   { label: 'Home',       path: '/' },
   { label: 'Features',   path: '/features' },
   { label: 'Visualizer', path: '/visualizer' },
-  { label: 'CS Planner', path: '/cs-planner' },
+  { label: 'Planners',   path: '/planners' },
   { label: 'History',    path: '/history' },
   { label: 'About',      path: '/about' },
 ];
@@ -19,15 +19,20 @@ export default function NavHeader({ right }) {
         UWCompass
       </button>
       <nav className="nav">
-        {NAV_LINKS.map(({ label, path }) => (
-          <button
-            key={path}
-            className={pathname === path ? 'nav-active' : ''}
-            onClick={() => navigate(path)}
-          >
-            {label}
-          </button>
-        ))}
+        {NAV_LINKS.map(({ label, path }) => {
+          const isActive = path === '/planners'
+            ? pathname === '/planners' || pathname.startsWith('/planner/') || pathname === '/cs-planner'
+            : pathname === path;
+          return (
+            <button
+              key={path}
+              className={isActive ? 'nav-active' : ''}
+              onClick={() => navigate(path)}
+            >
+              {label}
+            </button>
+          );
+        })}
       </nav>
       {right ?? <div />}
     </header>
