@@ -1,11 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavHeader from './NavHeader';
 import { useLocalStorage } from './useLocalStorage';
+import { useAuth } from './contexts/AuthContext';
+import { supabase } from './lib/supabase';
 
-const RECENT_KEY    = 'uwcompass-recent-courses';
-const STARRED_KEY   = 'uwcompass-starred-courses';
-const COMPLETED_KEY = 'uwcompass-completed';
+const RECENT_KEY  = 'uwcompass-recent-courses';
+const STARRED_KEY = 'uwcompass-starred-courses';
+
+const PROGRAMS = [
+  { id: 'cs',   label: 'Computer Science',               path: '/planner/cs'   },
+  { id: 'se',   label: 'Software Engineering',           path: '/planner/se'   },
+  { id: 'math', label: 'Pure Mathematics',               path: '/planner/math' },
+  { id: 'stat', label: 'Statistics',                     path: '/planner/stat' },
+  { id: 'ece',  label: 'Electrical & Computer Eng.',     path: '/planner/ece'  },
+];
+
+function readLocalCompleted(programId) {
+  try {
+    const raw = localStorage.getItem(`uwcompass-completed-${programId}`);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+
+function readLocalPath(programId) {
+  try { return JSON.parse(localStorage.getItem(`uwcompass-path-${programId}`)); }
+  catch { return null; }
+}
 
 function CourseRow({ course, actions }) {
   const navigate = useNavigate();
@@ -60,7 +81,7 @@ function SectionHeader({ title, count, countColor = '#5568ff', countBg = '#eef2f
             onMouseOver={e => { e.currentTarget.style.borderColor = '#fca5a5'; e.currentTarget.style.color = '#ef4444'; }}
             onMouseOut={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#94a3b8'; }}
           >
-            Clear
+            Clear all
           </button>
         )}
       </div>
@@ -89,22 +110,56 @@ const linkBtn = {
 
 export default function RecentlyViewed() {
   const navigate = useNavigate();
-  const [recentCourses, setRecentCourses] = useLocalStorage(RECENT_KEY, []);
+  const { user } = useAuth();
+  const [recentCourses,  setRecentCourses]  = useLocalStorage(RECENT_KEY,  []);
   const [starredCourses, setStarredCourses] = useLocalStorage(STARRED_KEY, []);
-  const [completedCourses, setCompletedCourses] = useState([]);
 
-  useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem(COMPLETED_KEY) || '[]');
-      setCompletedCourses(Array.isArray(saved) ? saved.sort() : []);
-    } catch {}
-  }, []);
+  // completed: { cs: ['CS135', ...], se: [...], ... }
+  const [completed, setCompleted] = useState(() =>
+    Object.fromEntries(PROGRAMS.map(p => [p.id, readLocalCompleted(p.id)]))
+  );
+
+  const totalCompleted = PROGRAMS.reduce((sum, p) => sum + completed[p.id].length, 0);
 
   const toggleStar = (course) => {
     setStarredCourses(prev =>
       prev.includes(course) ? prev.filter(c => c !== course) : [course, ...prev]
     );
   };
+
+  const deleteCourse = useCallback((programId, course) => {
+    const updated = completed[programId].filter(c => c !== course);
+
+    // Update localStorage
+    localStorage.setItem(`uwcompass-completed-${programId}`, JSON.stringify(updated));
+
+    // Update React state
+    setCompleted(prev => ({ ...prev, [programId]: updated }));
+
+    // Sync to Supabase for logged-in users
+    if (user) {
+      const pathId = readLocalPath(programId);
+      supabase.from('user_planners').upsert(
+        { user_id: user.id, program_id: programId, path_id: pathId, completed: updated },
+        { onConflict: 'user_id,program_id' },
+      ).then(({ error }) => {
+        if (error) console.error('[RecentlyViewed] Supabase delete sync failed:', error);
+      });
+    }
+  }, [completed, user]);
+
+  const clearProgram = useCallback((programId) => {
+    localStorage.setItem(`uwcompass-completed-${programId}`, JSON.stringify([]));
+    setCompleted(prev => ({ ...prev, [programId]: [] }));
+
+    if (user) {
+      const pathId = readLocalPath(programId);
+      supabase.from('user_planners').upsert(
+        { user_id: user.id, program_id: programId, path_id: pathId, completed: [] },
+        { onConflict: 'user_id,program_id' },
+      );
+    }
+  }, [user]);
 
   const StarBtn = ({ course }) => (
     <button
@@ -121,6 +176,22 @@ export default function RecentlyViewed() {
     </button>
   );
 
+  const DeleteBtn = ({ onClick }) => (
+    <button
+      onClick={onClick}
+      title="Remove"
+      style={{
+        background: 'none', border: 'none', cursor: 'pointer',
+        fontSize: 16, lineHeight: 1, padding: '0 3px',
+        color: '#d1d5db', transition: 'color 0.14s',
+      }}
+      onMouseOver={e => e.currentTarget.style.color = '#ef4444'}
+      onMouseOut={e => e.currentTarget.style.color = '#d1d5db'}
+    >
+      ×
+    </button>
+  );
+
   return (
     <div style={{ minHeight: '100vh', background: '#f8faff' }}>
       <div className="background-grid" />
@@ -128,7 +199,7 @@ export default function RecentlyViewed() {
 
       <div style={{ maxWidth: 720, margin: '0 auto', padding: '48px 40px 80px', display: 'flex', flexDirection: 'column', gap: 44 }}>
 
-        {/* ── Browsed Courses ─────────────────────────────────────────── */}
+        {/* ── Browsed Courses ──────────────────────────────────────────────── */}
         <section>
           <SectionHeader
             title="Browsed Courses"
@@ -143,13 +214,22 @@ export default function RecentlyViewed() {
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {recentCourses.map(course => (
-                <CourseRow key={course} course={course} actions={<StarBtn course={course} />} />
+                <CourseRow
+                  key={course}
+                  course={course}
+                  actions={
+                    <>
+                      <StarBtn course={course} />
+                      <DeleteBtn onClick={() => setRecentCourses(prev => prev.filter(c => c !== course))} />
+                    </>
+                  }
+                />
               ))}
             </div>
           )}
         </section>
 
-        {/* ── Starred Courses ──────────────────────────────────────────── */}
+        {/* ── Starred Courses ───────────────────────────────────────────────── */}
         <section>
           <SectionHeader
             title="Starred"
@@ -165,11 +245,14 @@ export default function RecentlyViewed() {
                   key={course}
                   course={course}
                   actions={
-                    <button
-                      onClick={() => toggleStar(course)}
-                      title="Unstar"
-                      style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18, color: '#f59e0b', padding: '0 2px' }}
-                    >★</button>
+                    <>
+                      <button
+                        onClick={() => toggleStar(course)}
+                        title="Unstar"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18, color: '#f59e0b', padding: '0 2px' }}
+                      >★</button>
+                      <DeleteBtn onClick={() => setStarredCourses(prev => prev.filter(c => c !== course))} />
+                    </>
                   }
                 />
               ))}
@@ -177,53 +260,104 @@ export default function RecentlyViewed() {
           )}
         </section>
 
-        {/* ── Courses Taken ─────────────────────────────────────────────── */}
+        {/* ── Courses Taken ─────────────────────────────────────────────────── */}
         <section>
           <SectionHeader
             title="Courses Taken"
-            count={completedCourses.length || undefined}
+            count={totalCompleted || undefined}
             countColor="#16a34a"
             countBg="#f0fdf4"
-            action={
-              <button
-                onClick={() => navigate('/cs-planner')}
-                style={{
-                  padding: '5px 12px', borderRadius: 8, fontSize: 12,
-                  background: 'none', border: '1px solid #e2e8f0',
-                  color: '#5568ff', cursor: 'pointer', fontWeight: 500, fontFamily: 'inherit',
-                }}
-              >
-                Edit in CS Planner →
-              </button>
-            }
           />
-          <p style={{ margin: '0 0 14px', fontSize: 13, color: '#64748b', lineHeight: 1.6 }}>
-            Courses marked as completed in the CS Planner.
+          <p style={{ margin: '0 0 20px', fontSize: 13, color: '#64748b', lineHeight: 1.6 }}>
+            Courses marked as completed in your planners. Click × to remove a course.
           </p>
-          {completedCourses.length === 0 ? (
+
+          {totalCompleted === 0 ? (
             <EmptyState
               message="No courses marked as taken yet."
-              action={<button style={linkBtn} onClick={() => navigate('/cs-planner')}>Open CS Planner →</button>}
+              action={<button style={linkBtn} onClick={() => navigate('/planners')}>Open a Planner →</button>}
             />
           ) : (
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {completedCourses.map(course => (
-                <button
-                  key={course}
-                  onClick={() => navigate(`/course/${course}`)}
-                  style={{
-                    padding: '6px 16px', borderRadius: 20, fontSize: 13,
-                    background: '#f0fdf4', color: '#16a34a',
-                    border: '1px solid #bbf7d0', cursor: 'pointer',
-                    fontWeight: 600, fontFamily: 'inherit',
-                    transition: 'all 0.14s',
-                  }}
-                  onMouseOver={e => { e.currentTarget.style.background = '#dcfce7'; }}
-                  onMouseOut={e => { e.currentTarget.style.background = '#f0fdf4'; }}
-                >
-                  {course}
-                </button>
-              ))}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+              {PROGRAMS.map(prog => {
+                const courses = completed[prog.id];
+                if (courses.length === 0) return null;
+                return (
+                  <div key={prog.id}>
+                    {/* Program sub-header */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: '#475569' }}>{prog.label}</span>
+                      <span style={{
+                        fontSize: 11, fontWeight: 700, color: '#16a34a',
+                        background: '#f0fdf4', borderRadius: 20, padding: '1px 8px',
+                        border: '1px solid #bbf7d0',
+                      }}>{courses.length}</span>
+                      <button
+                        onClick={() => navigate(prog.path)}
+                        style={{
+                          marginLeft: 'auto', padding: '3px 10px', borderRadius: 6,
+                          fontSize: 11, background: 'none', border: '1px solid #e2e8f0',
+                          color: '#5568ff', cursor: 'pointer', fontFamily: 'inherit',
+                        }}
+                      >
+                        Edit in planner →
+                      </button>
+                      <button
+                        onClick={() => clearProgram(prog.id)}
+                        style={{
+                          padding: '3px 10px', borderRadius: 6,
+                          fontSize: 11, background: 'none', border: '1px solid #e2e8f0',
+                          color: '#94a3b8', cursor: 'pointer', fontFamily: 'inherit',
+                          transition: 'all 0.12s',
+                        }}
+                        onMouseOver={e => { e.currentTarget.style.borderColor = '#fca5a5'; e.currentTarget.style.color = '#ef4444'; }}
+                        onMouseOut={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#94a3b8'; }}
+                      >
+                        Clear
+                      </button>
+                    </div>
+
+                    {/* Course chips with delete */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                      {courses.map(course => (
+                        <div
+                          key={course}
+                          style={{
+                            display: 'inline-flex', alignItems: 'center', gap: 4,
+                            padding: '5px 10px 5px 14px', borderRadius: 20,
+                            background: '#f0fdf4', border: '1px solid #bbf7d0',
+                          }}
+                        >
+                          <button
+                            onClick={() => navigate(`/course/${course}`)}
+                            style={{
+                              background: 'none', border: 'none', cursor: 'pointer',
+                              fontWeight: 700, fontSize: 13, color: '#16a34a',
+                              padding: 0, fontFamily: 'inherit',
+                            }}
+                          >
+                            {course}
+                          </button>
+                          <button
+                            onClick={() => deleteCourse(prog.id, course)}
+                            title={`Remove ${course}`}
+                            style={{
+                              background: 'none', border: 'none', cursor: 'pointer',
+                              fontSize: 14, lineHeight: 1, color: '#86efac',
+                              padding: '0 1px', display: 'flex', alignItems: 'center',
+                              transition: 'color 0.12s',
+                            }}
+                            onMouseOver={e => e.currentTarget.style.color = '#ef4444'}
+                            onMouseOut={e => e.currentTarget.style.color = '#86efac'}
+                          >
+                            ×
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
         </section>

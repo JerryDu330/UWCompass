@@ -16,6 +16,7 @@ const PlannerHub        = lazy(() => import('./PlannerHub'));
 const Features          = lazy(() => import('./Features'));
 const About             = lazy(() => import('./About'));
 const RecentlyViewed    = lazy(() => import('./RecentlyViewed'));
+const AIAdvisor         = lazy(() => import('./AIAdvisor'));
 
 const Loading = () => (
   <div style={{
@@ -88,6 +89,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/planner/ece"      element={<ECEPlanner />} />
             <Route path="/cs-planner"       element={<CSPlanner />} />
             <Route path="/history"          element={<RecentlyViewed />} />
+            <Route path="/advisor"          element={<AIAdvisor />} />
             <Route path="*"                 element={<NotFound />} />
           </Routes>
           </Suspense>

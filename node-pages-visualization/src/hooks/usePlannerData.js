@@ -2,34 +2,22 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../lib/supabase';
 
-// Abstracts planner storage: Supabase when logged in, localStorage for guests.
-// On first login, automatically migrates existing localStorage data to Supabase.
+// localStorage is always the primary local cache (fast, works offline).
+// Supabase is synced on top for cross-device persistence when logged in.
 export function usePlannerData(programId) {
   const { user } = useAuth();
-  const [pathId, setPathIdState]   = useState(null);
-  const [completed, setCompleted]  = useState(new Set());
-  const [isLoading, setIsLoading]  = useState(true);
+  const [pathId, setPathIdState]  = useState(null);
+  const [completed, setCompleted] = useState(new Set());
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Refs to avoid stale closures in debounced save callbacks
-  const userRef      = useRef(user);
-  const pathIdRef    = useRef(pathId);
-  const saveTimer    = useRef(null);
+  const userRef   = useRef(user);
+  const pathIdRef = useRef(pathId);
+  const saveTimer = useRef(null);
 
   useEffect(() => { userRef.current = user; },   [user]);
   useEffect(() => { pathIdRef.current = pathId; }, [pathId]);
 
-  // ── Load ───────────────────────────────────────────────────────────────────
-  useEffect(() => {
-    setIsLoading(true);
-    if (user) {
-      loadFromSupabase(user);
-    } else {
-      setPathIdState(readLocalPath());
-      setCompleted(readLocalCompleted());
-      setIsLoading(false);
-    }
-  }, [user?.id, programId]); // eslint-disable-line react-hooks/exhaustive-deps
-
+  // ── Helpers ────────────────────────────────────────────────────────────────
   function readLocalPath() {
     try { return JSON.parse(localStorage.getItem(`uwcompass-path-${programId}`)); }
     catch { return null; }
@@ -42,7 +30,24 @@ export function usePlannerData(programId) {
     } catch { return new Set(); }
   }
 
-  async function loadFromSupabase(currentUser) {
+  function writeLocal(pid, comp) {
+    localStorage.setItem(`uwcompass-path-${programId}`,      JSON.stringify(pid));
+    localStorage.setItem(`uwcompass-completed-${programId}`, JSON.stringify(comp));
+  }
+
+  // ── Load ───────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    // Always show localStorage data immediately — no loading spinner.
+    setPathIdState(readLocalPath());
+    setCompleted(readLocalCompleted());
+    setIsLoading(false);
+
+    // For logged-in users, quietly sync from Supabase in the background.
+    // If Supabase has newer data (e.g. from another device), it updates the UI.
+    if (user) syncFromSupabase(user);
+  }, [user?.id, programId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function syncFromSupabase(currentUser) {
     try {
       const { data, error } = await supabase
         .from('user_planners')
@@ -54,24 +59,20 @@ export function usePlannerData(programId) {
       if (error) throw error;
 
       if (data) {
+        // Supabase has a record — it's authoritative for cross-device sync.
         setPathIdState(data.path_id);
         setCompleted(new Set(data.completed ?? []));
+        writeLocal(data.path_id, data.completed ?? []);
       } else {
-        // First login for this program — migrate localStorage data
+        // First login for this program — push localStorage data to Supabase.
         const pid  = readLocalPath();
         const comp = readLocalCompleted();
-        setPathIdState(pid);
-        setCompleted(comp);
         if (pid || comp.size > 0) {
           await upsert(currentUser.id, pid, [...comp]);
         }
       }
     } catch (err) {
-      console.error('[usePlannerData] load failed:', err);
-      setPathIdState(readLocalPath());
-      setCompleted(readLocalCompleted());
-    } finally {
-      setIsLoading(false);
+      console.error('[usePlannerData] Supabase sync failed, using localStorage:', err);
     }
   }
 
@@ -84,8 +85,8 @@ export function usePlannerData(programId) {
     if (error) console.error('[usePlannerData] upsert failed:', error);
   }
 
-  // Debounce writes so rapid course toggles don't flood Supabase
-  function scheduleSave(pid, comp) {
+  // Debounce Supabase writes — localStorage write is always immediate above.
+  function scheduleSupabaseSave(pid, comp) {
     clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(() => {
       if (userRef.current) upsert(userRef.current.id, pid, comp);
@@ -95,33 +96,22 @@ export function usePlannerData(programId) {
   // ── Public API ─────────────────────────────────────────────────────────────
   const setPathId = useCallback((newPathId) => {
     setPathIdState(newPathId);
-    if (userRef.current) {
-      scheduleSave(newPathId, [...completed]);
-    } else {
-      localStorage.setItem(`uwcompass-path-${programId}`, JSON.stringify(newPathId));
-    }
+    writeLocal(newPathId, [...completed]);
+    if (userRef.current) scheduleSupabaseSave(newPathId, [...completed]);
   }, [programId, completed]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Replace the whole completed set (used when switching career paths)
   const replaceCompleted = useCallback((newSet) => {
     setCompleted(newSet);
-    if (userRef.current) {
-      scheduleSave(pathIdRef.current, [...newSet]);
-    } else {
-      localStorage.setItem(`uwcompass-completed-${programId}`, JSON.stringify([...newSet]));
-    }
+    writeLocal(pathIdRef.current, [...newSet]);
+    if (userRef.current) scheduleSupabaseSave(pathIdRef.current, [...newSet]);
   }, [programId]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Toggle a single course
   const toggleCompleted = useCallback((code) => {
     setCompleted(prev => {
       const next = new Set(prev);
       next.has(code) ? next.delete(code) : next.add(code);
-      if (userRef.current) {
-        scheduleSave(pathIdRef.current, [...next]);
-      } else {
-        localStorage.setItem(`uwcompass-completed-${programId}`, JSON.stringify([...next]));
-      }
+      writeLocal(pathIdRef.current, [...next]);
+      if (userRef.current) scheduleSupabaseSave(pathIdRef.current, [...next]);
       return next;
     });
   }, [programId]); // eslint-disable-line react-hooks/exhaustive-deps

@@ -61,7 +61,7 @@ export default function ProgramPlanner({ config }) {
     courseInfo, typeColors, legend, paths, generatePlan, shortTitle,
   } = config;
 
-  const { pathId, setPathId, completed, replaceCompleted, toggleCompleted, isLoading } =
+  const { pathId, setPathId, completed, replaceCompleted, toggleCompleted } =
     usePlannerData(id);
 
   const selectedPath = paths.find(p => p.id === pathId) ?? null;
@@ -102,10 +102,7 @@ export default function ProgramPlanner({ config }) {
             <p>Each path surfaces different upper-year electives while sharing the same core requirements.</p>
           </div>
 
-          {isLoading ? (
-            <div className="planner-loading">Loading your saved progress…</div>
-          ) : (
-            <div className="path-grid">
+          <div className="path-grid">
               {paths.map(path => (
                 <button
                   key={path.id}
@@ -131,7 +128,6 @@ export default function ProgramPlanner({ config }) {
                 </button>
               ))}
             </div>
-          )}
         </section>
 
         {plan && (
