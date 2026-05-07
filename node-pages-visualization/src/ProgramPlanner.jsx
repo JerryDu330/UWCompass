@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useLocalStorage } from './useLocalStorage';
+import React, { useState } from 'react';
+import { usePlannerData } from './hooks/usePlannerData';
 import NavHeader from './NavHeader';
 import './CSPlanner.css';
 
@@ -61,31 +61,10 @@ export default function ProgramPlanner({ config }) {
     courseInfo, typeColors, legend, paths, generatePlan, shortTitle,
   } = config;
 
-  const [savedPathId, setSavedPathId] = useLocalStorage(`uwcompass-path-${id}`, null);
-  const [selectedPath, setSelectedPath] = useState(
-    () => paths.find(p => p.id === savedPathId) ?? null
-  );
-  const [completed, setCompleted] = useState(() => {
-    try {
-      const saved = localStorage.getItem(`uwcompass-completed-${id}`);
-      return saved ? new Set(JSON.parse(saved)) : new Set();
-    } catch {
-      return new Set();
-    }
-  });
+  const { pathId, setPathId, completed, replaceCompleted, toggleCompleted, isLoading } =
+    usePlannerData(id);
 
-  useEffect(() => {
-    localStorage.setItem(`uwcompass-completed-${id}`, JSON.stringify([...completed]));
-  }, [completed, id]);
-
-  const toggleCompleted = (code) => {
-    if (courseInfo[code]?.placeholder) return;
-    setCompleted(prev => {
-      const next = new Set(prev);
-      next.has(code) ? next.delete(code) : next.add(code);
-      return next;
-    });
-  };
+  const selectedPath = paths.find(p => p.id === pathId) ?? null;
 
   const plan = selectedPath ? generatePlan(selectedPath) : null;
 
@@ -95,6 +74,14 @@ export default function ProgramPlanner({ config }) {
   const total = allReal.length;
   const done = allReal.filter(c => completed.has(c)).length;
   const pct = total ? Math.round((done / total) * 100) : 0;
+
+  function handleSelectPath(path) {
+    const newPlanCodes = new Set(
+      generatePlan(path).flatMap(t => t.courses).filter(c => !courseInfo[c]?.placeholder)
+    );
+    replaceCompleted(new Set([...completed].filter(c => newPlanCodes.has(c))));
+    setPathId(path.id);
+  }
 
   return (
     <div className="planner-page">
@@ -115,39 +102,36 @@ export default function ProgramPlanner({ config }) {
             <p>Each path surfaces different upper-year electives while sharing the same core requirements.</p>
           </div>
 
-          <div className="path-grid">
-            {paths.map(path => (
-              <button
-                key={path.id}
-                className={`path-card${selectedPath?.id === path.id ? ' path-selected' : ''}`}
-                style={{ '--pc': path.color, '--pl': path.colorLight }}
-                onClick={() => {
-                  const newPlanCourses = new Set(
-                    generatePlan(path).flatMap(t => t.courses).filter(c => !courseInfo[c]?.placeholder)
-                  );
-                  setCompleted(prev => new Set([...prev].filter(c => newPlanCourses.has(c))));
-                  setSelectedPath(path);
-                  setSavedPathId(path.id);
-                }}
-              >
-                <div className="path-icon" style={{ background: path.colorLight, color: path.color }}>
-                  {path.icon}
-                </div>
-                <h3 className="path-title">{path.title}</h3>
-                <p className="path-desc">{path.description}</p>
-                <div className="path-skills">
-                  {path.skills.map(s => (
-                    <span key={s} className="skill-chip" style={{ background: path.colorLight, color: path.color }}>
-                      {s}
-                    </span>
-                  ))}
-                </div>
-                {selectedPath?.id === path.id && (
-                  <div className="path-selected-label" style={{ color: path.color }}>✓ Selected</div>
-                )}
-              </button>
-            ))}
-          </div>
+          {isLoading ? (
+            <div className="planner-loading">Loading your saved progress…</div>
+          ) : (
+            <div className="path-grid">
+              {paths.map(path => (
+                <button
+                  key={path.id}
+                  className={`path-card${selectedPath?.id === path.id ? ' path-selected' : ''}`}
+                  style={{ '--pc': path.color, '--pl': path.colorLight }}
+                  onClick={() => handleSelectPath(path)}
+                >
+                  <div className="path-icon" style={{ background: path.colorLight, color: path.color }}>
+                    {path.icon}
+                  </div>
+                  <h3 className="path-title">{path.title}</h3>
+                  <p className="path-desc">{path.description}</p>
+                  <div className="path-skills">
+                    {path.skills.map(s => (
+                      <span key={s} className="skill-chip" style={{ background: path.colorLight, color: path.color }}>
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                  {selectedPath?.id === path.id && (
+                    <div className="path-selected-label" style={{ color: path.color }}>✓ Selected</div>
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
         </section>
 
         {plan && (

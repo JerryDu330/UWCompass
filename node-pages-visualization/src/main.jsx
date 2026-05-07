@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
 import './styles.css';
 
 const Home              = lazy(() => import('./Home'));
@@ -70,8 +71,9 @@ class ErrorBoundary extends React.Component {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ErrorBoundary>
-        <Suspense fallback={<Loading />}>
+      <AuthProvider>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/"                 element={<Home />} />
             <Route path="/features"         element={<Features />} />
@@ -88,8 +90,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/history"          element={<RecentlyViewed />} />
             <Route path="*"                 element={<NotFound />} />
           </Routes>
-        </Suspense>
-      </ErrorBoundary>
+          </Suspense>
+        </ErrorBoundary>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
