@@ -1,4 +1,5 @@
 import { useMemo, useState, useCallback, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ReactFlow, { Background, Controls, MarkerType, Handle, Position } from 'reactflow';
 import dagre from 'dagre';
 import 'reactflow/dist/style.css';
@@ -72,7 +73,7 @@ function colPlace(items, baseX, rowH) {
 function makeNode(id, x, y, role, typeOf, displayLabel) {
   const origId = id.includes('@') ? id.split('@')[0] : id;
   const or    = typeOf?.get(origId) === 'OR';
-  const small = role === 'extra_prereq' || role === 'center_ref';
+  const small = role === 'extra_prereq' || role === 'center_ref' || role === 'left_prereq';
   const w     = or ? WO : small ? WS : WC;
   const h     = or ? HO : small ? HS : HC;
 
@@ -231,6 +232,96 @@ function buildHoverCluster(fc, fcScreenX, fcScreenY, extraEdgesByFrom, orAllMemb
   return { nodes, edges };
 }
 
+// ─── Center course prerequisite cluster ───────────────────────────────────────
+function buildLeftCluster(CENTER, fwdByFrom, typeOf) {
+  const andCourses = [];
+  const orGroups   = [];
+
+  (fwdByFrom.get(CENTER) || []).forEach(e => {
+    if (e.to_type === 'OR') {
+      const members = (fwdByFrom.get(e.to) || [])
+        .filter(e2 => e2.to_type === 'COURSE')
+        .map(e2 => e2.to);
+      const unique = [...new Set(members)].sort();
+      if (unique.length) orGroups.push({ orId: e.to, courses: unique });
+    } else if (e.to_type === 'COURSE' && !andCourses.includes(e.to)) {
+      andCourses.push(e.to);
+    }
+  });
+  andCourses.sort();
+
+  if (!andCourses.length && !orGroups.length) return { nodes: [], edges: [] };
+
+  const layoutItems = [
+    ...orGroups.map(g => { const d = groupDims(g.courses.length); return { type: 'group', ...g, ...d }; }),
+    ...andCourses.map(c => ({ type: 'and', courseId: c, h: HS, w: WS })),
+  ];
+
+  const maxItemW = Math.max(...layoutItems.map(item => item.w));
+  const totalH   = layoutItems.reduce(
+    (sum, item, i) => sum + item.h + (i < layoutItems.length - 1 ? EGRP_ITEM_GAP_OUTER : 0), 0
+  );
+
+  // Position cluster to the left of center (center node left edge ≈ -WC/2)
+  const hGap    = 110;
+  const fcX     = -WC / 2;
+  const fcY     = 0;
+  const clusterX = fcX - maxItemW - hGap;
+  const startY   = fcY - totalH / 2;
+
+  const MERGE_ID = `MERGE@${CENTER}_prereqs`;
+  const mergeX   = clusterX + maxItemW + (hGap - 8) / 2;
+  const mergeY   = fcY - 4;
+
+  const nodes = [];
+  const edges = [];
+
+  nodes.push({ id: MERGE_ID, type: 'mergeNode', data: {}, position: { x: mergeX, y: mergeY } });
+  edges.push({
+    id: `e-${MERGE_ID}-${CENTER}`,
+    source: MERGE_ID, target: CENTER, type: 'straight',
+    style: { stroke: '#94a3b8', strokeWidth: 1.5 },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#94a3b8', width: 10, height: 10 },
+    data: { role: 'center-prereq-merge', color: '#94a3b8' },
+  });
+
+  let curY = startY;
+  layoutItems.forEach(item => {
+    if (item.type === 'group') {
+      const gbId = `CGRP_${item.orId}@${CENTER}`;
+      nodes.push({
+        id: gbId, type: 'centerGroupBg', data: { role: 'centerGroupBg' },
+        position: { x: clusterX, y: curY },
+        style: { width: item.w, height: item.h, background: 'transparent', border: 'none', padding: 0 },
+        zIndex: 0, selectable: false,
+      });
+      edges.push({
+        id: `e-${gbId}-MERGE`,
+        source: gbId, target: MERGE_ID, type: 'straight',
+        style: { stroke: '#94a3b8', strokeWidth: 1.5 },
+      });
+      item.courses.forEach((courseId, i) => {
+        const col = item.twoCol && i >= item.perCol ? 1 : 0;
+        const row = item.twoCol && i >= item.perCol ? i - item.perCol : i;
+        const nx  = clusterX + EGRP_PAD_H + col * (WS + EGRP_PAD_H + EGRP_COL_GAP);
+        const ny  = curY + EGRP_PAD_V + row * (HS + EGRP_ITEM_GAP);
+        nodes.push(makeNode(`${courseId}@${CENTER}_prereq`, nx, ny, 'left_prereq', typeOf, courseId));
+      });
+    } else {
+      const nodeId = `${item.courseId}@${CENTER}_prereq`;
+      nodes.push(makeNode(nodeId, clusterX + (maxItemW - WS) / 2, curY, 'left_prereq', typeOf, item.courseId));
+      edges.push({
+        id: `e-${nodeId}-MERGE`,
+        source: nodeId, target: MERGE_ID, type: 'straight',
+        style: { stroke: '#94a3b8', strokeWidth: 1.5 },
+      });
+    }
+    curY += item.h + EGRP_ITEM_GAP_OUTER;
+  });
+
+  return { nodes, edges };
+}
+
 // ─── Custom nodes ─────────────────────────────────────────────────────────────
 const MergeNode = () => (
   <div style={{ width: 8, height: 8, background: '#94a3b8', borderRadius: '50%' }}>
@@ -253,32 +344,65 @@ const ExtraGroupBgNode = () => (
   </div>
 );
 
-const nodeTypes = { mergeNode: MergeNode, extraGroupBg: ExtraGroupBgNode };
+const CenterGroupBgNode = () => (
+  <div style={{
+    width: '100%', height: '100%', boxSizing: 'border-box',
+    borderRadius: 8, border: '1.5px dashed #64748b80', background: '#64748b06',
+    position: 'relative',
+  }}>
+    <Handle type="source" position={Position.Right} style={{ opacity: 0 }} />
+    <div style={{
+      position: 'absolute', top: 3, left: 6,
+      fontSize: 9, fontWeight: 700, color: '#64748b55', letterSpacing: '0.06em',
+    }}>OR</div>
+  </div>
+);
 
-// ─── Fixed (click) panel ──────────────────────────────────────────────────────
-const FixedPanel = ({ fixedNode, graph, onClear }) => {
-  if (!fixedNode) return null;
+const nodeTypes = { mergeNode: MergeNode, extraGroupBg: ExtraGroupBgNode, centerGroupBg: CenterGroupBgNode };
+
+// ─── Unified course info panel ────────────────────────────────────────────────
+const CourseInfoPanel = ({ selectedInfo, graph, onClear, navigate }) => {
+  const [meta, setMeta] = useState(null);
+  const [metaLoading, setMetaLoading] = useState(false);
+
+  useEffect(() => {
+    if (!selectedInfo) return;
+    const { courseId } = selectedInfo;
+    const subject = courseId.replace(/\d.*$/, '');
+    setMeta(null);
+    setMetaLoading(true);
+    fetch(`/MetaData/${subject}/${courseId}.json`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => { setMeta(data); setMetaLoading(false); })
+      .catch(() => setMetaLoading(false));
+  }, [selectedInfo?.courseId]);
+
+  if (!selectedInfo) return null;
+  const { courseId, role } = selectedInfo;
+  const isCenter = courseId === graph.CENTER;
 
   const orGroups   = [];
   const andCourses = [];
-  (graph.extraEdgesByFrom.get(fixedNode) || []).forEach(e => {
-    if (graph.typeOf.get(e.to) === 'OR') {
-      const courses = [...new Set(graph.orAllMembers.get(e.to) || [])].sort();
-      if (courses.length) orGroups.push({ orId: e.to, courses });
-    } else {
-      andCourses.push(e.to);
-    }
-  });
-  andCourses.sort();
+  if (role === 'following') {
+    (graph.extraEdgesByFrom.get(courseId) || []).forEach(e => {
+      if (graph.typeOf.get(e.to) === 'OR') {
+        const courses = [...new Set(graph.orAllMembers.get(e.to) || [])].sort();
+        if (courses.length) orGroups.push({ orId: e.to, courses });
+      } else {
+        andCourses.push(e.to);
+      }
+    });
+    andCourses.sort();
+  }
 
-  const chip = (courseId) => (
-    <span key={courseId} style={{
+  const chip = (cId) => (
+    <span key={cId} style={{
       display: 'inline-block', padding: '2px 8px', borderRadius: 6,
       fontSize: 11, fontWeight: 600, margin: '2px 3px',
-      background: courseId === graph.CENTER ? '#5568ff' : '#16a34a15',
-      color:      courseId === graph.CENTER ? '#fff'     : '#16a34a',
-      border: `1px solid ${courseId === graph.CENTER ? '#5568ff' : '#16a34a55'}`,
-    }}>{courseId}</span>
+      background: cId === graph.CENTER ? '#5568ff' : '#16a34a15',
+      color:      cId === graph.CENTER ? '#fff'     : '#16a34a',
+      border: `1px solid ${cId === graph.CENTER ? '#5568ff' : '#16a34a55'}`,
+    }}>{cId}</span>
   );
 
   return (
@@ -290,60 +414,111 @@ const FixedPanel = ({ fixedNode, graph, onClear }) => {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
       minWidth: 220, maxWidth: 300, zIndex: 20,
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
-        <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a1a' }}>{fixedNode}</span>
+      {/* Header */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
+        <span style={{ fontWeight: 700, fontSize: 15, color: '#1a1a1a' }}>{courseId}</span>
         <button onClick={onClear} style={{
           background: 'none', border: '1px solid #e2e8f0', borderRadius: 6,
           cursor: 'pointer', fontSize: 11, color: '#64748b', padding: '2px 8px',
         }}>Clear</button>
       </div>
 
-      {(orGroups.length > 0 || andCourses.length > 0) && (
-        <div style={{ fontSize: 10, fontWeight: 700, color: '#5568ff', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>
-          Prerequisites
+      {/* Units */}
+      {meta?.Units && (
+        <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: '#64748b' }}>{meta.Units} unit{meta.Units === '1.00' ? '' : 's'}</span>
         </div>
       )}
 
-      {orGroups.length > 1 && (
-        <p style={{ fontSize: 11, color: '#64748b', margin: '0 0 8px', lineHeight: 1.4 }}>
-          All groups are required — pick one course from each.
-        </p>
+      {/* Description */}
+      {metaLoading && (
+        <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 8 }}>Loading…</div>
       )}
-
-      {orGroups.map((g) => (
-        <div key={g.orId} style={{
-          marginBottom: 8, padding: '6px 8px', borderRadius: 8,
-          border: '1.5px dashed #16a34a70', background: '#16a34a05',
+      {meta?.Description && (
+        <div style={{
+          fontSize: 12, color: '#475569', lineHeight: 1.6, marginBottom: 10,
+          maxHeight: 140, overflowY: 'auto',
         }}>
-          <div style={{ fontSize: 9, fontWeight: 700, color: '#16a34a60', marginBottom: 4, letterSpacing: '0.06em' }}>
-            Pick one of:
-          </div>
-          <div style={{ lineHeight: 1.6 }}>
-            {g.courses.map(chip)}
-          </div>
-        </div>
-      ))}
-
-      {andCourses.length > 0 && orGroups.length > 0 && (
-        <div style={{ fontSize: 10, fontWeight: 600, color: '#94a3b8', margin: '2px 0 6px', letterSpacing: '0.04em' }}>
-          + also required:
+          {meta.Description}
         </div>
       )}
+      {!metaLoading && !meta && (
+        <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 8 }}>No description available.</div>
+      )}
 
-      {andCourses.length > 0 && (
-        <div style={{ lineHeight: 1.6 }}>
-          {andCourses.map(c => (
-            <span key={c} style={{
-              display: 'inline-block', padding: '2px 8px', borderRadius: 6,
-              fontSize: 11, fontWeight: 600, margin: '2px 3px',
-              background: '#64748b15', color: '#475569', border: '1px solid #64748b55',
-            }}>{c}</span>
+      {/* Following: extra prereq blocks */}
+      {role === 'following' && (
+        <>
+          {(orGroups.length > 0 || andCourses.length > 0) && (
+            <div style={{ fontSize: 10, fontWeight: 700, color: '#5568ff', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>
+              Prerequisites
+            </div>
+          )}
+          {orGroups.length > 1 && (
+            <p style={{ fontSize: 11, color: '#64748b', margin: '0 0 8px', lineHeight: 1.4 }}>
+              All groups required — pick one from each.
+            </p>
+          )}
+          {orGroups.map(g => (
+            <div key={g.orId} style={{
+              marginBottom: 8, padding: '6px 8px', borderRadius: 8,
+              border: '1.5px dashed #16a34a70', background: '#16a34a05',
+            }}>
+              <div style={{ fontSize: 9, fontWeight: 700, color: '#16a34a60', marginBottom: 4, letterSpacing: '0.06em' }}>Pick one of:</div>
+              <div style={{ lineHeight: 1.6 }}>{g.courses.map(chip)}</div>
+            </div>
           ))}
+          {andCourses.length > 0 && orGroups.length > 0 && (
+            <div style={{ fontSize: 10, fontWeight: 600, color: '#94a3b8', margin: '2px 0 6px', letterSpacing: '0.04em' }}>+ also required:</div>
+          )}
+          {andCourses.length > 0 && (
+            <div style={{ lineHeight: 1.6, marginBottom: 8 }}>
+              {andCourses.map(c => (
+                <span key={c} style={{
+                  display: 'inline-block', padding: '2px 8px', borderRadius: 6,
+                  fontSize: 11, fontWeight: 600, margin: '2px 3px',
+                  background: '#64748b15', color: '#475569', border: '1px solid #64748b55',
+                }}>{c}</span>
+              ))}
+            </div>
+          )}
+          {!orGroups.length && !andCourses.length && (
+            <p style={{ fontSize: 12, color: '#94a3b8', margin: '0 0 8px' }}>No additional prerequisites.</p>
+          )}
+        </>
+      )}
+
+      {/* Center: hint about left-wing */}
+      {isCenter && !graph.hasLeftWing && (
+        <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 8 }}>
+          No prerequisites found.
         </div>
       )}
 
-      {!orGroups.length && !andCourses.length && (
-        <p style={{ fontSize: 12, color: '#94a3b8', margin: 0 }}>No additional prerequisites.</p>
+      {/* Left prereq context */}
+      {role === 'left_prereq' && !isCenter && (
+        <div style={{ fontSize: 11, color: '#64748b', marginBottom: 8 }}>
+          Prerequisite of <span style={{ fontWeight: 600, color: '#0f172a' }}>{graph.CENTER}</span>.
+        </div>
+      )}
+
+      {/* Explore link for non-center courses */}
+      {!isCenter && (
+        <button
+          onClick={() => navigate(`/course/${courseId}`)}
+          style={{
+            marginTop: 8, width: '100%', padding: '6px 10px',
+            borderRadius: 8, border: '1px solid #e2e8f0',
+            background: '#f8faff', cursor: 'pointer',
+            fontSize: 12, fontWeight: 600, color: '#5568ff',
+            fontFamily: 'inherit', textAlign: 'center',
+            transition: 'background 0.12s',
+          }}
+          onMouseOver={e => e.currentTarget.style.background = '#eef2ff'}
+          onMouseOut={e => e.currentTarget.style.background = '#f8faff'}
+        >
+          Explore {courseId} →
+        </button>
       )}
     </div>
   );
@@ -351,20 +526,21 @@ const FixedPanel = ({ fixedNode, graph, onClear }) => {
 
 // ─── Main component ───────────────────────────────────────────────────────────
 const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId }) => {
+  const navigate      = useNavigate();
   const containerRef  = useRef(null);
   const rfInstanceRef = useRef(null);
   const leaveTimer    = useRef(null);
 
   const [containerH, setContainerH] = useState(600);
-  const [activeNode, setActiveNode] = useState(null);  // hover
-  const [fixedNode,  setFixedNode]  = useState(null);  // click-locked
-  const [clickedNode, setClickedNode] = useState(null); // center/prereq info
+  const [activeNode, setActiveNode] = useState(null);   // hover
+  const [fixedNode,  setFixedNode]  = useState(null);   // click-locked following (controls cluster)
+  const [selectedInfo, setSelectedInfo] = useState(null); // { courseId, role } for info panel
   const [showHelp, setShowHelp]     = useState(true);
 
   const CENTER = courseId;
 
-  // Clear fixed node when course changes
-  useEffect(() => { setFixedNode(null); setClickedNode(null); }, [courseId]);
+  // Clear panel and cluster when course changes
+  useEffect(() => { setFixedNode(null); setSelectedInfo(null); }, [courseId]);
 
   useEffect(() => {
     const update = () => {
@@ -434,64 +610,45 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
       }
     });
 
-    const leftPos = buildLeftPositions(fwdEdges, typeOf, CENTER);
-
-    const leftOrTarget = new Map();
+    // Index fwdEdges by from-node for cluster layout
+    const fwdByFrom = new Map();
     fwdEdges.forEach(e => {
-      if (typeOf.get(e.to) === 'OR') leftOrTarget.set(e.to, e.from);
-    });
-    const resolveOr = (id) => {
-      let cur = id;
-      const seen = new Set();
-      while (typeOf.get(cur) === 'OR' && !seen.has(cur)) {
-        seen.add(cur); cur = leftOrTarget.get(cur) ?? cur;
-      }
-      return typeOf.get(cur) === 'OR' ? null : cur;
-    };
-
-    const nodes = [];
-    leftPos.forEach((pos, id) => {
-      if (typeOf.get(id) === 'OR') return;
-      nodes.push(makeNode(id, pos.x, pos.y, id === CENTER ? 'center' : 'left_prereq', typeOf));
-    });
-    [...col1Placements, ...col2Placements].forEach(({ id, x, y }) => {
-      nodes.push(makeNode(id, x, y, 'following', typeOf));
+      if (!fwdByFrom.has(e.from)) fwdByFrom.set(e.from, []);
+      fwdByFrom.get(e.from).push(e);
     });
 
-    const edgeSet = new Set();
-    const edges = [];
-    fwdEdges.forEach(e => {
-      if (typeOf.get(e.to) === 'OR') return;
-      const tgt = typeOf.get(e.from) === 'OR' ? resolveOr(e.from) : e.from;
-      if (!tgt) return;
-      const eid = `${e.to}|${tgt}`;
-      if (edgeSet.has(eid)) return;
-      edgeSet.add(eid);
-      edges.push(makeEdge(e.to, tgt, 'left', '#94a3b8', true, 'straight'));
-    });
+    // Left wing: direct prereqs of CENTER as OR-group column cluster
+    const leftCluster = buildLeftCluster(CENTER, fwdByFrom, typeOf);
+
+    const nodes = [
+      makeNode(CENTER, -WC / 2, -HC / 2, 'center', typeOf),
+      ...leftCluster.nodes,
+      ...[...col1Placements, ...col2Placements].map(({ id, x, y }) =>
+        makeNode(id, x, y, 'following', typeOf)
+      ),
+    ];
+    const edges = [...leftCluster.edges];
 
     return { nodes, edges, typeOf, extraEdgesByFrom, orAllMembers, followPos,
-      followingSet: new Set(filtered), CENTER, hasLeftWing: fwdEdges.length > 0 };
+      followingSet: new Set(filtered), CENTER, hasLeftWing: leftCluster.hasLeftWing, fwdByFrom };
   }, [rawData, selectedSubjects, selectedLevels, containerH, CENTER]);
 
   // ── Build display graph ─────────────────────────────────────────────────────
   const { displayNodes, displayEdges } = useMemo(() => {
-    // Hover takes priority; fall back to fixed node
     const target = activeNode || fixedNode;
     if (!target || !graph.followingSet.has(target)) {
       return { displayNodes: graph.nodes, displayEdges: graph.edges };
     }
 
-    const fc  = target;
-    const pos = graph.followPos.get(fc);
+    const pos = graph.followPos.get(target);
     if (!pos) return { displayNodes: graph.nodes, displayEdges: graph.edges };
 
     const cluster = buildHoverCluster(
-      fc, pos.x, pos.y, graph.extraEdgesByFrom, graph.orAllMembers, graph.typeOf, containerH, graph.CENTER,
+      target, pos.x, pos.y, graph.extraEdgesByFrom, graph.orAllMembers, graph.typeOf, containerH, graph.CENTER,
     );
 
     const updatedBase = graph.nodes.map(n =>
-      n.data.role === 'following' && n.id !== fc
+      n.data.role === 'following' && n.id !== target
         ? { ...n, style: { ...n.style, opacity: 0.15 } }
         : n
     );
@@ -514,24 +671,31 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
   }, []);
 
   const onNodeClick = useCallback((_, node) => {
-    const role = node.data.role;
+    const role    = node.data.role;
+    const origId  = node.id.includes('@') ? node.id.split('@')[0] : node.id;
+
     if (role === 'following') {
-      setFixedNode(prev => prev === node.id ? null : node.id);
-      setClickedNode(null);
-    } else if (role === 'center' || role === 'left_prereq') {
-      setClickedNode(prev => prev === node.id ? null : node.id);
+      const toggling = fixedNode === node.id;
+      setFixedNode(toggling ? null : node.id);
+      setSelectedInfo(toggling ? null : { courseId: node.id, role: 'following' });
+    } else if (role === 'center' || role === 'center_ref') {
+      const toggling = selectedInfo?.courseId === CENTER;
       setFixedNode(null);
+      setSelectedInfo(toggling ? null : { courseId: CENTER, role: 'center' });
+    } else if (role === 'left_prereq') {
+      const toggling = selectedInfo?.courseId === origId && !fixedNode;
+      setFixedNode(null);
+      setSelectedInfo(toggling ? null : { courseId: origId, role: 'left_prereq' });
+    } else if (role === 'extra_prereq') {
+      const toggling = selectedInfo?.courseId === origId && selectedInfo?.role === 'extra_prereq';
+      setSelectedInfo(toggling ? null : { courseId: origId, role: 'extra_prereq' });
     }
-  }, []);
+  }, [fixedNode, selectedInfo, CENTER]);
 
   const onInit = useCallback((instance) => {
     rfInstanceRef.current = instance;
     instance.fitView({ padding: 0.14 });
   }, []);
-
-  const clickedRole = clickedNode
-    ? graph.nodes.find(n => n.id === clickedNode)?.data?.role
-    : null;
 
   return (
     <div ref={containerRef} style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -550,22 +714,13 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
         <Controls />
       </ReactFlow>
 
-      {/* ── Fixed (click) panel — following course detail ─────────────────── */}
-      <FixedPanel fixedNode={fixedNode} graph={graph} onClear={() => setFixedNode(null)} />
-
-      {/* ── Click info panel — center / prereq ───────────────────────────── */}
-      {clickedNode && clickedRole && (
-        <div className="ct-info-panel">
-          <button className="ct-close-btn" onClick={() => setClickedNode(null)}>✕</button>
-          <h3 className="ct-info-title">{clickedNode}</h3>
-          {clickedRole === 'center' && (
-            <p className="ct-info-label">Course being explored.</p>
-          )}
-          {clickedRole === 'left_prereq' && (
-            <p className="ct-info-label">A prerequisite option for {CENTER}.</p>
-          )}
-        </div>
-      )}
+      {/* ── Unified course info panel ─────────────────────────────────────── */}
+      <CourseInfoPanel
+        selectedInfo={selectedInfo}
+        graph={graph}
+        navigate={navigate}
+        onClear={() => { setSelectedInfo(null); setFixedNode(null); }}
+      />
 
       {/* ── Help / legend panel ──────────────────────────────────────────── */}
       {showHelp && (
@@ -579,7 +734,7 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
           {graph.hasLeftWing && (
             <div className="ct-legend-row">
               <span className="ct-legend-dot" style={{ background: '#64748b15', border: '1.5px solid #64748b55' }} />
-              <span><strong>Left</strong> — prerequisites of {CENTER}</span>
+              <span><strong>Left</strong> — direct prerequisites of {CENTER}</span>
             </div>
           )}
           <div className="ct-legend-row">
