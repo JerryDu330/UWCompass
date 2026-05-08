@@ -9,6 +9,7 @@ crossListed = []
 def find_metadata(html_text, class_name):
     res = {
         "Code": class_name,
+        "Title": "",
         "Description": "",
         "Units": "",
         "Cross-Listed Courses": [],
@@ -22,6 +23,13 @@ def find_metadata(html_text, class_name):
     }
 
     soup = BeautifulSoup(html_text, "html.parser")
+
+    heading = soup.select_one('div[class^="course-view__itemTitleAndTranslationButton"] h2, div[class^="course-view__itemTitleAndTranslationButton"] h1')
+    if heading:
+        text = heading.get_text(strip=True)
+        if '-' in text:
+            res["Title"] = text.split('-', 1)[1].strip()
+
     h3_tags = soup.select('h3[class^="course-view__label"]')
 
     for tag in h3_tags:
@@ -51,7 +59,7 @@ if __name__ == "__main__":
         html_path = os.path.join("data", "Course_HTML", subject, f"{code}.html")
 
         if not os.path.exists(html_path):
-            print(f"{code} {i} (skipped — HTML not found)")
+            print(f"{code} {i} (skipped - HTML not found)")
             continue
 
         print(f"{code} {i}")
