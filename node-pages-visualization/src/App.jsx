@@ -43,10 +43,10 @@ const STEPS = [
   },
   {
     icon: '↗',
-    title: 'Click to explore a course tree',
+    title: 'Double-click to explore a course tree',
     body: (
       <p style={{ fontSize: 13, color: '#64748b', margin: '6px 0 0', lineHeight: 1.6 }}>
-        Clicking any node opens its dedicated course tree — showing prerequisites on the left and
+        Double-clicking any node opens its dedicated course tree — showing prerequisites on the left and
         courses that depend on it on the right.
       </p>
     ),
@@ -121,8 +121,14 @@ export default function App() {
   const [data, setData] = useState(null);
   const [noData, setNoData] = useState(false);
   const [filter, setFilter] = useState('');
+  const [courseSearch, setCourseSearch] = useState('');
   const [savedSubject, setSavedSubject] = useLocalStorage('uwcompass-last-subject', '');
   const [showIntro, setShowIntro] = useState(() => !localStorage.getItem(INTRO_SEEN_KEY));
+
+  const goToCourse = () => {
+    const code = courseSearch.trim().toUpperCase();
+    if (code) navigate(`/course/${code}`);
+  };
 
   const dismissIntro = () => {
     localStorage.setItem(INTRO_SEEN_KEY, '1');
@@ -166,6 +172,26 @@ export default function App() {
 
       <div className="app-body">
         <aside className="sidebar">
+          <div style={{ padding: '12px 10px 8px' }}>
+            <div style={{ fontSize: 10, fontWeight: 700, color: '#94a3b8', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>
+              Jump to course
+            </div>
+            <div className="sidebar-search" style={{ margin: 0 }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+              <input
+                placeholder="e.g. CS136L, press Enter"
+                value={courseSearch}
+                onChange={e => setCourseSearch(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && goToCourse()}
+              />
+              {courseSearch && (
+                <button className="sidebar-search-clear" onClick={() => setCourseSearch('')}>×</button>
+              )}
+            </div>
+          </div>
+
           <div className="sidebar-header">
             <span className="sidebar-title">Subjects</span>
             <span className="sidebar-count">{filtered.length}</span>

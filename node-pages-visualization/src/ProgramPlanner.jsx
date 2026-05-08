@@ -1,9 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { usePlannerData } from './hooks/usePlannerData';
 import NavHeader from './NavHeader';
 import './CSPlanner.css';
 
 const FALLBACK_COLORS = { bg: '#f9fafb', text: '#6b7280', border: '#d1d5db' };
+
+function InfoBadge({ info }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const close = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', close);
+    return () => document.removeEventListener('mousedown', close);
+  }, [open]);
+
+  if (info.infoUrl) {
+    return (
+      <a
+        href={info.infoUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="chip-info-link"
+        title="View breadth & depth requirements"
+      >↗</a>
+    );
+  }
+
+  if (info.infoList) {
+    const { heading, note, items } = info.infoList;
+    return (
+      <div ref={ref} style={{ position: 'relative', display: 'inline-block' }}>
+        <button
+          className="chip-info-btn"
+          onClick={e => { e.stopPropagation(); setOpen(o => !o); }}
+          title={heading}
+        >ⓘ</button>
+        {open && (
+          <div className="chip-info-popover">
+            <div className="chip-info-heading">{heading}</div>
+            <div className="chip-info-note">{note}</div>
+            <div className="chip-info-items">
+              {items.map(item => (
+                <span key={item} className="chip-info-item">{item}</span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return null;
+}
 
 function Chip({ code, completed, onToggle, courseInfo, typeColors }) {
   const info = courseInfo[code];
@@ -11,20 +61,34 @@ function Chip({ code, completed, onToggle, courseInfo, typeColors }) {
   const colors = typeColors[info.type] || FALLBACK_COLORS;
   const isDone = completed.has(code);
   const isPlaceholder = !!info.placeholder;
+  const hasInfo = !!(info.infoList || info.infoUrl);
+
+  const chipStyle = {
+    background:  isDone ? '#f0fdf4' : colors.bg,
+    color:       isDone ? '#15803d' : colors.text,
+    borderColor: isDone ? '#86efac' : colors.border,
+  };
+
+  if (isPlaceholder) {
+    return (
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+        <div className="chip chip-placeholder" style={chipStyle}>
+          <span className="chip-name">{info.name}</span>
+        </div>
+        {hasInfo && <InfoBadge info={info} />}
+      </div>
+    );
+  }
 
   return (
     <button
-      className={`chip${isDone ? ' chip-done' : ''}${isPlaceholder ? ' chip-placeholder' : ''}`}
-      style={{
-        background:  isDone ? '#f0fdf4' : colors.bg,
-        color:       isDone ? '#15803d' : colors.text,
-        borderColor: isDone ? '#86efac' : colors.border,
-      }}
-      onClick={() => !isPlaceholder && onToggle(code)}
+      className={`chip${isDone ? ' chip-done' : ''}`}
+      style={chipStyle}
+      onClick={() => onToggle(code)}
       title={info.note}
     >
       {isDone && <span className="chip-check">✓ </span>}
-      {!isPlaceholder && <strong className="chip-code">{code} </strong>}
+      <strong className="chip-code">{code} </strong>
       <span className="chip-name">{info.name}</span>
     </button>
   );

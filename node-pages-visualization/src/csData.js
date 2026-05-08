@@ -15,15 +15,15 @@ export const COURSE_INFO = {
   CS135:     { name: 'Functional Programming',             type: 'cs',      note: 'Intro to programming via Racket — functions, recursion, lists' },
   MATH135:   { name: 'Algebra',                            type: 'math',    note: 'Proof techniques, number theory, modular arithmetic' },
   MATH137:   { name: 'Calculus 1',                         type: 'math',    note: 'Limits, derivatives, applications of differentiation' },
-  COMMST_A:  { name: 'Communication (1)',                  type: 'commst',  note: 'First communications breadth requirement', placeholder: true },
-  BREADTH_1: { name: 'Non-Math Elective',                  type: 'breadth', note: 'Any non-CS/MATH/STAT course', placeholder: true },
+  COMMST_A:  { name: 'Communication (1)',                  type: 'commst',  note: 'First communications breadth requirement', placeholder: true, infoList: { heading: 'Communication List I', note: 'At least 60% in one of:', items: ['COMMST 100', 'COMMST 223', 'EMLS 101R', 'EMLS 102R', 'EMLS/ENGL 129R', 'ENGL 109'] } },
+  BREADTH_1: { name: 'Non-Math Elective',                  type: 'breadth', note: 'Any non-CS/MATH/STAT course', placeholder: true, infoUrl: 'https://cs.uwaterloo.ca//current/programs/require/bd/depthAndBreadth' },
 
   // ── 1B (fixed) ──────────────────────────────────────────────────────────────
   CS136:     { name: 'Imperative Programming',             type: 'cs',      note: 'C, memory management, data structures — CS136L lab included as coreq' },
   MATH136:   { name: 'Linear Algebra 1',                   type: 'math',    note: 'Vectors, matrices, linear systems, determinants' },
   MATH138:   { name: 'Calculus 2',                         type: 'math',    note: 'Integration techniques, sequences and series' },
-  COMMST_B:  { name: 'Communication (2)',                  type: 'commst',  note: 'Second communications breadth requirement', placeholder: true },
-  BREADTH_2: { name: 'Non-Math Elective',                  type: 'breadth', note: 'Any non-CS/MATH/STAT course', placeholder: true },
+  COMMST_B:  { name: 'Communication (2)',                  type: 'commst',  note: 'Second communications breadth requirement', placeholder: true, infoList: { heading: 'Communication List II', note: 'One of:', items: ['COMMST 225', 'COMMST 227', 'COMMST 228', 'EMLS 103R', 'EMLS 104R', 'EMLS 110R', 'ENGL 101B', 'ENGL 108B', 'ENGL 108D', 'ENGL 119', 'ENGL 208B', 'ENGL 209', 'ENGL 210E', 'ENGL 210F', 'ENGL 378/MTHEL 300'] } },
+  BREADTH_2: { name: 'Non-Math Elective',                  type: 'breadth', note: 'Any non-CS/MATH/STAT course', placeholder: true, infoUrl: 'https://cs.uwaterloo.ca//current/programs/require/bd/depthAndBreadth' },
 
   // ── 2A (fixed) ──────────────────────────────────────────────────────────────
   // CS240 is intentionally NOT here — it prereqs CS241, CS245, STAT230 (all 2A courses).
@@ -32,7 +32,7 @@ export const COURSE_INFO = {
   CS245:     { name: 'Logic and Computation',              type: 'cs',      note: 'Propositional/predicate logic, soundness, completeness — prereq: CS136 + MATH135' },
   STAT230:   { name: 'Probability',                        type: 'stat',    note: 'Discrete & continuous distributions, expectation, variance — prereq: MATH137' },
   MATH239:   { name: 'Intro to Combinatorics',             type: 'math',    note: 'Graphs, trees, counting, pigeonhole principle — prereq: MATH138' },
-  BREADTH_3: { name: 'Non-Math Elective',                  type: 'breadth', note: 'Any non-CS/MATH/STAT course', placeholder: true },
+  BREADTH_3: { name: 'Non-Math Elective',                  type: 'breadth', note: 'Any non-CS/MATH/STAT course', placeholder: true, infoUrl: 'https://cs.uwaterloo.ca//current/programs/require/bd/depthAndBreadth' },
 
   // ── 2B ──────────────────────────────────────────────────────────────────────
   // CS240 is now correctly in 2B — its prereqs (CS241, CS245, STAT230) are all in 2A.
@@ -128,9 +128,9 @@ export const COURSE_INFO = {
   CS453:     { name: 'Software Fault Tolerance',           type: 'cs',      note: 'Reliability, redundancy, recovery — prereq: CS350' },
 
   // ── Generic plan placeholders (fixed slots, not path-specific) ───────────────
-  BREADTH_4: { name: 'Non-Math Elective',    type: 'breadth',  note: 'Depth/breadth requirement', placeholder: true },
-  BREADTH_5: { name: 'Non-Math Elective',    type: 'breadth',  note: 'Depth/breadth requirement', placeholder: true },
-  BREADTH_6: { name: 'Non-Math Elective',    type: 'breadth',  note: 'Depth/breadth requirement', placeholder: true },
+  BREADTH_4: { name: 'Non-Math Elective',    type: 'breadth',  note: 'Depth/breadth requirement', placeholder: true, infoUrl: 'https://cs.uwaterloo.ca//current/programs/require/bd/depthAndBreadth' },
+  BREADTH_5: { name: 'Non-Math Elective',    type: 'breadth',  note: 'Depth/breadth requirement', placeholder: true, infoUrl: 'https://cs.uwaterloo.ca//current/programs/require/bd/depthAndBreadth' },
+  BREADTH_6: { name: 'Non-Math Elective',    type: 'breadth',  note: 'Depth/breadth requirement', placeholder: true, infoUrl: 'https://cs.uwaterloo.ca//current/programs/require/bd/depthAndBreadth' },
   CS_ELEC_1: { name: 'CS Elective',          type: 'elective', note: 'Any 400-level CS course', placeholder: true },
   CS_ELEC_2: { name: 'CS Elective',          type: 'elective', note: 'Any 400-level CS course', placeholder: true },
   FREE_1:    { name: 'Free Elective',        type: 'free',     note: 'Any course from any faculty', placeholder: true },

@@ -3,6 +3,27 @@ import { useNavigate } from 'react-router-dom';
 import ReactFlow, { Background, Controls, MarkerType, Handle, Position } from 'reactflow';
 import dagre from 'dagre';
 import 'reactflow/dist/style.css';
+
+// ─── Course-links cache (fetched once, shared across renders) ─────────────────
+let _courseLinksCache = null;
+let _courseLinksFetch = null;
+export function getCourseLinks() {
+  if (_courseLinksCache) return Promise.resolve(_courseLinksCache);
+  if (!_courseLinksFetch)
+    _courseLinksFetch = fetch('/course-links.json')
+      .then(r => r.json())
+      .then(d => { _courseLinksCache = d; return d; })
+      .catch(() => ({}));
+  return _courseLinksFetch;
+}
+
+function useCourseLink(courseId) {
+  const [uwLink, setUwLink] = useState(null);
+  useEffect(() => {
+    getCourseLinks().then(links => setUwLink(links[courseId] ?? null));
+  }, [courseId]);
+  return uwLink;
+}
 import './CourseTree.css';
 
 // ─── Node dimensions ──────────────────────────────────────────────────────────
@@ -358,12 +379,55 @@ const CenterGroupBgNode = () => (
   </div>
 );
 
-const nodeTypes = { mergeNode: MergeNode, extraGroupBg: ExtraGroupBgNode, centerGroupBg: CenterGroupBgNode };
+const linkStyle = {
+  fontSize: 10, fontWeight: 600, color: '#5568ff',
+  textDecoration: 'none', padding: '2px 7px',
+  border: '1px solid #c7d2fe', borderRadius: 5,
+  background: '#eef2ff', whiteSpace: 'nowrap',
+  display: 'inline-block', lineHeight: '16px',
+};
+
+const CenterNode = ({ data }) => (
+  <div style={{ position: 'relative', width: WC, height: HC }}>
+    <Handle type="target" position={Position.Left}  style={{ opacity: 0 }} />
+    <div style={{
+      width: WC, height: HC,
+      fontSize: '13px', fontWeight: '700', letterSpacing: '-0.01em',
+      borderRadius: '8px',
+      background: '#5568ff', color: '#fff',
+      border: '1.5px solid #5568ff',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      boxShadow: '0 0 16px 4px #5568ff40',
+      cursor: 'pointer', userSelect: 'none',
+    }}>
+      {data.label}
+    </div>
+    <Handle type="source" position={Position.Right} style={{ opacity: 0 }} />
+    <div style={{
+      position: 'absolute', top: HC + 6, left: '50%',
+      transform: 'translateX(-50%)',
+      display: 'flex', gap: 5,
+    }}>
+      <a href={`https://uwflow.com/course/${data.courseId.toLowerCase()}`}
+         target="_blank" rel="noreferrer"
+         onClick={e => e.stopPropagation()}
+         style={linkStyle}>UWFlow ↗</a>
+      {data.uwLink && (
+        <a href={data.uwLink} target="_blank" rel="noreferrer"
+           onClick={e => e.stopPropagation()}
+           style={linkStyle}>UW Calendar ↗</a>
+      )}
+    </div>
+  </div>
+);
+
+const nodeTypes = { mergeNode: MergeNode, extraGroupBg: ExtraGroupBgNode, centerGroupBg: CenterGroupBgNode, centerNode: CenterNode };
 
 // ─── Unified course info panel ────────────────────────────────────────────────
 const CourseInfoPanel = ({ selectedInfo, graph, onClear, navigate }) => {
   const [meta, setMeta] = useState(null);
   const [metaLoading, setMetaLoading] = useState(false);
+  const uwLink = useCourseLink(selectedInfo?.courseId);
 
   useEffect(() => {
     if (!selectedInfo) return;
@@ -422,6 +486,13 @@ const CourseInfoPanel = ({ selectedInfo, graph, onClear, navigate }) => {
           cursor: 'pointer', fontSize: 11, color: '#64748b', padding: '2px 8px',
         }}>Clear</button>
       </div>
+
+      {/* Title */}
+      {meta?.Title && (
+        <div style={{ fontSize: 13, color: '#475569', fontWeight: 500, marginBottom: 4 }}>
+          {meta.Title}
+        </div>
+      )}
 
       {/* Units */}
       {meta?.Units && (
@@ -520,6 +591,38 @@ const CourseInfoPanel = ({ selectedInfo, graph, onClear, navigate }) => {
           Explore {courseId} →
         </button>
       )}
+
+      {/* External links */}
+      <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
+        <a
+          href={`https://uwflow.com/course/${courseId.toLowerCase()}`}
+          target="_blank" rel="noreferrer"
+          style={{
+            flex: 1, textAlign: 'center', padding: '5px 8px',
+            borderRadius: 7, border: '1px solid #e2e8f0',
+            fontSize: 11, fontWeight: 600, color: '#0f172a',
+            textDecoration: 'none', background: '#f8fafc',
+            transition: 'background 0.12s',
+          }}
+          onMouseOver={e => e.currentTarget.style.background = '#f1f5f9'}
+          onMouseOut={e => e.currentTarget.style.background = '#f8fafc'}
+        >UWFlow ↗</a>
+        {uwLink && (
+          <a
+            href={uwLink}
+            target="_blank" rel="noreferrer"
+            style={{
+              flex: 1, textAlign: 'center', padding: '5px 8px',
+              borderRadius: 7, border: '1px solid #e2e8f0',
+              fontSize: 11, fontWeight: 600, color: '#0f172a',
+              textDecoration: 'none', background: '#f8fafc',
+              transition: 'background 0.12s',
+            }}
+            onMouseOver={e => e.currentTarget.style.background = '#f1f5f9'}
+            onMouseOut={e => e.currentTarget.style.background = '#f8fafc'}
+          >UW Calendar ↗</a>
+        )}
+      </div>
     </div>
   );
 };
@@ -536,6 +639,7 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
   const [fixedNode,  setFixedNode]  = useState(null);   // click-locked following (controls cluster)
   const [selectedInfo, setSelectedInfo] = useState(null); // { courseId, role } for info panel
   const [showHelp, setShowHelp]     = useState(true);
+  const centerUwLink = useCourseLink(courseId);
 
   const CENTER = courseId;
 
@@ -621,7 +725,15 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
     const leftCluster = buildLeftCluster(CENTER, fwdByFrom, typeOf);
 
     const nodes = [
-      makeNode(CENTER, -WC / 2, -HC / 2, 'center', typeOf),
+      {
+        id: CENTER,
+        type: 'centerNode',
+        data: { label: CENTER, role: 'center', courseId: CENTER, uwLink: null },
+        position: { x: -WC / 2, y: -HC / 2 },
+        sourcePosition: 'right',
+        targetPosition: 'left',
+        style: { width: WC, height: HC, overflow: 'visible', padding: 0, border: 'none', background: 'transparent' },
+      },
       ...leftCluster.nodes,
       ...[...col1Placements, ...col2Placements].map(({ id, x, y }) =>
         makeNode(id, x, y, 'following', typeOf)
@@ -635,13 +747,17 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
 
   // ── Build display graph ─────────────────────────────────────────────────────
   const { displayNodes, displayEdges } = useMemo(() => {
+    const patchCenter = nodes => nodes.map(n =>
+      n.type === 'centerNode' ? { ...n, data: { ...n.data, uwLink: centerUwLink } } : n
+    );
+
     const target = activeNode || fixedNode;
     if (!target || !graph.followingSet.has(target)) {
-      return { displayNodes: graph.nodes, displayEdges: graph.edges };
+      return { displayNodes: patchCenter(graph.nodes), displayEdges: graph.edges };
     }
 
     const pos = graph.followPos.get(target);
-    if (!pos) return { displayNodes: graph.nodes, displayEdges: graph.edges };
+    if (!pos) return { displayNodes: patchCenter(graph.nodes), displayEdges: graph.edges };
 
     const cluster = buildHoverCluster(
       target, pos.x, pos.y, graph.extraEdgesByFrom, graph.orAllMembers, graph.typeOf, containerH, graph.CENTER,
@@ -654,10 +770,10 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
     );
 
     return {
-      displayNodes: [...updatedBase, ...cluster.nodes],
+      displayNodes: [...patchCenter(updatedBase), ...cluster.nodes],
       displayEdges: [...graph.edges, ...cluster.edges],
     };
-  }, [graph, activeNode, fixedNode, containerH]);
+  }, [graph, activeNode, fixedNode, containerH, centerUwLink]);
 
   // ── Event handlers ──────────────────────────────────────────────────────────
   const onNodeMouseEnter = useCallback((_, node) => {
@@ -729,32 +845,32 @@ const CourseTreeCanvas = ({ rawData, selectedSubjects, selectedLevels, courseId 
           <p className="ct-help-heading">How to read this graph</p>
           <div className="ct-legend-row">
             <span className="ct-legend-dot" style={{ background: '#5568ff' }} />
-            <span><strong>{CENTER}</strong> — course being explored</span>
+            <span><strong>{CENTER}</strong> — the course you're exploring</span>
           </div>
           {graph.hasLeftWing && (
             <div className="ct-legend-row">
               <span className="ct-legend-dot" style={{ background: '#64748b15', border: '1.5px solid #64748b55' }} />
-              <span><strong>Left</strong> — direct prerequisites of {CENTER}</span>
+              <span><strong>Left side (grey)</strong> — courses you must complete <em>before</em> {CENTER} (its prerequisites)</span>
             </div>
           )}
           <div className="ct-legend-row">
             <span className="ct-legend-dot" style={{ background: '#a855f715', border: '1.5px solid #a855f780' }} />
-            <span><strong>Purple</strong> — courses that need {CENTER}</span>
+            <span><strong>Right side (purple)</strong> — courses that list {CENTER} in their prerequisites. {CENTER} may be one option among several, so check the green nodes to confirm what else is needed before enrolling</span>
           </div>
           <div className="ct-legend-row">
             <span className="ct-legend-dot" style={{ background: '#16a34a15', border: '1.5px solid #16a34a55' }} />
-            <span><strong>Green</strong> — extra prerequisites (hover/click)</span>
+            <span><strong>Green nodes</strong> — additional prerequisites a purple course requires alongside {CENTER}</span>
           </div>
           <div className="ct-legend-row">
             <span className="ct-legend-dot" style={{ background: '#16a34a06', border: '1.5px dashed #16a34a80', borderRadius: 4 }} />
-            <span><strong>Green dashed box</strong> — pick one of these</span>
+            <span><strong>Green dashed box</strong> — you only need <em>one</em> course from this group to satisfy that requirement</span>
           </div>
           <hr className="ct-divider" />
           <p className="ct-help-note">
-            <strong>Hover</strong> a purple course to preview prerequisites.
+            <strong>Click</strong> any course node to see its title, units, and description.
           </p>
           <p className="ct-help-note" style={{ marginTop: 6 }}>
-            <strong>Click</strong> to lock and see AND/OR details.
+            <strong>Hover</strong> a purple course to also preview its full list of additional prerequisites.
           </p>
         </div>
       )}

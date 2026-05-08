@@ -13,14 +13,14 @@ export const STAT_COURSE_INFO = {
   MATH135:     { name: 'Algebra',                          type: 'math',   note: 'Proof techniques, number theory, modular arithmetic' },
   MATH137:     { name: 'Calculus 1',                       type: 'math',   note: 'Limits, derivatives, applications of differentiation' },
   CS115:       { name: 'Introduction to CS 1',             type: 'cs',     note: 'Functional programming in Racket — for non-CS Math students' },
-  S_COMMST_A:  { name: 'Communication (1)',                type: 'commst', note: 'First communications requirement', placeholder: true },
+  S_COMMST_A:  { name: 'Communication (1)',                type: 'commst', note: 'First communications requirement', placeholder: true, infoList: { heading: 'Communication List I', note: 'At least 60% in one of:', items: ['COMMST 100', 'COMMST 223', 'EMLS 101R', 'EMLS 102R', 'EMLS/ENGL 129R', 'ENGL 109'] } },
   S_BRD_1:     { name: 'Non-Math Elective',                type: 'breadth', note: 'Any non-Math course', placeholder: true },
 
   // ── 1B (fixed) ──────────────────────────────────────────────────────────────
   MATH136:     { name: 'Linear Algebra 1',                 type: 'math',   note: 'Vectors, matrices, linear systems — prereq: MATH135' },
   MATH138:     { name: 'Calculus 2',                       type: 'math',   note: 'Integration, sequences and series — prereq: MATH137' },
   CS116:       { name: 'Introduction to CS 2',             type: 'cs',     note: 'Python, higher-order functions, mutation — prereq: CS115' },
-  S_COMMST_B:  { name: 'Communication (2)',                type: 'commst', note: 'Second communications requirement', placeholder: true },
+  S_COMMST_B:  { name: 'Communication (2)',                type: 'commst', note: 'Second communications requirement', placeholder: true, infoList: { heading: 'Communication List II', note: 'One of:', items: ['COMMST 225', 'COMMST 227', 'COMMST 228', 'EMLS 103R', 'EMLS 104R', 'EMLS 110R', 'ENGL 101B', 'ENGL 108B', 'ENGL 108D', 'ENGL 119', 'ENGL 208B', 'ENGL 209', 'ENGL 210E', 'ENGL 210F', 'ENGL 378/MTHEL 300'] } },
   S_BRD_2:     { name: 'Non-Math Elective',                type: 'breadth', note: 'Any non-Math course', placeholder: true },
 
   // ── 2A (fixed) ──────────────────────────────────────────────────────────────

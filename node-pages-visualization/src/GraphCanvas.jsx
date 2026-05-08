@@ -1,4 +1,4 @@
-import { useMemo, useEffect, useState, useCallback } from 'react';
+import { useMemo, useEffect, useState, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactFlow, {
   Background,
@@ -217,7 +217,7 @@ const HoverPanel = ({ nodeId, starred, onToggleStar }) => {
       </div>
       <div style={{ fontSize: 11, color: '#94a3b8' }}>Other nodes are faded out.</div>
       <div style={{ borderTop: '1px solid rgba(0,0,0,0.05)', margin: '8px 0 6px' }} />
-      <div style={{ fontSize: 11, color: '#5568ff', fontWeight: 500 }}>Click to explore course tree →</div>
+      <div style={{ fontSize: 11, color: '#5568ff', fontWeight: 500 }}>Double-click to explore course tree →</div>
     </div>
   );
 };
@@ -232,6 +232,7 @@ const GraphCanvas = ({ data, subject }) => {
   const [hoveredNode, setHoveredNode] = useState(null);
   const [hiddenLevels, setHiddenLevels] = useState(new Set());
   const [showLegend, setShowLegend] = useState(true);
+  const lastClickRef = useRef({ id: null, time: 0 });
   const [starred, setStarred] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem(STARRED_KEY) || '[]')); }
     catch { return new Set(); }
@@ -255,7 +256,15 @@ const GraphCanvas = ({ data, subject }) => {
   }, []);
 
   const onNodeClick = useCallback((_, node) => {
-    if (!node.id.includes('OR_NODE')) navigate(`/course/${node.id}`);
+    if (node.id.includes('OR_NODE')) return;
+    const now = Date.now();
+    const last = lastClickRef.current;
+    if (last.id === node.id && now - last.time < 400) {
+      lastClickRef.current = { id: null, time: 0 };
+      navigate(`/course/${node.id}`);
+    } else {
+      lastClickRef.current = { id: node.id, time: now };
+    }
   }, [navigate]);
 
   const getTrace = useCallback((nodeId, allEdges) => {

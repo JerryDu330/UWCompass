@@ -381,3 +381,5 @@
   background: #eef2ff !important;
   color: #5568ff !important;
 }
+
+.react-flow__node-centerNode { overflow: visible !important; }
